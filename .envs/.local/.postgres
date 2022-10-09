@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=bl_trade_aid
+POSTGRES_USER=tfNbPxVdnlNEbUwDOgQMClkHTtpSpPag
+POSTGRES_PASSWORD=HdTniKerPQDDasn0q1PVC2tdSZMJzocV6fdm8WM3jAl6CuZYnDW913rbLUKfFSCS
