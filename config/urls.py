@@ -13,6 +13,9 @@ urlpatterns = [
     path(
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
+    # api bl_trade_aid
+    path("api/", include("bl_trade_aid.patterns.api.urls")),
+
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management

@@ -26,3 +26,10 @@ djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
 django-cors-headers==3.13.0 # https://github.com/adamchainz/django-cors-headers
 # DRF-spectacular for api documentation
 drf-spectacular==0.24.2  # https://github.com/tfranzel/drf-spectacular
+
+# bilore trade
+pandas==1.4.4  
+numpy==1.23.4
+requests==2.28.1
+ib-insync==0.9.71
+

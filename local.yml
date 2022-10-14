@@ -67,15 +67,15 @@ services:
     ports: []
     command: /start-celeryworker
 
-  celerybeat:
-    <<: *django
-    image: bl_trade_aid_local_celerybeat
-    container_name: bl_trade_aid_local_celerybeat
-    depends_on:
-      - redis
-      - postgres
-    ports: []
-    command: /start-celerybeat
+      #   celerybeat:
+      #     <<: *django
+      #     image: bl_trade_aid_local_celerybeat
+      #     container_name: bl_trade_aid_local_celerybeat
+      #     depends_on:
+      #       - redis
+      #       - postgres
+      #     ports: []
+      #     command: /start-celerybeat
 
   flower:
     <<: *django
