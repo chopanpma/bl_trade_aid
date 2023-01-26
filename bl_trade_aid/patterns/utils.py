@@ -134,7 +134,7 @@ class APIUtils():
         # TODO: Implement function
         return APIUtils.call_ib_service(
                 symbol, height_precision, exchange,
-                security_type, user_extended_hours=False)
+                security_type, use_extended_hours=False)
 
     @staticmethod
     def call_ib_service(
