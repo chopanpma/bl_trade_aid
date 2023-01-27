@@ -11,7 +11,7 @@ services:
       dockerfile: ./compose/local/django/Dockerfile
     image: bl_trade_aid_local_django
     container_name: bl_trade_aid_local_django
-    platform: linux/x86_64
+      #    platform: linux/x86_64
     depends_on:
       - postgres
     volumes:

@@ -119,7 +119,7 @@ class Command(BaseCommand):
         # command
         util.startLoop()
         ib = IB()
-        ib.connect('192.168.0.15', 7497, clientId=1)
+        ib.connect('192.168.0.20', 7497, clientId=1)
 
         contract = Stock(
                 options['symbol'],
