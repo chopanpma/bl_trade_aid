@@ -46,8 +46,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   && rm -rf /var/lib/apt/lists/*
 
 # ibapi
-COPY ./twsapi_macunix.976.01/IBJts/source/pythonclient/dist/ibapi-9.76.1-py3-none-any.whl /ibapi-9.76.1-py3-none-any.whl
-RUN pip install wheel && pip install /ibapi-9.76.1-py3-none-any.whl
+# COPY ./twsapi_macunix.976.01/IBJts/source/pythonclient/dist/ibapi-9.76.1-py3-none-any.whl /ibapi-9.76.1-py3-none-any.whl
+COPY ./twsapi_macunix.976.01/IBJts/source/pythonclient /pythonclient
+RUN cd /pythonclient/ && python setup.py bdist_wheel
+RUN pip install wheel && pip install /pythonclient/dist/ibapi-9.76.1-py3-none-any.whl
 
 # All absolute dir copies ignore workdir instruction. All relative dir copies are wrt to the workdir instruction
 # copy python dependency wheels from python-build-stage
