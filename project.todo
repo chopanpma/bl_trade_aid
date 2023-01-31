@@ -1,0 +1,21 @@
+[ ] functionality
+  * query type of contract with characteristics
+  - market profile OO
+  - set an alert
+  - remove an alert
+  - search for alert
+  - place a buy order 
+  - bargain on buy
+  - cancel the order place
+  - place a sell order
+  - bargain on sell
+  - cancell the sell order
+
+
+
+[ ] system capabilities
+-  log every search
+- log every selection
+- log every action
+- ab test functionality 
+

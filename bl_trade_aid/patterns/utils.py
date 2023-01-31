@@ -171,3 +171,9 @@ class APIUtils():
 
         df = util.df(bars)
         return df
+
+
+class MarketUtils():
+    @staticmethod
+    def get_contracts():
+        pass
