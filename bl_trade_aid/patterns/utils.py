@@ -4,6 +4,8 @@ from threading import Thread
 from ib_insync import IB
 from ib_insync import Stock
 from ib_insync import util
+from ib_insync import ScannerSubscription
+from ib_insync import TagValue
 import queue
 
 import logging
@@ -176,4 +178,26 @@ class APIUtils():
 class MarketUtils():
     @staticmethod
     def get_contracts():
-        pass
+
+        # Connect to TWS API
+        ib = IB()
+        ib.connect('192.168.0.20', 7497, clientId=1)
+
+        # Request scanner data
+        scanner = ScannerSubscription(instrument='STK', locationCode='US', scanCode='HOT_BY_VOLUME')
+        data = ib.reqScannerData(scanner, [TagValue('averageOptVolumeAbove', '100'),
+                                           TagValue('marketCapAbove', '100000000'),
+                                           TagValue('moodyRatingAbove', 'Caa'),
+                                           TagValue('scannerSettingPairs', 'StockType=STOCK')])
+
+        # Filter the contracts with no change from yesterday and price between 1 and 15 USD
+        filtered_data = [
+                contract for contract in data
+                if contract.close == contract.closeYesterday and 1 <= contract.lastTrade.price <= 15]
+
+        # Display the filtered contracts
+        for contract in filtered_data:
+            logger.info(contract)
+
+        # Disconnect from TWS API
+        ib.disconnect()

@@ -31,5 +31,5 @@ drf-spectacular==0.24.2  # https://github.com/tfranzel/drf-spectacular
 pandas==1.4.4  
 numpy==1.23.4
 requests==2.28.1
-ib-insync==0.9.71
+ib-insync==0.9.81
 
