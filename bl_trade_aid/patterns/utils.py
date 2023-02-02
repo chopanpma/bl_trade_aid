@@ -184,16 +184,13 @@ class MarketUtils():
         ib.connect('192.168.0.20', 7497, clientId=1)
 
         # Request scanner data
-        scanner = ScannerSubscription(instrument='STK', locationCode='US', scanCode='HOT_BY_VOLUME')
+        scanner = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
         data = ib.reqScannerData(scanner, [TagValue('averageOptVolumeAbove', '100'),
                                            TagValue('marketCapAbove', '100000000'),
-                                           TagValue('moodyRatingAbove', 'Caa'),
                                            TagValue('scannerSettingPairs', 'StockType=STOCK')])
 
         # Filter the contracts with no change from yesterday and price between 1 and 15 USD
-        filtered_data = [
-                contract for contract in data
-                if contract.close == contract.closeYesterday and 1 <= contract.lastTrade.price <= 15]
+        filtered_data = data
 
         # Display the filtered contracts
         for contract in filtered_data:
