@@ -9,6 +9,9 @@ from bl_trade_aid.users.models import User
 import logging
 logger = logging.getLogger(__name__)
 
+#          png_filename = f'{settings.APPS_DIR}/api/tests/fixtures/kenobi.png'
+#          with open(png_filename, 'rb') as jpeg:
+
 
 class ReturningResultTestCase(TestCase):
     def setUp(self):
@@ -57,11 +60,32 @@ class ReturningResultTestCase(TestCase):
 
         # TODO:count elements in the result to make the test fail or pass
 
-    def test_store_new_query_from_same_ticker(self):
+    def test_return_bars(self):
+        # TODO: implement
+        # - mock library call for the scan
+        # - write the file
+        # - create mock file
+        # assert retur
         pass
 
-    def test_list_stored_querie(self):
+    def test_store_scan(self):
+        # TODO: implement
+        # - mock library call for the scan
+        # - add info to the table
+        # - assert table values
         pass
 
-    def test_retrieve_mp_of_stored_query(self):
+    def test_query_is_under_a_experiment(self):
+        pass
+
+    def test_experiment_is_mapped_to_a_param_config(self):
+        pass
+
+    def test_param_config(self):
+        pass
+
+    def test_create_a_tpo_from_data(self):
+        pass
+
+    def test_create_a_market_profile_from_data(self):
         pass

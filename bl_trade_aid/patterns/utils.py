@@ -189,12 +189,9 @@ class MarketUtils():
                                            TagValue('marketCapAbove', '100000000'),
                                            TagValue('scannerSettingPairs', 'StockType=STOCK')])
 
-        # Filter the contracts with no change from yesterday and price between 1 and 15 USD
-        filtered_data = data
-
         # Display the filtered contracts
-        for contract in filtered_data:
-            logger.info(contract)
+        with open('result.txt', 'w') as file:
+            file.write(f'data: {data}')
 
         # Disconnect from TWS API
         ib.disconnect()
