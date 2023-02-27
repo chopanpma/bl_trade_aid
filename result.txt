@@ -1,1 +1,1 @@
-data: <MagicMock name='reqScannerData()' id='281473366856128'>
+data: <MagicMock name='reqScannerData()' id='281472612870128'>

@@ -7,6 +7,7 @@ from ib_insync import util
 from ib_insync import ScannerSubscription
 from ib_insync import TagValue
 import queue
+import pickle
 
 import logging
 logger = logging.getLogger(__name__)
@@ -190,8 +191,9 @@ class MarketUtils():
                                            TagValue('scannerSettingPairs', 'StockType=STOCK')])
 
         # Display the filtered contracts
-        with open('result.txt', 'w') as file:
-            file.write(f'data: {data}')
+        print(f'type data:{type(data)}')
+        with open('scan_results.picle', 'wb') as file:
+            pickle.dump(data, file)
 
         # Disconnect from TWS API
         ib.disconnect()
