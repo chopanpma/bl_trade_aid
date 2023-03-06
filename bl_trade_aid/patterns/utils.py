@@ -6,8 +6,11 @@ from ib_insync import Stock
 from ib_insync import util
 from ib_insync import ScannerSubscription
 from ib_insync import TagValue
+from .models import ScanData
+from .models import Contract
+from .models import ContractDetails
 import queue
-import pickle
+# import pickle
 
 import logging
 logger = logging.getLogger(__name__)
@@ -190,10 +193,44 @@ class MarketUtils():
                                            TagValue('marketCapAbove', '100000000'),
                                            TagValue('scannerSettingPairs', 'StockType=STOCK')])
 
-        # Display the filtered contracts
-        print(f'type data:{type(data)}')
-        with open('scan_results.picle', 'wb') as file:
-            pickle.dump(data, file)
+        # Serialize contracts for mocking
+        # print(f'type data:{type(data)}')
+        # with open('scan_results.picle', 'wb') as file:
+        #     pickle.dump(data, file)
+
+        # Insert data into the tables.
+        for scan_data in data:
+            contract_dict = scan_data.contractDetails.contract.__dict__
+            contract_instance = Contract()
+            ModelUtil.update_model_fields(contract_instance, contract_dict)
+
+            contract_details_dict = scan_data.contractDetails.__dict__
+            contract_details_instance = ContractDetails()
+            ModelUtil.update_model_fields(contract_details_instance, contract_details_dict)
+
+            contract_details_instance.contract = contract_instance
+
+            scan_data_dict = scan_data.__dict__
+            scan_data_instance = ScanData()
+            ModelUtil.update_model_fields(scan_data_instance, scan_data_dict)
+
+            scan_data_instance.contractDetais = contract_details_instance
+
+            scan_data_instance.save()
 
         # Disconnect from TWS API
         ib.disconnect()
+
+
+class ModelUtil():
+
+    def update_model_fields(model_instance, fields_dict):
+        """
+        Updates the fields of a Django model instance with the values in a dictionary.
+        """
+        for field_name in fields_dict:
+            # Only update fields that are in the dictionary
+            model_fields = model_instance.__dict__.keys()
+
+            if field_name in model_fields:
+                setattr(model_instance, field_name, fields_dict[field_name])
