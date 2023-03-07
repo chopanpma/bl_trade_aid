@@ -203,19 +203,18 @@ class MarketUtils():
             contract_dict = scan_data.contractDetails.contract.__dict__
             contract_instance = Contract()
             ModelUtil.update_model_fields(contract_instance, contract_dict)
+            contract_instance.save()
 
             contract_details_dict = scan_data.contractDetails.__dict__
             contract_details_instance = ContractDetails()
             ModelUtil.update_model_fields(contract_details_instance, contract_details_dict)
-
+            contract_details_instance.save()
             contract_details_instance.contract = contract_instance
 
             scan_data_dict = scan_data.__dict__
             scan_data_instance = ScanData()
             ModelUtil.update_model_fields(scan_data_instance, scan_data_dict)
-
-            scan_data_instance.contractDetais = contract_details_instance
-
+            scan_data_instance.contractDetails = contract_details_instance
             scan_data_instance.save()
 
         # Disconnect from TWS API

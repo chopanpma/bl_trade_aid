@@ -37,7 +37,7 @@ class ScannerSubscriptionTestCase(TestCase):
 
         # - assert the function calls the mock
         # TODO:assert inserted records
-        self.assertEquals(1, len(ScanData.objects.all()))
+        self.assertEquals(50, len(ScanData.objects.all()))
 
         logger.info(f'callcount:  {mock_reqscannerdata.call_count}')
         self.assertEquals(1, mock_connect.call_count)
