@@ -1,5 +1,9 @@
 [ ] functionality
-  * query type of contract with characteristics
+  [D] query type of contract with characteristics
+  * fetch query result and get all details from the batch, with fixed params 
+    [D] fetch and save one bar detail. 
+    [*] test the loop
+  - storing with batch number
   - market profile OO
   - set an alert
   - remove an alert
@@ -10,6 +14,8 @@
   - place a sell order
   - bargain on sell
   - cancell the sell order
+  - query type of contract with characteristics RESULTS COMING FROM PARAMETER
+  - query bar result coming from params EXPERIMEWNT RESULTS COMING FROM PARAMETER
 
 
 

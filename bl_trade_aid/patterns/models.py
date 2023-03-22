@@ -1,7 +1,10 @@
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 from model_utils.models import TimeStampedModel
+from zoneinfo import ZoneInfo
+
 
 # Create your models here.
 
@@ -42,6 +45,36 @@ class TPOPrint(TimeStampedModel):
     print = models.CharField(_('Print'), max_length=1)
     tpo = models.ForeignKey('TPO',  verbose_name=_('TPO'), related_name='prints',
                             on_delete=models.PROTECT)
+
+
+class BarData(TimeStampedModel):
+    tz = ZoneInfo('America/New_York')
+
+    date = models.DateTimeField(_('date'), null=True, blank=True)
+    open = models.DecimalField(_('open'), max_digits=12, decimal_places=2,
+                               help_text=_('open'))
+    high = models.DecimalField(_('high'), max_digits=12, decimal_places=2,
+                               help_text=_('high'))
+    low = models.DecimalField(_('low'), max_digits=12, decimal_places=2,
+                              help_text=_('low'))
+
+    close = models.DecimalField(_('close'), max_digits=12, decimal_places=2,
+                                help_text=_('close'))
+
+    volume = models.DecimalField(_('volume'), max_digits=12, decimal_places=2,
+                                 help_text=_('volume'))
+
+    average = models.DecimalField(_('average'), max_digits=12, decimal_places=2,
+                                  help_text=_('average'))
+
+    barCount = models.IntegerField(_('barCount'), help_text=_('barCount'))
+
+    def save(self, *args, **kwargs):
+        if self.date is not None:
+            # Convert the datetime to the appropriate timezone
+            self.date = timezone.make_aware(self.date, self.tz)
+
+        super().save(*args, **kwargs)
 
 
 class ScanData(TimeStampedModel):

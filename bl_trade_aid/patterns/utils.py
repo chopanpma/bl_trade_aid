@@ -9,6 +9,7 @@ from ib_insync import TagValue
 from .models import ScanData
 from .models import Contract
 from .models import ContractDetails
+from .models import BarData
 import queue
 # import pickle
 
@@ -195,7 +196,7 @@ class MarketUtils():
 
         # Serialize contracts for mocking
         # print(f'type data:{type(data)}')
-        # with open('scan_results.picle', 'wb') as file:
+        # with open('scan_results.pickle', 'wb') as file:
         #     pickle.dump(data, file)
 
         # Insert data into the tables.
@@ -216,6 +217,44 @@ class MarketUtils():
             ModelUtil.update_model_fields(scan_data_instance, scan_data_dict)
             scan_data_instance.contractDetails = contract_details_instance
             scan_data_instance.save()
+
+        # Disconnect from TWS API
+        ib.disconnect()
+
+    def get_bars_in_date_range(symbol, exchange):
+
+        # Connect to TWS API
+        ib = IB()
+        ib.connect('192.168.0.20', 7497, clientId=1)
+
+        contract = Stock(
+                symbol,
+                exchange,
+                'USD'
+                )
+
+        # Request scanner data
+        bars = ib.reqHistoricalData(
+                contract,
+                endDateTime='',
+                durationStr='14 D',  # add param for days
+                barSizeSetting='30 mins',
+                whatToShow='TRADES',
+                useRTH=True,  # TODO: create param for extended hours
+                formatDate=1)
+
+        # Serialize bar result
+        #  print(f'type bars:{type(bars)}')
+        #  print(f'bars:{bars}')
+        #  with open('bar_data_range_results.pickle', 'wb') as file:
+        #      pickle.dump(bars, file)
+
+        # Insert data into the tables.
+        for bar in bars:
+            bar_data_dict = bar.__dict__
+            bar_data_instance = BarData()
+            ModelUtil.update_model_fields(bar_data_instance, bar_data_dict)
+            bar_data_instance.save()
 
         # Disconnect from TWS API
         ib.disconnect()
