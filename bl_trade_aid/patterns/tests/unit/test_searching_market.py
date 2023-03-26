@@ -53,7 +53,7 @@ class ScannerSubscriptionTestCase(TestCase):
 
         MarketUtils.get_contracts()
         self.assertEquals(50, len(ScanData.objects.all()))
-        # call_command('dumpdata',  indent=4, output='scandata_fixture.json')
+#         call_command('dumpdata',  indent=4, output='scandata_fixture.json')
 
         print(f'call args list:  {mock_disconnect_scan.call_args_list}')
         print(f'calls:  {mock_disconnect_scan.calls}')

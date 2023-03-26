@@ -209,8 +209,8 @@ class MarketUtils():
             contract_details_dict = scan_data.contractDetails.__dict__
             contract_details_instance = ContractDetails()
             ModelUtil.update_model_fields(contract_details_instance, contract_details_dict)
-            contract_details_instance.save()
             contract_details_instance.contract = contract_instance
+            contract_details_instance.save()
 
             scan_data_dict = scan_data.__dict__
             scan_data_instance = ScanData()
@@ -220,6 +220,11 @@ class MarketUtils():
 
         # Disconnect from TWS API
         ib.disconnect()
+
+    def get_bars_from_scandata(scan_data_dataset):
+        for scan_data_instance in scan_data_dataset:
+            MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
+                                               scan_data_instance.contractDetails.contract.exchange)
 
     def get_bars_in_date_range(symbol, exchange):
 
