@@ -77,7 +77,16 @@ class BarData(TimeStampedModel):
         super().save(*args, **kwargs)
 
 
+class Batch(TimeStampedModel):
+    experiment = models.IntegerField(_('Experiment'), null=True, blank=True,
+                                     help_text=_('Experiment the batch is in'))
+
+
 class ScanData(TimeStampedModel):
+    batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='scans',
+                              null=True, blank=True,
+                              on_delete=models.PROTECT)
+
     rank = models.IntegerField(_('Rank'), null=True, blank=True,
                                help_text=_('Not known yet'))
     price = models.DecimalField(_('Price'), max_digits=12, decimal_places=2, null=True, blank=True,
@@ -124,8 +133,8 @@ class ContractDetails(TimeStampedModel):
     priceMagnifier = models.IntegerField(_('Price Magnifier'), null=True, blank=True,
                                          help_text=_('Price Magnifier'))
 
-    unerConId = models.IntegerField(_(''), null=True, blank=True,
-                                    help_text=_(''))
+    unerConId = models.IntegerField(_('UnerConId'), null=True, blank=True,
+                                    help_text=_('UnerConId'))
 
     longName = models.CharField(_('Long Name'), max_length=100, null=True, blank=True,
                                 help_text=_('Long Name'))
@@ -160,8 +169,8 @@ class ContractDetails(TimeStampedModel):
     mdSizeMultiplier = models.CharField(_('mdSizeevMultiplier'), max_length=100, null=True, blank=True,
                                         help_text=_('mdSizeevMultiplier'))
 
-    aggGroup = models.IntegerField(_(''), null=True, blank=True,
-                                   help_text=_(''))
+    aggGroup = models.IntegerField(_('aggGroup'), null=True, blank=True,
+                                   help_text=_('aggGroup'))
 
     underSymbol = models.CharField(_('underSymbol'), max_length=100, null=True, blank=True,
                                    help_text=_('underSymbol'))
@@ -209,8 +218,8 @@ class ContractDetails(TimeStampedModel):
 
     putable = models.BooleanField(default=False)
 
-    coupon = models.IntegerField(_(''), null=True, blank=True,
-                                 help_text=_(''))
+    coupon = models.IntegerField(_('Coupon'), null=True, blank=True,
+                                 help_text=_('Coupon'))
 
     convertible = models.BooleanField(default=False)
 

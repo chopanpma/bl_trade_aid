@@ -6,6 +6,7 @@ from django.core.management import call_command
 from ...utils import MarketUtils
 from ...models import ScanData
 from ...models import BarData
+from ...models import Batch
 import pickle
 import logging
 logger = logging.getLogger(__name__)
@@ -36,7 +37,7 @@ class ScannerSubscriptionTestCase(TestCase):
 
         self.assertEquals(1, mock_connect.call_count)
         self.assertEquals(1, mock_req_historical_data.call_count)
-        self.assertEquals(1, mock_disconnect_bar.call_count)
+        self.assertEquals(2, mock_disconnect_bar.call_count)
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqScannerData')
@@ -52,6 +53,9 @@ class ScannerSubscriptionTestCase(TestCase):
         mock_reqscannerdata.return_value = data
 
         MarketUtils.get_contracts()
+
+        batch = Batch.objects.all()[0]
+
         self.assertEquals(50, len(ScanData.objects.all()))
 #         call_command('dumpdata',  indent=4, output='scandata_fixture.json')
 
@@ -60,7 +64,10 @@ class ScannerSubscriptionTestCase(TestCase):
         self.assertEquals(1, mock_connect.call_count)
         self.assertEquals(1, mock_reqscannerdata.call_count)
         # TODO: why is it called twice
-        self.assertEquals(2, mock_disconnect_scan.call_count)
+        self.assertEquals(1, mock_disconnect_scan.call_count)
+
+        how_many_of_them_are_in_the_batch = ScanData.objects.filter(batch=batch)
+        self.assertEquals(50, how_many_of_them_are_in_the_batch.count())
 
     # TODO:
     # 1. create the fixture calling the command from the test DONE

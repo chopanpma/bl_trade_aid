@@ -10,6 +10,7 @@ from .models import ScanData
 from .models import Contract
 from .models import ContractDetails
 from .models import BarData
+from .models import Batch
 import queue
 # import pickle
 
@@ -200,6 +201,9 @@ class MarketUtils():
         #     pickle.dump(data, file)
 
         # Insert data into the tables.
+        batch = Batch()
+        batch.save()
+
         for scan_data in data:
             contract_dict = scan_data.contractDetails.contract.__dict__
             contract_instance = Contract()
@@ -216,8 +220,8 @@ class MarketUtils():
             scan_data_instance = ScanData()
             ModelUtil.update_model_fields(scan_data_instance, scan_data_dict)
             scan_data_instance.contractDetails = contract_details_instance
+            scan_data_instance.batch = batch
             scan_data_instance.save()
-
         # Disconnect from TWS API
         ib.disconnect()
 

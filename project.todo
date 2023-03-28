@@ -1,9 +1,9 @@
 [ ] functionality
   [D] query type of contract with characteristics
-  * fetch query result and get all details from the batch, with fixed params 
+  [D] fetch query result and get all details from the batch, with fixed params 
     [D] fetch and save one bar detail. 
-    [*] test the loop
-  - storing with batch number
+    [D] test the loop
+  [*] storing with batch number
   - market profile OO
   - set an alert
   - remove an alert
