@@ -29,20 +29,35 @@ class AuditableModel(models.Model):
 
 
 class ProfileChart(AuditableModel, TimeStampedModel):
+    batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='profile_charts',
+                              on_delete=models.PROTECT)
     price = models.DecimalField(_('Price'), max_digits=12, decimal_places=2,
                                 help_text=_('Price of the TPO'))
 
 
 class TPO(AuditableModel, TimeStampedModel):
+    profile_chart = models.ForeignKey('ProfileChart',  verbose_name=_('ProfileChart'), related_name='tpos',
+                                      on_delete=models.PROTECT)
     price = models.DecimalField(_('Price'), max_digits=12, decimal_places=2,
                                 help_text=_('Price of the TPO'))
+
+
+class Period(TimeStampedModel):
+    """
+    All Prints per TPO.
+    """
+    profile_chart = models.ForeignKey('ProfileChart',  verbose_name=_('ProfileChart'), related_name='periods',
+                                      on_delete=models.PROTECT)
+    period = models.CharField(_('Period'), max_length=1)
+    tpo = models.ForeignKey('TPO',  verbose_name=_('TPO'), related_name='perids',
+                            on_delete=models.PROTECT)
 
 
 class TPOPrint(TimeStampedModel):
     """
     All Prints per TPO.
     """
-    print = models.CharField(_('Print'), max_length=1)
+    period = models.CharField(_('Period'), max_length=1)
     tpo = models.ForeignKey('TPO',  verbose_name=_('TPO'), related_name='prints',
                             on_delete=models.PROTECT)
 

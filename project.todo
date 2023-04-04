@@ -3,8 +3,18 @@
   [D] fetch query result and get all details from the batch, with fixed params 
     [D] fetch and save one bar detail. 
     [D] test the loop
-  [*] storing with batch number
-  - market profile OO
+  [D] storing with batch number
+  [*] market profile OO
+    [ ] create periods
+    [ ] create tpo 
+    [ ] adjustments
+    [ ] crear oo model
+
+      
+    [ ] add prints
+    [ ] add accepted tpos
+    [ ] add value area 
+    [ ] add initial balance
   - set an alert
   - remove an alert
   - search for alert

@@ -33,6 +33,7 @@ class ScannerSubscriptionTestCase(TestCase):
 
         # - assert the function calls the mock
 
+        call_command('dumpdata',  indent=4, output='bardata_fixture.json')
         self.assertEquals(172, len(BarData.objects.all()))
 
         self.assertEquals(1, mock_connect.call_count)
