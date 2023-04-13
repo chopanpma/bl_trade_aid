@@ -11,7 +11,11 @@ from .models import Contract
 from .models import ContractDetails
 from .models import BarData
 from .models import Batch
+from django_pandas.io import read_frame
+from collections import defaultdict
 import queue
+import pandas as pd
+import numpy as np
 # import pickle
 
 import logging
@@ -181,6 +185,60 @@ class APIUtils():
         return df
 
 
+class ProfileChartUtils():
+    @staticmethod
+    def create_profile_chart(batch):
+
+        profile_chart = ProfileChart(batch)
+        return profile_chart
+
+
+class ProfileChart():
+    def __init__(self, batch, height_precision=100):
+        # TODO: insert bardata with a batch,
+        # moodify the fixture to have batch info
+        # make the test pass by returning the perios froom the dataframe
+
+        qs = BarData.objects.filter(batch=batch)
+        self.df = self.normalize_df(read_frame(qs))
+        self.df[('High')] = self.df[('High')] * height_precision
+        self.df[('Low')] = self.df[('Low')] * height_precision
+        self.df = self.df.round({'Low': 0, 'High': 0})
+        # build dictionary with all needed prices
+        mp = defaultdict(str)
+
+        tot_min_price = min(np.array(self.df['Low']))
+        tot_max_price = max(np.array(self.df['High']))
+        for price in range(int(tot_min_price), int(tot_max_price)):
+            mp[price] += ('\t')
+
+    def periods(self):
+        return self.df['DateTime'].to_dict()
+
+    def normalize_df(self, df):
+        df = df.rename(columns={'date': 'DateTime'})
+        df = df.rename(columns={'open': 'Open'})
+        df = df.rename(columns={'high': 'High'})
+        df = df.rename(columns={'low': 'Low'})
+        df = df.rename(columns={'close': 'Close'})
+        df = df.rename(columns={'volume': 'Volume'})
+
+        df = df.drop(df.columns.difference(
+            [
+                'DateTime',
+                'Open',
+                'High',
+                'Low',
+                'Close',
+                'Volume',
+                ]), 1, inplace=False)
+
+        df['Date'] = pd.to_datetime(pd.to_datetime(df['DateTime']).dt.date)
+        df = df.set_index(pd.DatetimeIndex(df['Date']))
+
+        return df
+
+
 class MarketUtils():
     @staticmethod
     def get_contracts():
@@ -230,7 +288,7 @@ class MarketUtils():
             MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
                                                scan_data_instance.contractDetails.contract.exchange)
 
-    def get_bars_in_date_range(symbol, exchange):
+    def get_bars_in_date_range(symbol, exchange, batch):
 
         # Connect to TWS API
         ib = IB()
@@ -263,6 +321,7 @@ class MarketUtils():
             bar_data_dict = bar.__dict__
             bar_data_instance = BarData()
             ModelUtil.update_model_fields(bar_data_instance, bar_data_dict)
+            bar_data_instance.batch = batch
             bar_data_instance.save()
 
         # Disconnect from TWS API

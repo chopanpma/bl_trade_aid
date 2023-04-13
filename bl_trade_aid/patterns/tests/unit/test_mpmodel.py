@@ -24,4 +24,4 @@ class MarketProfileOOModelTestCase(TestCase):
         batch = 1
         pf = ProfileChartUtils.create_profile_chart(batch)
 
-        self.assertEquals(14, len(pf.periods))
+        self.assertEquals(14, len(pf.periods()))

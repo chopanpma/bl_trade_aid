@@ -63,6 +63,8 @@ class TPOPrint(TimeStampedModel):
 
 
 class BarData(TimeStampedModel):
+    batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='bar_data',
+                              on_delete=models.PROTECT)
     tz = ZoneInfo('America/New_York')
 
     date = models.DateTimeField(_('date'), null=True, blank=True)

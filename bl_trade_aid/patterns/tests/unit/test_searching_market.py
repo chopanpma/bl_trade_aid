@@ -29,12 +29,18 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_req_historical_data.return_value = data
 
-        MarketUtils.get_bars_in_date_range('AMV', 'SMART')
+        batch = Batch()
+        batch.save()
+
+        MarketUtils.get_bars_in_date_range('AMV', 'SMART', batch)
 
         # - assert the function calls the mock
 
         call_command('dumpdata',  indent=4, output='bardata_fixture.json')
+        batch = BarData.objects.all()[0].batch
+
         self.assertEquals(172, len(BarData.objects.all()))
+        self.assertEquals(172, len(BarData.objects.filter(batch=batch)))
 
         self.assertEquals(1, mock_connect.call_count)
         self.assertEquals(1, mock_req_historical_data.call_count)
