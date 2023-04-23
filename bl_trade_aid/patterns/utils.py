@@ -328,6 +328,35 @@ class MarketUtils():
         ib.disconnect()
 
 
+class HourLetterMapper():
+    def __init__(self):
+        self.hours_to_letter = {
+            '08:00': 'A',
+            '08:30': 'B',
+            '09:00': 'C',
+            '09:30': 'D',
+            '10:00': 'E',
+            '10:30': 'F',
+            '11:00': 'G',
+            '11:30': 'H',
+            '12:00': 'I',
+            '12:30': 'J',
+            '13:00': 'K',
+            '13:30': 'L',
+            '14:00': 'M',
+            '14:30': 'N',
+            '15:00': 'O',
+            '15:30': 'P',
+            '16:00': 'Q',
+            '16:30': 'R',
+            '17:00': 'S',
+            '17:30': 'T',
+            }
+
+    def get_letter(self, hour):
+        return self.hours_to_letter.get(hour, 'X')
+
+
 class ModelUtil():
 
     def update_model_fields(model_instance, fields_dict):
