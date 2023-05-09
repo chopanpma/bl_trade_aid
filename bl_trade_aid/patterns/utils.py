@@ -204,6 +204,24 @@ class ProfileChart():
         self.df[('High')] = self.df[('High')] * height_precision
         self.df[('Low')] = self.df[('Low')] * height_precision
         self.df = self.df.round({'Low': 0, 'High': 0})
+        unique_dates = sorted(self.df['Date'].unique())
+        self.dates_df = pd.DataFrame({'Date': unique_dates})
+
+        # add chart column
+        self.dates_df['ProfileChart'] = pd.Series(dtype=object)
+        self.dates_df.set_index('Date')
+
+        # loop throught original ds then create the dict if it does not existe
+
+        mapper = HourLetterMapper()
+        for index, row in self.df.iterrows():
+            if self.dates_df[row['Date']]['ProfileChart'] is None:
+                self.dates_df[row['Date']]['ProfileChart'] = mapper.get_letter(row['DateTime'])
+            else:
+                self.dates_df[row['Date']]['ProfileChart'] += mapper.get_letter(row['DateTime'])
+
+        # map the letter to the price of the row
+        # by the end you should have the pc of all days
         # build dictionary with all needed prices
         mp = defaultdict(str)
 
@@ -212,8 +230,18 @@ class ProfileChart():
         for price in range(int(tot_min_price), int(tot_max_price)):
             mp[price] += ('\t')
 
+        # evaluate that price range
+        # loop throught the array indexing by date, then by price, and map the hour/letter added
+
+        #  with open('mp_pf_dataframe.pickle', 'wb') as file:
+        #     pickle.dump(self.df, file)
+
     def periods(self):
         return self.df['DateTime'].to_dict()
+
+    def get_day_tpos(self, day):
+
+        return self.dates_df[day]['ProfileChart']
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})

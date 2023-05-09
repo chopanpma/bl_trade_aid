@@ -26,15 +26,13 @@ class MarketProfileOOModelTestCase(TestCase):
         pf = ProfileChartUtils.create_profile_chart(batch)
 
         self.assertEquals(14, len(pf.periods()))
+        # test the profile chart one day column is created
+        day_column = pf.get_day_tpos('2023-03-14')
 
-    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
-    @patch('ib_insync.IB.reqHistoricalData')
-    @patch('ib_insync.IB.connect')
+        self.assertEquals(day_column['83'], 'ABC')
+
     def test_get_period_letters(
             self,
-            mock_connect,
-            mock_req_historical_data,
-            mock_disconnect_bar
             ):
         mapper = HourLetterMapper()
 
@@ -43,3 +41,23 @@ class MarketProfileOOModelTestCase(TestCase):
         self.assertEquals('P', mapper.get_letter('15:30'))
         self.assertEquals('X', mapper.get_letter('19:30'))
         self.assertEquals('X', mapper.get_letter('07:30'))
+
+#     def test_mp_one_day(
+#             self,
+#             ):
+#         #create mocks
+#         # load profile chart  with pickle
+#         file = open(f'{settings.APPS_DIR}/patterns/tests/fixtures/mp_pf_dataframe.pickle', 'rb')
+#         df = pickle.load(file)
+#         # call the service that will create one column for the prices and one for day
+# 
+#         
+#         # assert the day TPO
+#         self.assertEquals('A', mapper.get_letter('08:00'))
+# 
+#     def test_one_day_is_called_more_than_once(
+#             self,
+#             ):
+#         # Mock one day of data
+#         # assert each price string
+#         self.assertEquals('A', mapper.get_letter('08:00'))
