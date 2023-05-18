@@ -208,17 +208,21 @@ class ProfileChart():
         self.dates_df = pd.DataFrame({'Date': unique_dates})
 
         # add chart column
-        self.dates_df['ProfileChart'] = pd.Series(dtype=object)
-        self.dates_df.set_index('Date')
+        self.dates_df['ProfileChart'] = ''
+        self.dates_df.set_index('Date', inplace=True)
 
         # loop throught original ds then create the dict if it does not existe
 
         mapper = HourLetterMapper()
         for index, row in self.df.iterrows():
-            if self.dates_df[row['Date']]['ProfileChart'] is None:
-                self.dates_df[row['Date']]['ProfileChart'] = mapper.get_letter(row['DateTime'])
+            only_date = pd.Timestamp(row['Date'].normalize())
+
+            # TODO: find a safer way to locate an element in the list
+            if self.dates_df.loc[only_date]['ProfileChart'] == '':
+                self.dates_df.loc[only_date]['ProfileChart'] = mapper.get_letter(row['DateTime'])
             else:
-                self.dates_df[row['Date']]['ProfileChart'] += mapper.get_letter(row['DateTime'])
+                print(f'date: {only_date}, ')
+                self.dates_df.loc[only_date]['ProfileChart'] += mapper.get_letter(row['DateTime'])
 
         # map the letter to the price of the row
         # by the end you should have the pc of all days
@@ -241,7 +245,7 @@ class ProfileChart():
 
     def get_day_tpos(self, day):
 
-        return self.dates_df[day]['ProfileChart']
+        return self.dates_df.loc[pd.Timestamp(day)]['ProfileChart']
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})
