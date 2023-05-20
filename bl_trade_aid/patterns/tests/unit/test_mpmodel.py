@@ -28,7 +28,7 @@ class MarketProfileOOModelTestCase(TestCase):
         self.assertEquals(14, len(pf.periods()))
         # test the profile chart one day column is created
         day_tpo = pf.get_day_tpos('2023-03-14')
-
+        import ipdb;ipdb.set_trace()
         self.assertEquals(day_tpo, 'ABC')
 
     def test_get_period_letters(

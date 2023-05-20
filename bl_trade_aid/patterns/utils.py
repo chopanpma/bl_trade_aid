@@ -14,6 +14,7 @@ from .models import Batch
 from django_pandas.io import read_frame
 from collections import defaultdict
 import queue
+import copy
 import pandas as pd
 import numpy as np
 # import pickle
@@ -211,19 +212,6 @@ class ProfileChart():
         self.dates_df['ProfileChart'] = ''
         self.dates_df.set_index('Date', inplace=True)
 
-        # loop throught original ds then create the dict if it does not existe
-
-        mapper = HourLetterMapper()
-        for index, row in self.df.iterrows():
-            only_date = pd.Timestamp(row['Date'].normalize())
-
-            # TODO: find a safer way to locate an element in the list
-            if self.dates_df.loc[only_date]['ProfileChart'] == '':
-                self.dates_df.loc[only_date]['ProfileChart'] = mapper.get_letter(row['DateTime'])
-            else:
-                print(f'date: {only_date}, ')
-                self.dates_df.loc[only_date]['ProfileChart'] += mapper.get_letter(row['DateTime'])
-
         # map the letter to the price of the row
         # by the end you should have the pc of all days
         # build dictionary with all needed prices
@@ -234,8 +222,21 @@ class ProfileChart():
         for price in range(int(tot_min_price), int(tot_max_price)):
             mp[price] += ('\t')
 
-        # evaluate that price range
-        # loop throught the array indexing by date, then by price, and map the hour/letter added
+        # loop throught original ds then create the dict if it does not existe
+
+        mapper = HourLetterMapper()
+        for index, row in self.df.iterrows():
+            only_date = pd.Timestamp(row['Date'].normalize())
+
+            # TODO: find a safer way to locate an element in the list
+            day_chart = None
+            if self.dates_df.loc[only_date]['ProfileChart'] == '':
+                day_chart = copy.deepcopy(mp)
+            else:
+                day_chart = self.dates_df.loc[only_date]['ProfileChart']
+            price = int(row['Close'] * height_precision)
+            day_chart[int(price)] += mapper.get_letter(row['DateTime'].strftime('%H:%M'))
+            self.dates_df.loc[only_date]['ProfileChart'] = day_chart
 
         #  with open('mp_pf_dataframe.pickle', 'wb') as file:
         #     pickle.dump(self.df, file)
@@ -386,6 +387,9 @@ class HourLetterMapper():
             }
 
     def get_letter(self, hour):
+        #  dt = datetime.datetime.fromtimestamp(hour)
+        #  # Format the datetime object as HH:MM string
+        #  time_str = dt.strftime('%H:%M')
         return self.hours_to_letter.get(hour, 'X')
 
 
