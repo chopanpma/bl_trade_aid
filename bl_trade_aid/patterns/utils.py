@@ -220,7 +220,7 @@ class ProfileChart():
         tot_min_price = min(np.array(self.df['Low']))
         tot_max_price = max(np.array(self.df['High']))
         for price in range(int(tot_min_price), int(tot_max_price)):
-            mp[price] += ('\t')
+            mp[price] += ('')
 
         # loop throught original ds then create the dict if it does not existe
 

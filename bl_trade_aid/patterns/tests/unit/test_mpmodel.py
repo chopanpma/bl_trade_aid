@@ -27,9 +27,8 @@ class MarketProfileOOModelTestCase(TestCase):
 
         self.assertEquals(14, len(pf.periods()))
         # test the profile chart one day column is created
-        day_tpo = pf.get_day_tpos('2023-03-14')
-        import ipdb;ipdb.set_trace()
-        self.assertEquals(day_tpo, 'ABC')
+        day_tpo = pf.get_day_tpos('2023-03-13')
+        self.assertEquals(day_tpo[76], 'JMOST')
 
     def test_get_period_letters(
             self,
@@ -50,11 +49,11 @@ class MarketProfileOOModelTestCase(TestCase):
 #         file = open(f'{settings.APPS_DIR}/patterns/tests/fixtures/mp_pf_dataframe.pickle', 'rb')
 #         df = pickle.load(file)
 #         # call the service that will create one column for the prices and one for day
-# 
-#         
+#
+#
 #         # assert the day TPO
 #         self.assertEquals('A', mapper.get_letter('08:00'))
-# 
+#
 #     def test_one_day_is_called_more_than_once(
 #             self,
 #             ):
