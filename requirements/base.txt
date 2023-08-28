@@ -33,3 +33,4 @@ numpy==1.23.4
 requests==2.28.1
 ib-insync==0.9.81
 django-pandas==0.6.6
+prettytable==3.8.0

@@ -4,18 +4,23 @@
     [D] fetch and save one bar detail. 
     [D] test the loop
   [D] storing with batch number
-  [*] market profile OO
-    [ ] create periods
-    [ ] create tpo 
-    [ ] adjustments
-    [ ] crear oo model
-    [ ] callculate precision 
-
-      
-    [ ] add prints
+  [P] market profile OO
+    [D] create periods
+    [D] create tpo 
+    [D] adjustments
+    [D] crear oo model
+    [D] callculate precision 
+    [D] add prints
     [ ] add accepted tpos
     [ ] add value area 
     [ ] add initial balance
+  [*] Compare to old profile to check accuracy
+    [*] test/implement create files per date/batch/instrument in tables
+    [*] test/implement create files per date/batch/instrument in actual files
+    [ ] connect the wires to call the service for a day in a symbol
+    [ ] compare charts
+    [ ] fix details
+  [ ]  get the list of candiates to run the query
   - set an alert
   - remove an alert
   - search for alert
@@ -31,7 +36,7 @@
 
 
 [ ] system capabilities
--  log every search
+- log every search
 - log every selection
 - log every action
 - ab test functionality 

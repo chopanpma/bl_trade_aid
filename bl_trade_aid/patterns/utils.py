@@ -18,6 +18,7 @@ import copy
 import pandas as pd
 import numpy as np
 # import pickle
+import prettytable
 
 import logging
 logger = logging.getLogger(__name__)
@@ -215,12 +216,12 @@ class ProfileChart():
         # map the letter to the price of the row
         # by the end you should have the pc of all days
         # build dictionary with all needed prices
-        mp = defaultdict(str)
+        self.mp = defaultdict(str)
 
         tot_min_price = min(np.array(self.df['Low']))
         tot_max_price = max(np.array(self.df['High']))
         for price in range(int(tot_min_price), int(tot_max_price)):
-            mp[price] += ('')
+            self.mp[price] += ('')
 
         # loop throught original ds then create the dict if it does not existe
 
@@ -231,12 +232,14 @@ class ProfileChart():
             # TODO: find a safer way to locate an element in the list
             day_chart = None
             if self.dates_df.loc[only_date]['ProfileChart'] == '':
-                day_chart = copy.deepcopy(mp)
+                day_chart = copy.deepcopy(self.mp)
             else:
                 day_chart = self.dates_df.loc[only_date]['ProfileChart']
             price = int(row['Close'] * height_precision)
             day_chart[int(price)] += mapper.get_letter(row['DateTime'].strftime('%H:%M'))
             self.dates_df.loc[only_date]['ProfileChart'] = day_chart
+
+        self.dates_df.to_csv('datesdf.csv')
 
         #  with open('mp_pf_dataframe.pickle', 'wb') as file:
         #     pickle.dump(self.df, file)
@@ -270,6 +273,29 @@ class ProfileChart():
         df = df.set_index(pd.DatetimeIndex(df['Date']))
 
         return df
+
+    def get_profile_chart_data_frame_string(self):
+        self.profile_chart_df = pd.DataFrame({'Price': self.mp.keys()})
+        for date, charts in self.dates_df.iterrows():
+            date_label = date.strftime('%y/%m/%d')
+            self.profile_chart_df[date_label] = ''
+
+            for index, row in self.profile_chart_df.iterrows():
+                #  import ipdb; ipdb.set_trace()
+                self.profile_chart_df.at[index, date_label] = self.dates_df.loc[date][0][
+                        self.profile_chart_df.iloc[index]['Price']]
+
+        # self.profile_chart_df.to_csv('output.csv', sep='\t', index=False)
+        pt = prettytable.PrettyTable()
+        pt.field_names = list(self.profile_chart_df.columns)
+        for index, row in self.profile_chart_df.iterrows():
+            pt.add_row(row)
+
+        pt.align = 'l'
+
+        with open('output.txt', 'w') as file:
+            file.write(pt.get_string())
+        return pt.get_string()
 
 
 class MarketUtils():
@@ -315,6 +341,7 @@ class MarketUtils():
             scan_data_instance.save()
         # Disconnect from TWS API
         ib.disconnect()
+        return batch
 
     def get_bars_from_scandata(scan_data_dataset):
         for scan_data_instance in scan_data_dataset:
@@ -364,6 +391,8 @@ class MarketUtils():
 class HourLetterMapper():
     def __init__(self):
         self.hours_to_letter = {
+            '07:00': 'Z',
+            '07:30': '$',
             '08:00': 'A',
             '08:30': 'B',
             '09:00': 'C',
@@ -379,11 +408,69 @@ class HourLetterMapper():
             '14:00': 'M',
             '14:30': 'N',
             '15:00': 'O',
-            '15:30': 'P',
-            '16:00': 'Q',
-            '16:30': 'R',
-            '17:00': 'S',
-            '17:30': 'T',
+            '15:30': 'o',
+            '16:00': 's',
+            '16:30': 't',
+            '17:00': 'P',
+            '17:30': 'Q',
+            '18:00': 'R',
+            '18:30': 'S',
+            '19:00': 'T',
+            '19:30': 'U',
+            '20:00': 'V',
+            '20:30': 'W',
+            '21:00': 'X',
+            }
+
+        self.hours_to_letter_extended = {
+            '00:00': 'A',
+            '00:30': 'B',
+            '01:00': 'C',
+            '01:30': 'D',
+            '02:00': 'E',
+            '02:30': 'F',
+            '03:00': 'G',
+            '03:30': 'H',
+            '04:00': 'I',
+            '04:30': 'J',
+            '05:00': 'K',
+            '05:30': 'L',
+            '06:00': 'M',
+            '06:30': 'N',
+            '07:00': 'O',
+            '07:30': 'P',
+            '08:00': 'Q',
+            '08:30': 'R',
+            '09:00': 'S',
+            '09:30': 'T',
+            '10:00': 'U',
+            '10:30': 'V',
+            '11:00': 'W',
+            '11:30': 'X',
+            '12:00': 'a',
+            '12:30': 'b',
+            '13:00': 'c',
+            '13:30': 'd',
+            '14:00': 'e',
+            '14:30': 'f',
+            '15:00': 'g',
+            '15:30': 'h',
+            '16:00': 'i',
+            '16:30': 'j',
+            '17:00': 'k',
+            '17:30': 'l',
+            '18:00': 'm',
+            '18:30': 'n',
+            '19:00': 'o',
+            '19:30': 'p',
+            '20:00': 'q',
+            '20:30': 'r',
+            '21:00': 's',
+            '21:30': 't',
+            '22:00': 'u',
+            '22:30': 'v',
+            '23:00': 'w',
+            '23:30': 'x',
             }
 
     def get_letter(self, hour):

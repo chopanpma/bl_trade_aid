@@ -31,8 +31,9 @@ class AuditableModel(models.Model):
 class ProfileChart(AuditableModel, TimeStampedModel):
     batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='profile_charts',
                               on_delete=models.PROTECT)
-    price = models.DecimalField(_('Price'), max_digits=12, decimal_places=2,
-                                help_text=_('Price of the TPO'))
+    symbol = models.CharField(_('Symbol'), max_length=10)
+    # specifying a directory within your MEDIA_ROOT to store the files
+    chart_file = models.FileField(upload_to='charts/', null=True, blank=True)
 
 
 class TPO(AuditableModel, TimeStampedModel):

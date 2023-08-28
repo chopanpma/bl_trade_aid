@@ -239,7 +239,7 @@ MANAGERS = ADMINS
 # more details on how to customize your logging configuration.
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": False,
+    "disable_existing_loggers": True,
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
@@ -248,14 +248,32 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "DEBUG",
+            "level": "INFO",
             "class": "logging.StreamHandler",
             "formatter": "verbose",
         }
     },
     "root": {"level": "INFO", "handlers": ["console"]},
+    "loggers": {
+        "bl_trade_aid.patterns": {
+            "level": "INFO",
+            "handlers": ["console"],
+            "propagate": False,
+        },
+        "django.db.backends": {
+            "level": "ERROR",
+            "handlers": ["console"],
+            "propagate": False,
+        },
+        # Errors logged by the SDK itself
+        "sentry_sdk": {"level": "ERROR", "handlers": ["console"], "propagate": False},
+        "django.security.DisallowedHost": {
+            "level": "ERROR",
+            "handlers": ["console"],
+            "propagate": False,
+        },
+    },
 }
-
 
 # django-allauth
 # ------------------------------------------------------------------------------
