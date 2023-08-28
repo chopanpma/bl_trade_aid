@@ -15,8 +15,9 @@
     [ ] add value area 
     [ ] add initial balance
   [*] Compare to old profile to check accuracy
+    [D] test/implement create files per date/batch/instrument in string
     [*] test/implement create files per date/batch/instrument in tables
-    [*] test/implement create files per date/batch/instrument in actual files
+    [ ] test/implement create files per date/batch/instrument in actual files
     [ ] connect the wires to call the service for a day in a symbol
     [ ] compare charts
     [ ] fix details
