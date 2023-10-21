@@ -11,7 +11,9 @@ from .models import Contract
 from .models import ContractDetails
 from .models import BarData
 from .models import Batch
+from .models import ProfileChart
 from django_pandas.io import read_frame
+from django.core.files.uploadedfile import SimpleUploadedFile
 from collections import defaultdict
 import queue
 import copy
@@ -191,61 +193,72 @@ class ProfileChartUtils():
     @staticmethod
     def create_profile_chart(batch):
 
-        profile_chart = ProfileChart(batch)
+        profile_chart = ProfileChartWrapper(batch)
         return profile_chart
 
 
-class ProfileChart():
+class ProfileChartWrapper():
     def __init__(self, batch, height_precision=100):
-        # TODO: insert bardata with a batch,
-        # moodify the fixture to have batch info
-        # make the test pass by returning the perios froom the dataframe
 
         qs = BarData.objects.filter(batch=batch)
-        self.df = self.normalize_df(read_frame(qs))
-        self.df[('High')] = self.df[('High')] * height_precision
-        self.df[('Low')] = self.df[('Low')] * height_precision
-        self.df = self.df.round({'Low': 0, 'High': 0})
-        unique_dates = sorted(self.df['Date'].unique())
-        self.dates_df = pd.DataFrame({'Date': unique_dates})
+        self.batch = batch
+        self.symbols_df_dict = {}
+        self.dates_df_dict = {}
 
-        # add chart column
-        self.dates_df['ProfileChart'] = ''
-        self.dates_df.set_index('Date', inplace=True)
+        full_table_df = read_frame(qs)
+        symbols = full_table_df['symbol'].unique()
 
-        # map the letter to the price of the row
-        # by the end you should have the pc of all days
-        # build dictionary with all needed prices
-        self.mp = defaultdict(str)
+        for symbol in symbols:
+            filter_condition = full_table_df['symbol'] == symbol
+            symbol_df = full_table_df[filter_condition]
+            self.symbols_df_dict[symbol] = symbol_df
 
-        tot_min_price = min(np.array(self.df['Low']))
-        tot_max_price = max(np.array(self.df['High']))
-        for price in range(int(tot_min_price), int(tot_max_price)):
-            self.mp[price] += ('')
+            symbol_df = self.normalize_df(symbol_df)
+            symbol_df[('High')] = symbol_df[('High')] * height_precision
+            symbol_df[('Low')] = symbol_df[('Low')] * height_precision
+            symbol_df = symbol_df.round({'Low': 0, 'High': 0})
+            unique_dates = sorted(symbol_df['Date'].unique())
+            dates_df = pd.DataFrame({'Date': unique_dates})
 
-        # loop throught original ds then create the dict if it does not existe
+            # add chart column
+            dates_df['ProfileChart'] = ''
+            dates_df.set_index('Date', inplace=True)
 
-        mapper = HourLetterMapper()
-        for index, row in self.df.iterrows():
-            only_date = pd.Timestamp(row['Date'].normalize())
+            # map the letter to the price of the row
+            # by the end you should have the pc of all days
+            # build dictionary with all needed prices
+            self.mp = defaultdict(str)
 
-            # TODO: find a safer way to locate an element in the list
-            day_chart = None
-            if self.dates_df.loc[only_date]['ProfileChart'] == '':
-                day_chart = copy.deepcopy(self.mp)
-            else:
-                day_chart = self.dates_df.loc[only_date]['ProfileChart']
-            price = int(row['Close'] * height_precision)
-            day_chart[int(price)] += mapper.get_letter(row['DateTime'].strftime('%H:%M'))
-            self.dates_df.loc[only_date]['ProfileChart'] = day_chart
+            tot_min_price = min(np.array(symbol_df['Low']))
+            tot_max_price = max(np.array(symbol_df['High']))
+            for price in range(int(tot_min_price), int(tot_max_price)):
+                self.mp[price] += ('')
 
-        self.dates_df.to_csv('datesdf.csv')
+            # loop throught original ds then create the dict if it does not existe
 
-        #  with open('mp_pf_dataframe.pickle', 'wb') as file:
-        #     pickle.dump(self.df, file)
+            mapper = HourLetterMapper()
+            for index, row in symbol_df.iterrows():
+                only_date = pd.Timestamp(row['Date'].normalize())
 
-    def periods(self):
-        return self.df['DateTime'].to_dict()
+                # TODO: find a safer way to locate an element in the list
+                day_chart = None
+                if dates_df.loc[only_date]['ProfileChart'] == '':
+                    day_chart = copy.deepcopy(self.mp)
+                else:
+                    day_chart = dates_df.loc[only_date]['ProfileChart']
+                price = int(row['Close'] * height_precision)
+                day_chart[int(price)] += mapper.get_letter(row['DateTime'].strftime('%H:%M'))
+                dates_df.loc[only_date]['ProfileChart'] = day_chart
+
+            dates_df.to_csv(f'{symbol}.csv')
+            self.dates_df_dict[symbol] = dates_df
+
+            #  with open('mp_pf_dataframe.pickle', 'wb') as file:
+            #     pickle.dump(self.df, file)
+
+    def periods(self, symbol):
+        import ipdb;ipdb.set_trace()
+        return self.dates_df_dict[symbol]['Datetime'].to_dict()
 
     def get_day_tpos(self, day):
 
@@ -267,6 +280,7 @@ class ProfileChart():
                 'Low',
                 'Close',
                 'Volume',
+                'symbol',
                 ]), 1, inplace=False)
 
         df['Date'] = pd.to_datetime(pd.to_datetime(df['DateTime']).dt.date)
@@ -281,7 +295,6 @@ class ProfileChart():
             self.profile_chart_df[date_label] = ''
 
             for index, row in self.profile_chart_df.iterrows():
-                #  import ipdb; ipdb.set_trace()
                 self.profile_chart_df.at[index, date_label] = self.dates_df.loc[date][0][
                         self.profile_chart_df.iloc[index]['Price']]
 
@@ -293,12 +306,24 @@ class ProfileChart():
 
         pt.align = 'l'
 
-        with open('output.txt', 'w') as file:
-            file.write(pt.get_string())
+        content = bytes(pt.get_string(), 'utf-8')
+        chart_file = SimpleUploadedFile("profile", content)
+
+        ProfileChart.objects.create(
+            batch=self.batch,
+            symbol="TEST",
+            chart_file=chart_file
+        )
         return pt.get_string()
 
 
 class MarketUtils():
+    @staticmethod
+    def get_current_profile_charts():
+        batch = MarketUtils.get_contracts()
+        scan_data_list = ScanData.objects.filter(batch=batch)
+        MarketUtils.get_bars_from_scandata(scan_data_list)
+
     @staticmethod
     def get_contracts():
 

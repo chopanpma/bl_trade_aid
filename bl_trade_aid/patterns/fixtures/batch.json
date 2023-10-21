@@ -1,0 +1,9 @@
+[
+    {
+        "model": "patterns.batch",
+        "pk": 1,
+        "fields": {
+            "experiment": "1"
+        }
+    }
+]

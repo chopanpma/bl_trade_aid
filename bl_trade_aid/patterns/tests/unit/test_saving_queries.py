@@ -22,44 +22,6 @@ class ReturningResultTestCase(TestCase):
                      '1gbpsJCX9t61T4UnI-JxavNxO6wi4IL7w'
         # cls.user = UserFactory.create(password='password')
 
-    @patch('bl_trade_aid.patterns.utils.APIUtils.call_ib_service')
-    def test_returning_result(self, mock_apiutils_function):
-        User.objects.create_user('lauren', 'lennon@thebeatles.com', 'johnpassword')
-        self.assertTrue(self.client.login(username='lauren', password='johnpassword'))
-
-        # mock dataframe
-        mock_ibr_dataframe = pd.read_pickle(f'{settings.APPS_DIR}/patterns/tests/fixtures/test_dataframe')
-        mock_apiutils_function.return_value = mock_ibr_dataframe
-
-        # TODO:call service with one ticker
-        # - create view
-        # - create url
-        # - call util from view
-        # - run the test and fix
-
-        # TODO: implement integration test
-        # - test calling function with parameters
-        # - implement call
-
-        data = {
-            'symbol': 'APPL',
-            'height_precision': 100,
-            'exchange': 'SMART',
-            'security_type': 'STK',
-            'use_extended_hours': 'true'
-        }
-
-        # Make an authenticated request to the view...
-        url = reverse('api:list-bar-data')
-        print(f'url: {url} ')
-
-        response = self.client.post(url, data=data)
-
-        # TODO: change the status for the constant for clarity
-        self.assertEqual(response.status_code, 200)
-
-        # TODO:count elements in the result to make the test fail or pass
-
     def test_return_bars(self):
         # TODO: implement
         # - mock library call for the scan

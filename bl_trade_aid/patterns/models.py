@@ -87,6 +87,8 @@ class BarData(TimeStampedModel):
 
     barCount = models.IntegerField(_('barCount'), help_text=_('barCount'))
 
+    symbol = models.CharField(_('Symbol'), max_length=10)
+
     def save(self, *args, **kwargs):
         if self.date is not None:
             # Convert the datetime to the appropriate timezone
