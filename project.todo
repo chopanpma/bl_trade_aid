@@ -16,21 +16,20 @@
     [ ] add initial balance
   [*] Compare to old profile to check accuracy
     [D] test/implement create files per date/batch/instrument in string
-    [*] test/implement create files per date/batch/instrument in tables
-      [*] create all profiles (test/impl)
+    [D] test/implement create files per date/batch/instrument in tables
+      [D] create all profiles (test/impl)
       [D] make sure we save a batch of contracts  
         [D] modify the test for fetch bardata filtered by batch
           [D] test failing
           [D]test passing
         [D] modify the test for save scandata to save the batch
         [D] create a test about fetch and get bardata and create chart
-      [*] create mp for all of them in disk test 
-      [*] create mp for all of theem implmeentation
-      [ ]  test reality
-    [ ] test/implement create files per date/batch/instrument in actual files
-    [ ] connect the wires to call the service for a day in a symbol
-    [ ] compare charts
-    [ ] fix details
+      [D] create mp for all of them in disk test 
+      [D] create mp for all of theem implmeentation
+    [*]  test reality
+      [*] connect the wires to call the service for a batch 
+      [ ] compare charts
+      [ ] fix details
   [ ]  get the list of candiates to run the query
   - set an alert
   - remove an alert
