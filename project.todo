@@ -17,6 +17,7 @@
   [*] Compare to old profile to check accuracy
     [D] test/implement create files per date/batch/instrument in string
     [*] test/implement create files per date/batch/instrument in tables
+      [*] create all profiles (test/impl)
       [D] make sure we save a batch of contracts  
         [D] modify the test for fetch bardata filtered by batch
           [D] test failing

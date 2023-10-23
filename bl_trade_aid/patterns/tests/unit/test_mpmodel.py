@@ -57,11 +57,11 @@ class MarketProfileOOModelTestCase(TestCase):
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
         batch = Batch.objects.all()[0]
-        pc = ProfileChartUtils.create_profile_chart(batch)
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
 
         self.assertEquals(14, len(pc.periods('MSFT')))
         # test the profile chart one day column is created
-        day_tpo = pc.get_day_tpos('2023-03-13')
+        day_tpo = pc.get_day_tpos('2023-03-13', 'MSFT')
         self.assertEquals(day_tpo[76], 'JMOPQ')
 
     def test_get_period_letters(
@@ -87,18 +87,17 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
         batch = Batch.objects.all()[0]
-        pc = ProfileChartUtils.create_profile_chart(batch)
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.generate_profile_charts(batch)
         # create mocks
         # load profile chart  with pickle
         # call the service that will create the column for the prices and one for day
 
         # icompare with the text that is supposed to have the mpc
-        logger.debug(pc.get_profile_chart_data_frame_string())
         filename = f'{settings.APPS_DIR}/patterns/tests/fixtures/profile_chart_output.txt'
         with open(filename, 'r') as f:
             content = f.read()
 
-        self.assertEquals(content, pc.get_profile_chart_data_frame_string())
         qs = ProfileChart.objects.all()
         profile_chart = qs[0]
         saved_file = profile_chart.chart_file.read()
@@ -114,13 +113,13 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture_2', verbosity=0)
         batch = Batch.objects.all()[0]
-        pc = ProfileChartUtils.create_profile_chart(batch)
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.generate_profile_charts(batch)
         # create mocks
         # load profile chart  with pickle
         # call the service that will create the column for the prices and one for day
 
         # icompare with the text that is supposed to have the mpc
-        logger.debug(pc.get_profile_chart_data_frame_string())
         filename1 = f'{settings.APPS_DIR}/patterns/tests/fixtures/profile_chart_output1.txt'
         with open(filename1, 'r') as f:
             content1 = f.read()

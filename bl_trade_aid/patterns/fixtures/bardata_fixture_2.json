@@ -3095,18 +3095,9 @@
         "symbol": "AAPL"
     }
 },
-{
-    "model": "patterns.batch",
-    "pk": 1,
-    "fields": {
-        "created": "2023-04-13T14:01:39.456Z",
-        "modified": "2023-04-13T14:01:39.456Z",
-        "experiment": null
-    }
-},
   {
     "model": "patterns.bardata",
-    "pk": 1,
+    "pk": 201,
     "fields": {
         "created": "2023-04-13T14:01:39.458Z",
         "modified": "2023-04-13T14:01:39.458Z",
@@ -3124,7 +3115,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 2,
+    "pk": 202,
     "fields": {
         "created": "2023-04-13T14:01:39.458Z",
         "modified": "2023-04-13T14:01:39.458Z",
@@ -3142,7 +3133,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 3,
+    "pk": 203,
     "fields": {
         "created": "2023-04-13T14:01:39.459Z",
         "modified": "2023-04-13T14:01:39.459Z",
@@ -3160,7 +3151,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 4,
+    "pk": 204,
     "fields": {
         "created": "2023-04-13T14:01:39.459Z",
         "modified": "2023-04-13T14:01:39.459Z",
@@ -3178,7 +3169,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 5,
+    "pk": 205,
     "fields": {
         "created": "2023-04-13T14:01:39.460Z",
         "modified": "2023-04-13T14:01:39.460Z",
@@ -3196,7 +3187,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 6,
+    "pk": 206,
     "fields": {
         "created": "2023-04-13T14:01:39.460Z",
         "modified": "2023-04-13T14:01:39.460Z",
@@ -3214,7 +3205,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 7,
+    "pk": 207,
     "fields": {
         "created": "2023-04-13T14:01:39.460Z",
         "modified": "2023-04-13T14:01:39.460Z",
@@ -3232,7 +3223,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 8,
+    "pk": 208,
     "fields": {
         "created": "2023-04-13T14:01:39.461Z",
         "modified": "2023-04-13T14:01:39.461Z",
@@ -3250,7 +3241,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 9,
+    "pk": 209,
     "fields": {
         "created": "2023-04-13T14:01:39.461Z",
         "modified": "2023-04-13T14:01:39.461Z",
@@ -3268,7 +3259,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 10,
+    "pk": 2010,
     "fields": {
         "created": "2023-04-13T14:01:39.461Z",
         "modified": "2023-04-13T14:01:39.461Z",
@@ -3286,7 +3277,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 11,
+    "pk": 2011,
     "fields": {
         "created": "2023-04-13T14:01:39.461Z",
         "modified": "2023-04-13T14:01:39.461Z",
@@ -3304,7 +3295,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 12,
+    "pk": 2012,
     "fields": {
         "created": "2023-04-13T14:01:39.462Z",
         "modified": "2023-04-13T14:01:39.462Z",
@@ -3322,7 +3313,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 13,
+    "pk": 2013,
     "fields": {
         "created": "2023-04-13T14:01:39.462Z",
         "modified": "2023-04-13T14:01:39.462Z",
@@ -3340,7 +3331,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 14,
+    "pk": 2014,
     "fields": {
         "created": "2023-04-13T14:01:39.462Z",
         "modified": "2023-04-13T14:01:39.462Z",
@@ -3358,7 +3349,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 15,
+    "pk": 2015,
     "fields": {
         "created": "2023-04-13T14:01:39.462Z",
         "modified": "2023-04-13T14:01:39.462Z",
@@ -3376,7 +3367,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 16,
+    "pk": 2016,
     "fields": {
         "created": "2023-04-13T14:01:39.463Z",
         "modified": "2023-04-13T14:01:39.463Z",
@@ -3394,7 +3385,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 17,
+    "pk": 2017,
     "fields": {
         "created": "2023-04-13T14:01:39.463Z",
         "modified": "2023-04-13T14:01:39.463Z",
@@ -3412,7 +3403,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 18,
+    "pk": 2018,
     "fields": {
         "created": "2023-04-13T14:01:39.463Z",
         "modified": "2023-04-13T14:01:39.463Z",
@@ -3430,7 +3421,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 19,
+    "pk": 2019,
     "fields": {
         "created": "2023-04-13T14:01:39.463Z",
         "modified": "2023-04-13T14:01:39.463Z",
@@ -3448,7 +3439,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 20,
+    "pk": 2020,
     "fields": {
         "created": "2023-04-13T14:01:39.464Z",
         "modified": "2023-04-13T14:01:39.464Z",
@@ -3466,7 +3457,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 21,
+    "pk": 2021,
     "fields": {
         "created": "2023-04-13T14:01:39.464Z",
         "modified": "2023-04-13T14:01:39.464Z",
@@ -3484,7 +3475,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 22,
+    "pk": 2022,
     "fields": {
         "created": "2023-04-13T14:01:39.464Z",
         "modified": "2023-04-13T14:01:39.464Z",
@@ -3502,7 +3493,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 23,
+    "pk": 2023,
     "fields": {
         "created": "2023-04-13T14:01:39.465Z",
         "modified": "2023-04-13T14:01:39.465Z",
@@ -3520,7 +3511,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 24,
+    "pk": 2024,
     "fields": {
         "created": "2023-04-13T14:01:39.465Z",
         "modified": "2023-04-13T14:01:39.465Z",
@@ -3538,7 +3529,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 25,
+    "pk": 2025,
     "fields": {
         "created": "2023-04-13T14:01:39.465Z",
         "modified": "2023-04-13T14:01:39.465Z",
@@ -3556,7 +3547,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 26,
+    "pk": 2026,
     "fields": {
         "created": "2023-04-13T14:01:39.465Z",
         "modified": "2023-04-13T14:01:39.465Z",
@@ -3574,7 +3565,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 27,
+    "pk": 2027,
     "fields": {
         "created": "2023-04-13T14:01:39.466Z",
         "modified": "2023-04-13T14:01:39.466Z",
@@ -3592,7 +3583,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 28,
+    "pk": 2028,
     "fields": {
         "created": "2023-04-13T14:01:39.466Z",
         "modified": "2023-04-13T14:01:39.466Z",
@@ -3610,7 +3601,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 29,
+    "pk": 2029,
     "fields": {
         "created": "2023-04-13T14:01:39.466Z",
         "modified": "2023-04-13T14:01:39.466Z",
@@ -3628,7 +3619,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 30,
+    "pk": 2030,
     "fields": {
         "created": "2023-04-13T14:01:39.466Z",
         "modified": "2023-04-13T14:01:39.466Z",
@@ -3646,7 +3637,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 31,
+    "pk": 2031,
     "fields": {
         "created": "2023-04-13T14:01:39.467Z",
         "modified": "2023-04-13T14:01:39.467Z",
@@ -3664,7 +3655,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 32,
+    "pk": 2032,
     "fields": {
         "created": "2023-04-13T14:01:39.467Z",
         "modified": "2023-04-13T14:01:39.467Z",
@@ -3682,7 +3673,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 33,
+    "pk": 2033,
     "fields": {
         "created": "2023-04-13T14:01:39.467Z",
         "modified": "2023-04-13T14:01:39.467Z",
@@ -3700,7 +3691,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 34,
+    "pk": 2034,
     "fields": {
         "created": "2023-04-13T14:01:39.467Z",
         "modified": "2023-04-13T14:01:39.467Z",
@@ -3718,7 +3709,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 35,
+    "pk": 2035,
     "fields": {
         "created": "2023-04-13T14:01:39.468Z",
         "modified": "2023-04-13T14:01:39.468Z",
@@ -3736,7 +3727,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 36,
+    "pk": 2036,
     "fields": {
         "created": "2023-04-13T14:01:39.468Z",
         "modified": "2023-04-13T14:01:39.468Z",
@@ -3754,7 +3745,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 37,
+    "pk": 2037,
     "fields": {
         "created": "2023-04-13T14:01:39.468Z",
         "modified": "2023-04-13T14:01:39.468Z",
@@ -3772,7 +3763,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 38,
+    "pk": 2038,
     "fields": {
         "created": "2023-04-13T14:01:39.468Z",
         "modified": "2023-04-13T14:01:39.468Z",
@@ -3790,7 +3781,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 39,
+    "pk": 2039,
     "fields": {
         "created": "2023-04-13T14:01:39.468Z",
         "modified": "2023-04-13T14:01:39.468Z",
@@ -3808,7 +3799,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 40,
+    "pk": 2040,
     "fields": {
         "created": "2023-04-13T14:01:39.469Z",
         "modified": "2023-04-13T14:01:39.469Z",
@@ -3826,7 +3817,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 41,
+    "pk": 2041,
     "fields": {
         "created": "2023-04-13T14:01:39.469Z",
         "modified": "2023-04-13T14:01:39.469Z",
@@ -3844,7 +3835,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 42,
+    "pk": 2042,
     "fields": {
         "created": "2023-04-13T14:01:39.469Z",
         "modified": "2023-04-13T14:01:39.469Z",
@@ -3862,7 +3853,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 43,
+    "pk": 2043,
     "fields": {
         "created": "2023-04-13T14:01:39.469Z",
         "modified": "2023-04-13T14:01:39.469Z",
@@ -3880,7 +3871,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 44,
+    "pk": 2044,
     "fields": {
         "created": "2023-04-13T14:01:39.470Z",
         "modified": "2023-04-13T14:01:39.470Z",
@@ -3898,7 +3889,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 45,
+    "pk": 2045,
     "fields": {
         "created": "2023-04-13T14:01:39.470Z",
         "modified": "2023-04-13T14:01:39.470Z",
@@ -3916,7 +3907,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 46,
+    "pk": 2046,
     "fields": {
         "created": "2023-04-13T14:01:39.470Z",
         "modified": "2023-04-13T14:01:39.470Z",
@@ -3934,7 +3925,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 47,
+    "pk": 2047,
     "fields": {
         "created": "2023-04-13T14:01:39.470Z",
         "modified": "2023-04-13T14:01:39.470Z",
@@ -3952,7 +3943,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 48,
+    "pk": 2048,
     "fields": {
         "created": "2023-04-13T14:01:39.470Z",
         "modified": "2023-04-13T14:01:39.470Z",
@@ -3970,7 +3961,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 49,
+    "pk": 2049,
     "fields": {
         "created": "2023-04-13T14:01:39.471Z",
         "modified": "2023-04-13T14:01:39.471Z",
@@ -3988,7 +3979,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 50,
+    "pk": 2050,
     "fields": {
         "created": "2023-04-13T14:01:39.471Z",
         "modified": "2023-04-13T14:01:39.471Z",
@@ -4006,7 +3997,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 51,
+    "pk": 2051,
     "fields": {
         "created": "2023-04-13T14:01:39.471Z",
         "modified": "2023-04-13T14:01:39.471Z",
@@ -4024,7 +4015,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 52,
+    "pk": 2052,
     "fields": {
         "created": "2023-04-13T14:01:39.471Z",
         "modified": "2023-04-13T14:01:39.471Z",
@@ -4042,7 +4033,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 53,
+    "pk": 2053,
     "fields": {
         "created": "2023-04-13T14:01:39.472Z",
         "modified": "2023-04-13T14:01:39.472Z",
@@ -4060,7 +4051,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 54,
+    "pk": 2054,
     "fields": {
         "created": "2023-04-13T14:01:39.472Z",
         "modified": "2023-04-13T14:01:39.472Z",
@@ -4078,7 +4069,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 55,
+    "pk": 2055,
     "fields": {
         "created": "2023-04-13T14:01:39.472Z",
         "modified": "2023-04-13T14:01:39.472Z",
@@ -4096,7 +4087,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 56,
+    "pk": 2056,
     "fields": {
         "created": "2023-04-13T14:01:39.472Z",
         "modified": "2023-04-13T14:01:39.472Z",
@@ -4114,7 +4105,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 57,
+    "pk": 2057,
     "fields": {
         "created": "2023-04-13T14:01:39.473Z",
         "modified": "2023-04-13T14:01:39.473Z",
@@ -4132,7 +4123,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 58,
+    "pk": 2058,
     "fields": {
         "created": "2023-04-13T14:01:39.473Z",
         "modified": "2023-04-13T14:01:39.473Z",
@@ -4150,7 +4141,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 59,
+    "pk": 2059,
     "fields": {
         "created": "2023-04-13T14:01:39.473Z",
         "modified": "2023-04-13T14:01:39.473Z",
@@ -4168,7 +4159,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 60,
+    "pk": 2060,
     "fields": {
         "created": "2023-04-13T14:01:39.473Z",
         "modified": "2023-04-13T14:01:39.473Z",
@@ -4186,7 +4177,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 61,
+    "pk": 2061,
     "fields": {
         "created": "2023-04-13T14:01:39.473Z",
         "modified": "2023-04-13T14:01:39.473Z",
@@ -4204,7 +4195,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 62,
+    "pk": 2062,
     "fields": {
         "created": "2023-04-13T14:01:39.474Z",
         "modified": "2023-04-13T14:01:39.474Z",
@@ -4222,7 +4213,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 63,
+    "pk": 2063,
     "fields": {
         "created": "2023-04-13T14:01:39.474Z",
         "modified": "2023-04-13T14:01:39.474Z",
@@ -4240,7 +4231,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 64,
+    "pk": 2064,
     "fields": {
         "created": "2023-04-13T14:01:39.474Z",
         "modified": "2023-04-13T14:01:39.474Z",
@@ -4258,7 +4249,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 65,
+    "pk": 2065,
     "fields": {
         "created": "2023-04-13T14:01:39.474Z",
         "modified": "2023-04-13T14:01:39.474Z",
@@ -4276,7 +4267,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 66,
+    "pk": 2066,
     "fields": {
         "created": "2023-04-13T14:01:39.474Z",
         "modified": "2023-04-13T14:01:39.474Z",
@@ -4294,7 +4285,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 67,
+    "pk": 2067,
     "fields": {
         "created": "2023-04-13T14:01:39.475Z",
         "modified": "2023-04-13T14:01:39.475Z",
@@ -4312,7 +4303,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 68,
+    "pk": 2068,
     "fields": {
         "created": "2023-04-13T14:01:39.475Z",
         "modified": "2023-04-13T14:01:39.475Z",
@@ -4330,7 +4321,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 69,
+    "pk": 2069,
     "fields": {
         "created": "2023-04-13T14:01:39.475Z",
         "modified": "2023-04-13T14:01:39.475Z",
@@ -4348,7 +4339,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 70,
+    "pk": 2070,
     "fields": {
         "created": "2023-04-13T14:01:39.475Z",
         "modified": "2023-04-13T14:01:39.475Z",
@@ -4366,7 +4357,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 71,
+    "pk": 2071,
     "fields": {
         "created": "2023-04-13T14:01:39.476Z",
         "modified": "2023-04-13T14:01:39.476Z",
@@ -4384,7 +4375,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 72,
+    "pk": 2072,
     "fields": {
         "created": "2023-04-13T14:01:39.476Z",
         "modified": "2023-04-13T14:01:39.476Z",
@@ -4402,7 +4393,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 73,
+    "pk": 2073,
     "fields": {
         "created": "2023-04-13T14:01:39.476Z",
         "modified": "2023-04-13T14:01:39.476Z",
@@ -4420,7 +4411,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 74,
+    "pk": 2074,
     "fields": {
         "created": "2023-04-13T14:01:39.476Z",
         "modified": "2023-04-13T14:01:39.476Z",
@@ -4438,7 +4429,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 75,
+    "pk": 2075,
     "fields": {
         "created": "2023-04-13T14:01:39.476Z",
         "modified": "2023-04-13T14:01:39.476Z",
@@ -4456,7 +4447,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 76,
+    "pk": 2076,
     "fields": {
         "created": "2023-04-13T14:01:39.477Z",
         "modified": "2023-04-13T14:01:39.477Z",
@@ -4474,7 +4465,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 77,
+    "pk": 2077,
     "fields": {
         "created": "2023-04-13T14:01:39.477Z",
         "modified": "2023-04-13T14:01:39.477Z",
@@ -4492,7 +4483,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 78,
+    "pk": 2078,
     "fields": {
         "created": "2023-04-13T14:01:39.477Z",
         "modified": "2023-04-13T14:01:39.477Z",
@@ -4510,7 +4501,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 79,
+    "pk": 2079,
     "fields": {
         "created": "2023-04-13T14:01:39.477Z",
         "modified": "2023-04-13T14:01:39.477Z",
@@ -4528,7 +4519,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 80,
+    "pk": 2080,
     "fields": {
         "created": "2023-04-13T14:01:39.478Z",
         "modified": "2023-04-13T14:01:39.478Z",
@@ -4546,7 +4537,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 81,
+    "pk": 2081,
     "fields": {
         "created": "2023-04-13T14:01:39.478Z",
         "modified": "2023-04-13T14:01:39.478Z",
@@ -4564,7 +4555,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 82,
+    "pk": 2082,
     "fields": {
         "created": "2023-04-13T14:01:39.478Z",
         "modified": "2023-04-13T14:01:39.478Z",
@@ -4582,7 +4573,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 83,
+    "pk": 2083,
     "fields": {
         "created": "2023-04-13T14:01:39.478Z",
         "modified": "2023-04-13T14:01:39.478Z",
@@ -4600,7 +4591,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 84,
+    "pk": 2084,
     "fields": {
         "created": "2023-04-13T14:01:39.479Z",
         "modified": "2023-04-13T14:01:39.479Z",
@@ -4618,7 +4609,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 85,
+    "pk": 2085,
     "fields": {
         "created": "2023-04-13T14:01:39.479Z",
         "modified": "2023-04-13T14:01:39.479Z",
@@ -4636,7 +4627,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 86,
+    "pk": 2086,
     "fields": {
         "created": "2023-04-13T14:01:39.479Z",
         "modified": "2023-04-13T14:01:39.479Z",
@@ -4654,7 +4645,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 87,
+    "pk": 2087,
     "fields": {
         "created": "2023-04-13T14:01:39.479Z",
         "modified": "2023-04-13T14:01:39.479Z",
@@ -4672,7 +4663,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 88,
+    "pk": 2088,
     "fields": {
         "created": "2023-04-13T14:01:39.479Z",
         "modified": "2023-04-13T14:01:39.479Z",
@@ -4690,7 +4681,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 89,
+    "pk": 2089,
     "fields": {
         "created": "2023-04-13T14:01:39.480Z",
         "modified": "2023-04-13T14:01:39.480Z",
@@ -4708,7 +4699,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 90,
+    "pk": 2090,
     "fields": {
         "created": "2023-04-13T14:01:39.480Z",
         "modified": "2023-04-13T14:01:39.480Z",
@@ -4726,7 +4717,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 91,
+    "pk": 2091,
     "fields": {
         "created": "2023-04-13T14:01:39.480Z",
         "modified": "2023-04-13T14:01:39.480Z",
@@ -4744,7 +4735,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 92,
+    "pk": 2092,
     "fields": {
         "created": "2023-04-13T14:01:39.480Z",
         "modified": "2023-04-13T14:01:39.480Z",
@@ -4762,7 +4753,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 93,
+    "pk": 2093,
     "fields": {
         "created": "2023-04-13T14:01:39.481Z",
         "modified": "2023-04-13T14:01:39.481Z",
@@ -4780,7 +4771,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 94,
+    "pk": 2094,
     "fields": {
         "created": "2023-04-13T14:01:39.481Z",
         "modified": "2023-04-13T14:01:39.481Z",
@@ -4798,7 +4789,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 95,
+    "pk": 2095,
     "fields": {
         "created": "2023-04-13T14:01:39.481Z",
         "modified": "2023-04-13T14:01:39.481Z",
@@ -4816,7 +4807,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 96,
+    "pk": 2096,
     "fields": {
         "created": "2023-04-13T14:01:39.481Z",
         "modified": "2023-04-13T14:01:39.481Z",
@@ -4834,7 +4825,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 97,
+    "pk": 2097,
     "fields": {
         "created": "2023-04-13T14:01:39.481Z",
         "modified": "2023-04-13T14:01:39.481Z",
@@ -4852,7 +4843,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 98,
+    "pk": 2098,
     "fields": {
         "created": "2023-04-13T14:01:39.482Z",
         "modified": "2023-04-13T14:01:39.482Z",
@@ -4870,7 +4861,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 99,
+    "pk": 2099,
     "fields": {
         "created": "2023-04-13T14:01:39.482Z",
         "modified": "2023-04-13T14:01:39.482Z",
@@ -4888,7 +4879,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 100,
+    "pk": 20100,
     "fields": {
         "created": "2023-04-13T14:01:39.482Z",
         "modified": "2023-04-13T14:01:39.482Z",
@@ -4906,7 +4897,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 101,
+    "pk": 20101,
     "fields": {
         "created": "2023-04-13T14:01:39.482Z",
         "modified": "2023-04-13T14:01:39.482Z",
@@ -4924,7 +4915,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 102,
+    "pk": 20102,
     "fields": {
         "created": "2023-04-13T14:01:39.482Z",
         "modified": "2023-04-13T14:01:39.482Z",
@@ -4942,7 +4933,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 103,
+    "pk": 20103,
     "fields": {
         "created": "2023-04-13T14:01:39.483Z",
         "modified": "2023-04-13T14:01:39.483Z",
@@ -4960,7 +4951,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 104,
+    "pk": 20104,
     "fields": {
         "created": "2023-04-13T14:01:39.483Z",
         "modified": "2023-04-13T14:01:39.483Z",
@@ -4978,7 +4969,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 105,
+    "pk": 20105,
     "fields": {
         "created": "2023-04-13T14:01:39.483Z",
         "modified": "2023-04-13T14:01:39.483Z",
@@ -4996,7 +4987,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 106,
+    "pk": 20106,
     "fields": {
         "created": "2023-04-13T14:01:39.483Z",
         "modified": "2023-04-13T14:01:39.483Z",
@@ -5014,7 +5005,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 107,
+    "pk": 20107,
     "fields": {
         "created": "2023-04-13T14:01:39.484Z",
         "modified": "2023-04-13T14:01:39.484Z",
@@ -5032,7 +5023,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 108,
+    "pk": 20108,
     "fields": {
         "created": "2023-04-13T14:01:39.484Z",
         "modified": "2023-04-13T14:01:39.484Z",
@@ -5050,7 +5041,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 109,
+    "pk": 20109,
     "fields": {
         "created": "2023-04-13T14:01:39.484Z",
         "modified": "2023-04-13T14:01:39.484Z",
@@ -5068,7 +5059,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 110,
+    "pk": 20110,
     "fields": {
         "created": "2023-04-13T14:01:39.484Z",
         "modified": "2023-04-13T14:01:39.484Z",
@@ -5086,7 +5077,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 111,
+    "pk": 20111,
     "fields": {
         "created": "2023-04-13T14:01:39.484Z",
         "modified": "2023-04-13T14:01:39.484Z",
@@ -5104,7 +5095,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 112,
+    "pk": 20112,
     "fields": {
         "created": "2023-04-13T14:01:39.485Z",
         "modified": "2023-04-13T14:01:39.485Z",
@@ -5122,7 +5113,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 113,
+    "pk": 20113,
     "fields": {
         "created": "2023-04-13T14:01:39.485Z",
         "modified": "2023-04-13T14:01:39.485Z",
@@ -5140,7 +5131,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 114,
+    "pk": 20114,
     "fields": {
         "created": "2023-04-13T14:01:39.485Z",
         "modified": "2023-04-13T14:01:39.485Z",
@@ -5158,7 +5149,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 115,
+    "pk": 20115,
     "fields": {
         "created": "2023-04-13T14:01:39.485Z",
         "modified": "2023-04-13T14:01:39.485Z",
@@ -5176,7 +5167,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 116,
+    "pk": 20116,
     "fields": {
         "created": "2023-04-13T14:01:39.486Z",
         "modified": "2023-04-13T14:01:39.486Z",
@@ -5194,7 +5185,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 117,
+    "pk": 20117,
     "fields": {
         "created": "2023-04-13T14:01:39.486Z",
         "modified": "2023-04-13T14:01:39.486Z",
@@ -5212,7 +5203,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 118,
+    "pk": 20118,
     "fields": {
         "created": "2023-04-13T14:01:39.486Z",
         "modified": "2023-04-13T14:01:39.486Z",
@@ -5230,7 +5221,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 119,
+    "pk": 20119,
     "fields": {
         "created": "2023-04-13T14:01:39.486Z",
         "modified": "2023-04-13T14:01:39.486Z",
@@ -5248,7 +5239,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 120,
+    "pk": 20120,
     "fields": {
         "created": "2023-04-13T14:01:39.486Z",
         "modified": "2023-04-13T14:01:39.486Z",
@@ -5266,7 +5257,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 121,
+    "pk": 20121,
     "fields": {
         "created": "2023-04-13T14:01:39.487Z",
         "modified": "2023-04-13T14:01:39.487Z",
@@ -5284,7 +5275,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 122,
+    "pk": 20122,
     "fields": {
         "created": "2023-04-13T14:01:39.487Z",
         "modified": "2023-04-13T14:01:39.487Z",
@@ -5302,7 +5293,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 123,
+    "pk": 20123,
     "fields": {
         "created": "2023-04-13T14:01:39.487Z",
         "modified": "2023-04-13T14:01:39.487Z",
@@ -5320,7 +5311,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 124,
+    "pk": 20124,
     "fields": {
         "created": "2023-04-13T14:01:39.487Z",
         "modified": "2023-04-13T14:01:39.487Z",
@@ -5338,7 +5329,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 125,
+    "pk": 20125,
     "fields": {
         "created": "2023-04-13T14:01:39.487Z",
         "modified": "2023-04-13T14:01:39.487Z",
@@ -5356,7 +5347,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 126,
+    "pk": 20126,
     "fields": {
         "created": "2023-04-13T14:01:39.488Z",
         "modified": "2023-04-13T14:01:39.488Z",
@@ -5374,7 +5365,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 127,
+    "pk": 20127,
     "fields": {
         "created": "2023-04-13T14:01:39.488Z",
         "modified": "2023-04-13T14:01:39.488Z",
@@ -5392,7 +5383,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 128,
+    "pk": 20128,
     "fields": {
         "created": "2023-04-13T14:01:39.488Z",
         "modified": "2023-04-13T14:01:39.488Z",
@@ -5410,7 +5401,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 129,
+    "pk": 20129,
     "fields": {
         "created": "2023-04-13T14:01:39.488Z",
         "modified": "2023-04-13T14:01:39.488Z",
@@ -5428,7 +5419,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 130,
+    "pk": 20130,
     "fields": {
         "created": "2023-04-13T14:01:39.489Z",
         "modified": "2023-04-13T14:01:39.489Z",
@@ -5446,7 +5437,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 131,
+    "pk": 20131,
     "fields": {
         "created": "2023-04-13T14:01:39.489Z",
         "modified": "2023-04-13T14:01:39.489Z",
@@ -5464,7 +5455,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 132,
+    "pk": 20132,
     "fields": {
         "created": "2023-04-13T14:01:39.489Z",
         "modified": "2023-04-13T14:01:39.489Z",
@@ -5482,7 +5473,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 133,
+    "pk": 20133,
     "fields": {
         "created": "2023-04-13T14:01:39.489Z",
         "modified": "2023-04-13T14:01:39.489Z",
@@ -5500,7 +5491,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 134,
+    "pk": 20134,
     "fields": {
         "created": "2023-04-13T14:01:39.489Z",
         "modified": "2023-04-13T14:01:39.489Z",
@@ -5518,7 +5509,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 135,
+    "pk": 20135,
     "fields": {
         "created": "2023-04-13T14:01:39.490Z",
         "modified": "2023-04-13T14:01:39.490Z",
@@ -5536,7 +5527,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 136,
+    "pk": 20136,
     "fields": {
         "created": "2023-04-13T14:01:39.491Z",
         "modified": "2023-04-13T14:01:39.491Z",
@@ -5554,7 +5545,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 137,
+    "pk": 20137,
     "fields": {
         "created": "2023-04-13T14:01:39.491Z",
         "modified": "2023-04-13T14:01:39.491Z",
@@ -5572,7 +5563,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 138,
+    "pk": 20138,
     "fields": {
         "created": "2023-04-13T14:01:39.491Z",
         "modified": "2023-04-13T14:01:39.491Z",
@@ -5590,7 +5581,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 139,
+    "pk": 20139,
     "fields": {
         "created": "2023-04-13T14:01:39.491Z",
         "modified": "2023-04-13T14:01:39.491Z",
@@ -5608,7 +5599,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 140,
+    "pk": 20140,
     "fields": {
         "created": "2023-04-13T14:01:39.491Z",
         "modified": "2023-04-13T14:01:39.491Z",
@@ -5626,7 +5617,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 141,
+    "pk": 20141,
     "fields": {
         "created": "2023-04-13T14:01:39.492Z",
         "modified": "2023-04-13T14:01:39.492Z",
@@ -5644,7 +5635,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 142,
+    "pk": 20142,
     "fields": {
         "created": "2023-04-13T14:01:39.492Z",
         "modified": "2023-04-13T14:01:39.492Z",
@@ -5662,7 +5653,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 143,
+    "pk": 20143,
     "fields": {
         "created": "2023-04-13T14:01:39.492Z",
         "modified": "2023-04-13T14:01:39.492Z",
@@ -5680,7 +5671,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 144,
+    "pk": 20144,
     "fields": {
         "created": "2023-04-13T14:01:39.492Z",
         "modified": "2023-04-13T14:01:39.492Z",
@@ -5698,7 +5689,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 145,
+    "pk": 20145,
     "fields": {
         "created": "2023-04-13T14:01:39.492Z",
         "modified": "2023-04-13T14:01:39.492Z",
@@ -5716,7 +5707,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 146,
+    "pk": 20146,
     "fields": {
         "created": "2023-04-13T14:01:39.493Z",
         "modified": "2023-04-13T14:01:39.493Z",
@@ -5734,7 +5725,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 147,
+    "pk": 20147,
     "fields": {
         "created": "2023-04-13T14:01:39.493Z",
         "modified": "2023-04-13T14:01:39.493Z",
@@ -5752,7 +5743,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 148,
+    "pk": 20148,
     "fields": {
         "created": "2023-04-13T14:01:39.493Z",
         "modified": "2023-04-13T14:01:39.493Z",
@@ -5770,7 +5761,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 149,
+    "pk": 20149,
     "fields": {
         "created": "2023-04-13T14:01:39.493Z",
         "modified": "2023-04-13T14:01:39.493Z",
@@ -5788,7 +5779,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 150,
+    "pk": 20150,
     "fields": {
         "created": "2023-04-13T14:01:39.494Z",
         "modified": "2023-04-13T14:01:39.494Z",
@@ -5806,7 +5797,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 151,
+    "pk": 20151,
     "fields": {
         "created": "2023-04-13T14:01:39.494Z",
         "modified": "2023-04-13T14:01:39.494Z",
@@ -5824,7 +5815,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 152,
+    "pk": 20152,
     "fields": {
         "created": "2023-04-13T14:01:39.494Z",
         "modified": "2023-04-13T14:01:39.494Z",
@@ -5842,7 +5833,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 153,
+    "pk": 20153,
     "fields": {
         "created": "2023-04-13T14:01:39.494Z",
         "modified": "2023-04-13T14:01:39.494Z",
@@ -5860,7 +5851,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 154,
+    "pk": 20154,
     "fields": {
         "created": "2023-04-13T14:01:39.494Z",
         "modified": "2023-04-13T14:01:39.494Z",
@@ -5878,7 +5869,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 155,
+    "pk": 20155,
     "fields": {
         "created": "2023-04-13T14:01:39.495Z",
         "modified": "2023-04-13T14:01:39.495Z",
@@ -5896,7 +5887,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 156,
+    "pk": 20156,
     "fields": {
         "created": "2023-04-13T14:01:39.495Z",
         "modified": "2023-04-13T14:01:39.495Z",
@@ -5914,7 +5905,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 157,
+    "pk": 20157,
     "fields": {
         "created": "2023-04-13T14:01:39.495Z",
         "modified": "2023-04-13T14:01:39.495Z",
@@ -5932,7 +5923,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 158,
+    "pk": 20158,
     "fields": {
         "created": "2023-04-13T14:01:39.495Z",
         "modified": "2023-04-13T14:01:39.495Z",
@@ -5950,7 +5941,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 159,
+    "pk": 20159,
     "fields": {
         "created": "2023-04-13T14:01:39.496Z",
         "modified": "2023-04-13T14:01:39.496Z",
@@ -5968,7 +5959,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 160,
+    "pk": 20160,
     "fields": {
         "created": "2023-04-13T14:01:39.496Z",
         "modified": "2023-04-13T14:01:39.496Z",
@@ -5986,7 +5977,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 161,
+    "pk": 20161,
     "fields": {
         "created": "2023-04-13T14:01:39.496Z",
         "modified": "2023-04-13T14:01:39.496Z",
@@ -6004,7 +5995,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 162,
+    "pk": 20162,
     "fields": {
         "created": "2023-04-13T14:01:39.496Z",
         "modified": "2023-04-13T14:01:39.496Z",
@@ -6022,7 +6013,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 163,
+    "pk": 20163,
     "fields": {
         "created": "2023-04-13T14:01:39.496Z",
         "modified": "2023-04-13T14:01:39.496Z",
@@ -6040,7 +6031,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 164,
+    "pk": 20164,
     "fields": {
         "created": "2023-04-13T14:01:39.497Z",
         "modified": "2023-04-13T14:01:39.497Z",
@@ -6058,7 +6049,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 165,
+    "pk": 20165,
     "fields": {
         "created": "2023-04-13T14:01:39.497Z",
         "modified": "2023-04-13T14:01:39.497Z",
@@ -6076,7 +6067,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 166,
+    "pk": 20166,
     "fields": {
         "created": "2023-04-13T14:01:39.497Z",
         "modified": "2023-04-13T14:01:39.497Z",
@@ -6094,7 +6085,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 167,
+    "pk": 20167,
     "fields": {
         "created": "2023-04-13T14:01:39.497Z",
         "modified": "2023-04-13T14:01:39.497Z",
@@ -6112,7 +6103,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 168,
+    "pk": 20168,
     "fields": {
         "created": "2023-04-13T14:01:39.498Z",
         "modified": "2023-04-13T14:01:39.498Z",
@@ -6130,7 +6121,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 169,
+    "pk": 20169,
     "fields": {
         "created": "2023-04-13T14:01:39.498Z",
         "modified": "2023-04-13T14:01:39.498Z",
@@ -6148,7 +6139,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 170,
+    "pk": 20170,
     "fields": {
         "created": "2023-04-13T14:01:39.498Z",
         "modified": "2023-04-13T14:01:39.498Z",
@@ -6166,7 +6157,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 171,
+    "pk": 20171,
     "fields": {
         "created": "2023-04-13T14:01:39.498Z",
         "modified": "2023-04-13T14:01:39.498Z",
@@ -6184,7 +6175,7 @@
 },
 {
     "model": "patterns.bardata",
-    "pk": 172,
+    "pk": 20172,
     "fields": {
         "created": "2023-04-13T14:01:39.498Z",
         "modified": "2023-04-13T14:01:39.498Z",
@@ -6198,15 +6189,6 @@
         "average": "0.77",
         "barCount": 5,
         "symbol": "MSFT"
-    }
-},
-{
-    "model": "patterns.batch",
-    "pk": 1,
-    "fields": {
-        "created": "2023-04-13T14:01:39.456Z",
-        "modified": "2023-04-13T14:01:39.456Z",
-        "experiment": null
     }
 }
 ]

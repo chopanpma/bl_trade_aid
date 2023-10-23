@@ -191,7 +191,7 @@ class APIUtils():
 
 class ProfileChartUtils():
     @staticmethod
-    def create_profile_chart(batch):
+    def create_profile_chart_wrapper(batch):
 
         profile_chart = ProfileChartWrapper(batch)
         return profile_chart
@@ -204,6 +204,7 @@ class ProfileChartWrapper():
         self.batch = batch
         self.symbols_df_dict = {}
         self.dates_df_dict = {}
+        self.mp_dict = {}
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -211,7 +212,6 @@ class ProfileChartWrapper():
         for symbol in symbols:
             filter_condition = full_table_df['symbol'] == symbol
             symbol_df = full_table_df[filter_condition]
-            self.symbols_df_dict[symbol] = symbol_df
 
             symbol_df = self.normalize_df(symbol_df)
             symbol_df[('High')] = symbol_df[('High')] * height_precision
@@ -227,12 +227,12 @@ class ProfileChartWrapper():
             # map the letter to the price of the row
             # by the end you should have the pc of all days
             # build dictionary with all needed prices
-            self.mp = defaultdict(str)
+            self.mp_dict[symbol] = defaultdict(str)
 
             tot_min_price = min(np.array(symbol_df['Low']))
             tot_max_price = max(np.array(symbol_df['High']))
             for price in range(int(tot_min_price), int(tot_max_price)):
-                self.mp[price] += ('')
+                self.mp_dict[symbol][price] += ('')
 
             # loop throught original ds then create the dict if it does not existe
 
@@ -243,7 +243,7 @@ class ProfileChartWrapper():
                 # TODO: find a safer way to locate an element in the list
                 day_chart = None
                 if dates_df.loc[only_date]['ProfileChart'] == '':
-                    day_chart = copy.deepcopy(self.mp)
+                    day_chart = copy.deepcopy(self.mp_dict[symbol])
                 else:
                     day_chart = dates_df.loc[only_date]['ProfileChart']
                 price = int(row['Close'] * height_precision)
@@ -252,17 +252,17 @@ class ProfileChartWrapper():
 
             dates_df.to_csv(f'{symbol}.csv')
             self.dates_df_dict[symbol] = dates_df
+            self.symbols_df_dict[symbol] = symbol_df
 
             #  with open('mp_pf_dataframe.pickle', 'wb') as file:
             #     pickle.dump(self.df, file)
 
     def periods(self, symbol):
-        import ipdb;ipdb.set_trace()
-        return self.dates_df_dict[symbol]['Datetime'].to_dict()
+        return self.symbols_df_dict[symbol]['DateTime'].to_dict()
 
-    def get_day_tpos(self, day):
+    def get_day_tpos(self, day, symbol):
 
-        return self.dates_df.loc[pd.Timestamp(day)]['ProfileChart']
+        return self.dates_df_dict[symbol].loc[pd.Timestamp(day)]['ProfileChart']
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})
@@ -288,33 +288,33 @@ class ProfileChartWrapper():
 
         return df
 
-    def get_profile_chart_data_frame_string(self):
-        self.profile_chart_df = pd.DataFrame({'Price': self.mp.keys()})
-        for date, charts in self.dates_df.iterrows():
-            date_label = date.strftime('%y/%m/%d')
-            self.profile_chart_df[date_label] = ''
+    def generate_profile_charts(self, batch):
+        for symbol in self.dates_df_dict.keys():
+            self.profile_chart_df = pd.DataFrame({'Price': self.mp_dict[symbol].keys()})
+            for date, charts in self.dates_df_dict[symbol].iterrows():
+                date_label = date.strftime('%y/%m/%d')
+                self.profile_chart_df[date_label] = ''
 
+                for index, row in self.profile_chart_df.iterrows():
+                    self.profile_chart_df.at[index, date_label] = self.dates_df_dict[symbol].loc[date][0][
+                            self.profile_chart_df.iloc[index]['Price']]
+
+            # self.profile_chart_df.to_csv('output.csv', sep='\t', index=False)
+            pt = prettytable.PrettyTable()
+            pt.field_names = list(self.profile_chart_df.columns)
             for index, row in self.profile_chart_df.iterrows():
-                self.profile_chart_df.at[index, date_label] = self.dates_df.loc[date][0][
-                        self.profile_chart_df.iloc[index]['Price']]
+                pt.add_row(row)
 
-        # self.profile_chart_df.to_csv('output.csv', sep='\t', index=False)
-        pt = prettytable.PrettyTable()
-        pt.field_names = list(self.profile_chart_df.columns)
-        for index, row in self.profile_chart_df.iterrows():
-            pt.add_row(row)
+            pt.align = 'l'
 
-        pt.align = 'l'
+            content = bytes(pt.get_string(), 'utf-8')
+            chart_file = SimpleUploadedFile("profile", content)
 
-        content = bytes(pt.get_string(), 'utf-8')
-        chart_file = SimpleUploadedFile("profile", content)
-
-        ProfileChart.objects.create(
-            batch=self.batch,
-            symbol="TEST",
-            chart_file=chart_file
-        )
-        return pt.get_string()
+            ProfileChart.objects.create(
+                batch=self.batch,
+                symbol=symbol,
+                chart_file=chart_file
+            )
 
 
 class MarketUtils():
