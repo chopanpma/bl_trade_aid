@@ -28,20 +28,26 @@
       [D] create mp for all of theem implmeentation
     [*]  test reality
       [*] connect the wires to call the service for a batch 
+        [*] test command
       [ ] compare charts
       [ ] fix details
   [ ]  get the list of candiates to run the query
-  - set an alert
-  - remove an alert
-  - search for alert
-  - place a buy order 
-  - bargain on buy
-  - cancel the order place
+  - as a user I would like to set reqScannerData parameters  in a table for the experiment
+  - as a user I would like to be able to set an alert at an specific instrument either with a trade or no 
+  - as a user I would like to be able to remove  an alert at an specific instrument either with a trade or no 
+  - as a user I would like to be able to set an alert at an specific open trade 
+  - as a user I would like to be able to remove an alert at an specific open trade 
+  - as a user I would like to be able to search for an active alert at an specific open trade 
+  - as a user I would like to be able to search for an active alert in all open trades 
+  - as a user I would like to be able to place an order 
+  - as a user I would like to be able bargain in buying, that is moving up until a limit. 
+  - as a user I would like to be able bargain in selling, that is moving up until a limit. 
+  - as a user I would like to be able to cancel an order if it has not been fullfilled. 
   - place a sell order
   - bargain on sell
   - cancell the sell order
-  - query type of contract with characteristics RESULTS COMING FROM PARAMETER
-  - query bar result coming from params EXPERIMEWNT RESULTS COMING FROM PARAMETER
+  - be able to enter the result of a trade 
+  - be able to automatically record the result of a sale
 
 
 

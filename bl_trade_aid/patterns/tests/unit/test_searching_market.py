@@ -105,8 +105,10 @@ class ScannerSubscriptionTestCase(TestCase):
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_from_scandata')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
+    @patch('bl_trade_aid.patterns.utils.ProfileChartWrapper.generate_profile_charts')
     def test_scan_and_create_profiles(
             self,
+            mock_generate_profile_charts,
             mock_get_bars_in_date_range,
             mock_get_bars_from_scandata,
             mock_get_contracts,
@@ -119,4 +121,5 @@ class ScannerSubscriptionTestCase(TestCase):
 
         self.assertEquals(1, mock_get_contracts.call_count)
         self.assertEquals(1, mock_get_bars_from_scandata.call_count)
+        self.assertEquals(1, mock_generate_profile_charts.call_count)
         # assert that the file has been created

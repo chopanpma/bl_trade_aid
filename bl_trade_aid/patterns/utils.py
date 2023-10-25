@@ -323,6 +323,8 @@ class MarketUtils():
         batch = MarketUtils.get_contracts()
         scan_data_list = ScanData.objects.filter(batch=batch)
         MarketUtils.get_bars_from_scandata(scan_data_list)
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.generate_profile_charts(batch)
 
     @staticmethod
     def get_contracts():
