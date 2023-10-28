@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class ScannerSubscriptionTestCase(TestCase):
+    fixtures = ['batch.json']
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
@@ -61,9 +62,7 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_reqscannerdata.return_value = data
 
-        MarketUtils.get_contracts()
-
-        batch = Batch.objects.all()[0]
+        batch = MarketUtils.get_contracts()
 
         self.assertEquals(50, len(ScanData.objects.filter(batch=batch)))
         # call_command('dumpdata',  indent=4, output='scandata_fixture.json')
@@ -94,7 +93,8 @@ class ScannerSubscriptionTestCase(TestCase):
         # and the mocked data does not contain batch
         scan_data_list = ScanData.objects.all()
 
-        MarketUtils.get_bars_from_scandata(scan_data_list)
+        batch = Batch.objects.all()[0]
+        MarketUtils.get_bars_from_scandata(scan_data_list, batch)
 
         # - assert the function calls the mock
         self.assertEquals(50, mock_get_bars.call_count)

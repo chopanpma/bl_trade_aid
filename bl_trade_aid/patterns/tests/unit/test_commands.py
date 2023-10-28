@@ -10,22 +10,13 @@ from django.test import TestCase, TransactionTestCase, override_settings, tag
 logger = logging.getLogger(__name__)
 
 
-# class CreateInterbankFileCommandTestCase(TransactionTestCase):
-#     def setUp(self):
-#         self.file = '{}/mpconnector/tests/fixtures/ActivePayments_201807251055.csv'.format(settings.APPS_DIR)
-# 
-#     @patch('pandas.read_csv')
-#     @patch('patterns.')
-#     def test_create_profile_charts(self, generate_interbank_file_mock, read_csv_mock):
-#         pass
-#         # mock the calls to methods
-#         # get_contracts
-#         # get_bars_from_scandata 
-#         # create_profile_charts
-#         # save profiles in a day/version folder.
-#         # assert the count
-#         # done
-# 
-#         call_command('generate_profile_charts')
-#         self.assertEqual(1, generate_interbank_file_mock.call_count)
-#         self.assertTrue(os.path.exists(file_path))
+class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
+
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_current_profile_charts')
+    def test_generate_current_profile_charts(self, mock_get_current_profile_charts):
+        # TODO: save profiles in a day/version folder.
+        # assert the count
+        # done
+
+        call_command('generate_current_profile_charts')
+        self.assertEqual(1, mock_get_current_profile_charts.call_count)

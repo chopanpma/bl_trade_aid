@@ -29,6 +29,7 @@
     [*]  test reality
       [*] connect the wires to call the service for a batch 
         [*] test command
+        [*] save profiles in a folder
       [ ] compare charts
       [ ] fix details
   [ ]  get the list of candiates to run the query

@@ -322,7 +322,7 @@ class MarketUtils():
     def get_current_profile_charts():
         batch = MarketUtils.get_contracts()
         scan_data_list = ScanData.objects.filter(batch=batch)
-        MarketUtils.get_bars_from_scandata(scan_data_list)
+        MarketUtils.get_bars_from_scandata(scan_data_list, batch=batch)
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts(batch)
 
@@ -370,10 +370,11 @@ class MarketUtils():
         ib.disconnect()
         return batch
 
-    def get_bars_from_scandata(scan_data_dataset):
+    def get_bars_from_scandata(scan_data_dataset, batch):
         for scan_data_instance in scan_data_dataset:
             MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
-                                               scan_data_instance.contractDetails.contract.exchange)
+                                               scan_data_instance.contractDetails.contract.exchange,
+                                               batch=batch)
 
     def get_bars_in_date_range(symbol, exchange, batch):
 

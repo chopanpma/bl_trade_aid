@@ -5,7 +5,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.603Z",
         "modified": "2023-03-26T16:24:10.603Z",
-        "rank": 0,
+        "batch": 1,
+		"rank": 0,
         "price": null,
         "contractDetails": 1,
         "distance": "",
@@ -20,7 +21,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.604Z",
         "modified": "2023-03-26T16:24:10.604Z",
-        "rank": 1,
+        "batch": 1,
+		"rank": 1,
         "price": null,
         "contractDetails": 2,
         "distance": "",
@@ -35,7 +37,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.605Z",
         "modified": "2023-03-26T16:24:10.605Z",
-        "rank": 2,
+        "batch": 1,
+		"rank": 2,
         "price": null,
         "contractDetails": 3,
         "distance": "",
@@ -50,7 +53,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.605Z",
         "modified": "2023-03-26T16:24:10.605Z",
-        "rank": 3,
+        "batch": 1,
+		"rank": 3,
         "price": null,
         "contractDetails": 4,
         "distance": "",
@@ -65,7 +69,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.606Z",
         "modified": "2023-03-26T16:24:10.606Z",
-        "rank": 4,
+        "batch": 1,
+		"rank": 4,
         "price": null,
         "contractDetails": 5,
         "distance": "",
@@ -80,7 +85,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.606Z",
         "modified": "2023-03-26T16:24:10.606Z",
-        "rank": 5,
+        "batch": 1,
+		"rank": 5,
         "price": null,
         "contractDetails": 6,
         "distance": "",
@@ -95,7 +101,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.607Z",
         "modified": "2023-03-26T16:24:10.607Z",
-        "rank": 6,
+        "batch": 1,
+		"rank": 6,
         "price": null,
         "contractDetails": 7,
         "distance": "",
@@ -110,7 +117,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.608Z",
         "modified": "2023-03-26T16:24:10.608Z",
-        "rank": 7,
+        "batch": 1,
+		"rank": 7,
         "price": null,
         "contractDetails": 8,
         "distance": "",
@@ -125,7 +133,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.608Z",
         "modified": "2023-03-26T16:24:10.608Z",
-        "rank": 8,
+        "batch": 1,
+		"rank": 8,
         "price": null,
         "contractDetails": 9,
         "distance": "",
@@ -140,7 +149,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.609Z",
         "modified": "2023-03-26T16:24:10.609Z",
-        "rank": 9,
+        "batch": 1,
+		"rank": 9,
         "price": null,
         "contractDetails": 10,
         "distance": "",
@@ -155,7 +165,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.610Z",
         "modified": "2023-03-26T16:24:10.610Z",
-        "rank": 10,
+        "batch": 1,
+		"rank": 10,
         "price": null,
         "contractDetails": 11,
         "distance": "",
@@ -170,7 +181,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.611Z",
         "modified": "2023-03-26T16:24:10.611Z",
-        "rank": 11,
+        "batch": 1,
+		"rank": 11,
         "price": null,
         "contractDetails": 12,
         "distance": "",
@@ -185,7 +197,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.611Z",
         "modified": "2023-03-26T16:24:10.611Z",
-        "rank": 12,
+        "batch": 1,
+		"rank": 12,
         "price": null,
         "contractDetails": 13,
         "distance": "",
@@ -200,7 +213,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.612Z",
         "modified": "2023-03-26T16:24:10.612Z",
-        "rank": 13,
+        "batch": 1,
+		"rank": 13,
         "price": null,
         "contractDetails": 14,
         "distance": "",
@@ -215,7 +229,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.613Z",
         "modified": "2023-03-26T16:24:10.613Z",
-        "rank": 14,
+        "batch": 1,
+		"rank": 14,
         "price": null,
         "contractDetails": 15,
         "distance": "",
@@ -230,7 +245,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.614Z",
         "modified": "2023-03-26T16:24:10.614Z",
-        "rank": 15,
+        "batch": 1,
+		"rank": 15,
         "price": null,
         "contractDetails": 16,
         "distance": "",
@@ -245,7 +261,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.614Z",
         "modified": "2023-03-26T16:24:10.614Z",
-        "rank": 16,
+        "batch": 1,
+		"rank": 16,
         "price": null,
         "contractDetails": 17,
         "distance": "",
@@ -260,7 +277,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.615Z",
         "modified": "2023-03-26T16:24:10.615Z",
-        "rank": 17,
+        "batch": 1,
+		"rank": 17,
         "price": null,
         "contractDetails": 18,
         "distance": "",
@@ -275,7 +293,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.616Z",
         "modified": "2023-03-26T16:24:10.616Z",
-        "rank": 18,
+        "batch": 1,
+		"rank": 18,
         "price": null,
         "contractDetails": 19,
         "distance": "",
@@ -290,7 +309,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.617Z",
         "modified": "2023-03-26T16:24:10.617Z",
-        "rank": 19,
+        "batch": 1,
+		"rank": 19,
         "price": null,
         "contractDetails": 20,
         "distance": "",
@@ -305,7 +325,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.617Z",
         "modified": "2023-03-26T16:24:10.617Z",
-        "rank": 20,
+        "batch": 1,
+		"rank": 20,
         "price": null,
         "contractDetails": 21,
         "distance": "",
@@ -320,7 +341,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.619Z",
         "modified": "2023-03-26T16:24:10.619Z",
-        "rank": 21,
+        "batch": 1,
+		"rank": 21,
         "price": null,
         "contractDetails": 22,
         "distance": "",
@@ -335,7 +357,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.621Z",
         "modified": "2023-03-26T16:24:10.621Z",
-        "rank": 22,
+        "batch": 1,
+		"rank": 22,
         "price": null,
         "contractDetails": 23,
         "distance": "",
@@ -350,7 +373,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.622Z",
         "modified": "2023-03-26T16:24:10.622Z",
-        "rank": 23,
+        "batch": 1,
+		"rank": 23,
         "price": null,
         "contractDetails": 24,
         "distance": "",
@@ -365,7 +389,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.623Z",
         "modified": "2023-03-26T16:24:10.623Z",
-        "rank": 24,
+        "batch": 1,
+		"rank": 24,
         "price": null,
         "contractDetails": 25,
         "distance": "",
@@ -380,7 +405,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.624Z",
         "modified": "2023-03-26T16:24:10.624Z",
-        "rank": 25,
+        "batch": 1,
+		"rank": 25,
         "price": null,
         "contractDetails": 26,
         "distance": "",
@@ -395,7 +421,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.625Z",
         "modified": "2023-03-26T16:24:10.625Z",
-        "rank": 26,
+        "batch": 1,
+		"rank": 26,
         "price": null,
         "contractDetails": 27,
         "distance": "",
@@ -410,7 +437,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.625Z",
         "modified": "2023-03-26T16:24:10.625Z",
-        "rank": 27,
+        "batch": 1,
+		"rank": 27,
         "price": null,
         "contractDetails": 28,
         "distance": "",
@@ -425,7 +453,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.626Z",
         "modified": "2023-03-26T16:24:10.626Z",
-        "rank": 28,
+        "batch": 1,
+		"rank": 28,
         "price": null,
         "contractDetails": 29,
         "distance": "",
@@ -440,7 +469,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.627Z",
         "modified": "2023-03-26T16:24:10.627Z",
-        "rank": 29,
+        "batch": 1,
+		"rank": 29,
         "price": null,
         "contractDetails": 30,
         "distance": "",
@@ -455,7 +485,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.628Z",
         "modified": "2023-03-26T16:24:10.628Z",
-        "rank": 30,
+        "batch": 1,
+		"rank": 30,
         "price": null,
         "contractDetails": 31,
         "distance": "",
@@ -470,7 +501,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.628Z",
         "modified": "2023-03-26T16:24:10.628Z",
-        "rank": 31,
+        "batch": 1,
+		"rank": 31,
         "price": null,
         "contractDetails": 32,
         "distance": "",
@@ -485,7 +517,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.629Z",
         "modified": "2023-03-26T16:24:10.629Z",
-        "rank": 32,
+        "batch": 1,
+		"rank": 32,
         "price": null,
         "contractDetails": 33,
         "distance": "",
@@ -500,7 +533,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.630Z",
         "modified": "2023-03-26T16:24:10.630Z",
-        "rank": 33,
+        "batch": 1,
+		"rank": 33,
         "price": null,
         "contractDetails": 34,
         "distance": "",
@@ -515,7 +549,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.630Z",
         "modified": "2023-03-26T16:24:10.630Z",
-        "rank": 34,
+        "batch": 1,
+		"rank": 34,
         "price": null,
         "contractDetails": 35,
         "distance": "",
@@ -530,7 +565,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.631Z",
         "modified": "2023-03-26T16:24:10.631Z",
-        "rank": 35,
+        "batch": 1,
+		"rank": 35,
         "price": null,
         "contractDetails": 36,
         "distance": "",
@@ -545,7 +581,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.631Z",
         "modified": "2023-03-26T16:24:10.631Z",
-        "rank": 36,
+        "batch": 1,
+		"rank": 36,
         "price": null,
         "contractDetails": 37,
         "distance": "",
@@ -560,7 +597,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.632Z",
         "modified": "2023-03-26T16:24:10.632Z",
-        "rank": 37,
+        "batch": 1,
+		"rank": 37,
         "price": null,
         "contractDetails": 38,
         "distance": "",
@@ -575,7 +613,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.633Z",
         "modified": "2023-03-26T16:24:10.633Z",
-        "rank": 38,
+        "batch": 1,
+		"rank": 38,
         "price": null,
         "contractDetails": 39,
         "distance": "",
@@ -590,7 +629,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.633Z",
         "modified": "2023-03-26T16:24:10.633Z",
-        "rank": 39,
+        "batch": 1,
+		"rank": 39,
         "price": null,
         "contractDetails": 40,
         "distance": "",
@@ -605,7 +645,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.634Z",
         "modified": "2023-03-26T16:24:10.634Z",
-        "rank": 40,
+        "batch": 1,
+		"rank": 40,
         "price": null,
         "contractDetails": 41,
         "distance": "",
@@ -620,7 +661,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.635Z",
         "modified": "2023-03-26T16:24:10.635Z",
-        "rank": 41,
+        "batch": 1,
+		"rank": 41,
         "price": null,
         "contractDetails": 42,
         "distance": "",
@@ -635,7 +677,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.636Z",
         "modified": "2023-03-26T16:24:10.636Z",
-        "rank": 42,
+        "batch": 1,
+		"rank": 42,
         "price": null,
         "contractDetails": 43,
         "distance": "",
@@ -650,7 +693,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.636Z",
         "modified": "2023-03-26T16:24:10.636Z",
-        "rank": 43,
+        "batch": 1,
+		"rank": 43,
         "price": null,
         "contractDetails": 44,
         "distance": "",
@@ -665,7 +709,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.637Z",
         "modified": "2023-03-26T16:24:10.637Z",
-        "rank": 44,
+        "batch": 1,
+		"rank": 44,
         "price": null,
         "contractDetails": 45,
         "distance": "",
@@ -680,7 +725,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.638Z",
         "modified": "2023-03-26T16:24:10.638Z",
-        "rank": 45,
+        "batch": 1,
+		"rank": 45,
         "price": null,
         "contractDetails": 46,
         "distance": "",
@@ -695,7 +741,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.639Z",
         "modified": "2023-03-26T16:24:10.639Z",
-        "rank": 46,
+        "batch": 1,
+		"rank": 46,
         "price": null,
         "contractDetails": 47,
         "distance": "",
@@ -710,7 +757,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.639Z",
         "modified": "2023-03-26T16:24:10.639Z",
-        "rank": 47,
+        "batch": 1,
+		"rank": 47,
         "price": null,
         "contractDetails": 48,
         "distance": "",
@@ -725,7 +773,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.640Z",
         "modified": "2023-03-26T16:24:10.640Z",
-        "rank": 48,
+        "batch": 1,
+		"rank": 48,
         "price": null,
         "contractDetails": 49,
         "distance": "",
@@ -740,7 +789,8 @@
     "fields": {
         "created": "2023-03-26T16:24:10.641Z",
         "modified": "2023-03-26T16:24:10.641Z",
-        "rank": 49,
+        "batch": 1,
+		"rank": 49,
         "price": null,
         "contractDetails": 50,
         "distance": "",

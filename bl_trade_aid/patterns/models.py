@@ -89,12 +89,12 @@ class BarData(TimeStampedModel):
 
     symbol = models.CharField(_('Symbol'), max_length=10)
 
-    def save(self, *args, **kwargs):
-        if self.date is not None:
-            # Convert the datetime to the appropriate timezone
-            self.date = timezone.make_aware(self.date, self.tz)
-
-        super().save(*args, **kwargs)
+#     def save(self, *args, **kwargs):
+#         if self.date is not None:
+#             # Convert the datetime to the appropriate timezone
+#             self.date = timezone.make_aware(self.date, self.tz)
+# 
+#         super().save(*args, **kwargs)
 
 
 class Batch(TimeStampedModel):
