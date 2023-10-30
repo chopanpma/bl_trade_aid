@@ -306,8 +306,10 @@ class ProfileChartWrapper():
                 pt.add_row(row)
 
             pt.align = 'l'
-
-            content = bytes(pt.get_string(), 'utf-8')
+            content = bytes(pt.get_string(title=f"{symbol} - {self.dates_df_dict[symbol].index[0]} "), 'utf-8')
+            content_txt = pt.get_string(title=f"{symbol} - {self.dates_df_dict[symbol].index[0]} ")
+            with open(f"{self.dates_df_dict[symbol].index[0].strftime('%y-%m-%d')}-{symbol}.txt", "w") as f:
+                f.write(content_txt)
             chart_file = SimpleUploadedFile("profile", content)
 
             ProfileChart.objects.create(
