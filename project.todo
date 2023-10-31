@@ -30,11 +30,10 @@
       [*] connect the wires to call the service for a batch 
         [D] test command
         [*] save profiles in a folder
-        [ ] open in vim?
+        [ ] add limit to query
         [ ] manage timeouts
         [ ] admin so we can look ad the values.
-        [*] add the header to the file
-        [ ] manage timeouts 
+        [D] add the header to the file
       [ ] compare charts
       [ ] fix details
   [ ]  get the list of candiates to run the query
