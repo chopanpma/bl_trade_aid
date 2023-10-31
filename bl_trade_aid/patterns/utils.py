@@ -321,10 +321,16 @@ class ProfileChartWrapper():
 
 class MarketUtils():
     @staticmethod
-    def get_current_profile_charts():
+    def get_current_profile_charts(
+            profile_chart_generation_limit
+            ):
         batch = MarketUtils.get_contracts()
         scan_data_list = ScanData.objects.filter(batch=batch)
-        MarketUtils.get_bars_from_scandata(scan_data_list, batch=batch)
+        MarketUtils.get_bars_from_scandata(
+                scan_data_list,
+                batch=batch,
+                profile_chart_generation_limit=profile_chart_generation_limit,
+                )
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts(batch)
 
@@ -372,11 +378,31 @@ class MarketUtils():
         ib.disconnect()
         return batch
 
-    def get_bars_from_scandata(scan_data_dataset, batch):
+    def get_bars_from_scandata(
+            scan_data_dataset,
+            batch,
+            profile_chart_generation_limit=None
+            ):
+        counter = 0
         for scan_data_instance in scan_data_dataset:
             MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
                                                scan_data_instance.contractDetails.contract.exchange,
                                                batch=batch)
+            counter = counter + 1
+
+            if MarketUtils.exit_on_limit_reached(
+                    profile_chart_generation_limit,
+                    counter):
+                return
+
+    def exit_on_limit_reached(
+            profile_chart_generation_limit,
+            counter):
+        if profile_chart_generation_limit is None:
+            return False
+
+        if counter >= profile_chart_generation_limit:
+            return True
 
     def get_bars_in_date_range(symbol, exchange, batch):
 
@@ -409,6 +435,7 @@ class MarketUtils():
         # Insert data into the tables.
         for bar in bars:
             bar_data_dict = bar.__dict__
+            bar_data_dict['symbol'] = symbol
             bar_data_instance = BarData()
             ModelUtil.update_model_fields(bar_data_instance, bar_data_dict)
             bar_data_instance.batch = batch

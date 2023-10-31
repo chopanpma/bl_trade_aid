@@ -6,7 +6,7 @@ from django.core.management import call_command
 from ...utils import ProfileChartUtils
 from ...utils import HourLetterMapper
 from django.core.files.uploadedfile import SimpleUploadedFile
-from ...models import ProfileChart, Batch
+from ...models import ProfileChart, Batch, BarData
 
 import logging
 
@@ -64,6 +64,26 @@ class MarketProfileOOModelTestCase(TestCase):
         day_tpo = pc.get_day_tpos('2023-03-13', 'MSFT')
         self.assertEquals(day_tpo[76], 'JMOPQ')
 
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_call_bar_data_and_insert_symbol(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        call_command('loaddata', 'bardata_fixture', verbosity=0)
+
+        batch = Batch.objects.all()[0]
+        ProfileChartUtils.create_profile_chart_wrapper(batch)
+        symbols = BarData.objects.filter(batch=batch).distinct('symbol')
+
+        self.assertEquals(2, len(symbols))
+        self.assertEquals('AAPL', symbols[0].symbol)
+        self.assertEquals('MSFT', symbols[1].symbol)
+
     def test_get_period_letters(
             self,
             ):
@@ -94,7 +114,7 @@ class MarketProfileOOModelTestCase(TestCase):
         # call the service that will create the column for the prices and one for day
 
         # icompare with the text that is supposed to have the mpc
-        filename = f'{settings.APPS_DIR}/patterns/tests/fixtures/profile_chart_output.txt'
+        filename = f'{settings.APPS_DIR}/patterns/tests/fixtures/profile_chart_output1.txt'
         with open(filename, 'r') as f:
             content = f.read()
 
