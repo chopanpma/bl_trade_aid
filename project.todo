@@ -4,7 +4,7 @@
     [D] fetch and save one bar detail. 
     [D] test the loop
   [D] storing with batch number
-  [P] market profile OO
+  [D] market profile OO
     [D] create periods
     [D] create tpo 
     [D] adjustments
@@ -27,16 +27,18 @@
       [D] create mp for all of them in disk test 
       [D] create mp for all of theem implmeentation
     [*]  test reality
-      [*] connect the wires to call the service for a batch 
+      [D] connect the wires to call the service for a batch 
         [D] test command
-        [*] save profiles in a folder
-        [ ] add limit to query
-        [ ] manage timeouts
-        [ ] admin so we can look ad the values.
+        [D] save profiles in a folder
+        [D] add limit to query
         [D] add the header to the file
-      [ ] compare charts
-      [ ] fix details
-  [ ]  get the list of candiates to run the query
+      [*] compare charts
+        [ ] fix details
+          [*] add command to use just one symbol 
+          [*] change price to be descendant 
+          [ ] manage timeouts
+  - as a user I would like to check standar models django admin
+  - as a user I would like to create experiments in django admin
   - as a user I would like to set reqScannerData parameters  in a table for the experiment
   - as a user I would like to be able to set an alert at an specific instrument either with a trade or no 
   - as a user I would like to be able to remove  an alert at an specific instrument either with a trade or no 
@@ -48,6 +50,7 @@
   - as a user I would like to be able bargain in buying, that is moving up until a limit. 
   - as a user I would like to be able bargain in selling, that is moving up until a limit. 
   - as a user I would like to be able to cancel an order if it has not been fullfilled. 
+  - as a user I would like to be able to Accept another exchanges so I can test more instruments. 
   - place a sell order
   - bargain on sell
   - cancell the sell order

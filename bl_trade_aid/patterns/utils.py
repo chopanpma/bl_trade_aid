@@ -298,6 +298,7 @@ class ProfileChartWrapper():
                 for index, row in self.profile_chart_df.iterrows():
                     self.profile_chart_df.at[index, date_label] = self.dates_df_dict[symbol].loc[date][0][
                             self.profile_chart_df.iloc[index]['Price']]
+            self.profile_chart_df.sort_values(by='Price', ascending=False, inplace=True)
 
             # self.profile_chart_df.to_csv('output.csv', sep='\t', index=False)
             pt = prettytable.PrettyTable()
@@ -320,10 +321,23 @@ class ProfileChartWrapper():
 
 
 class MarketUtils():
+
+    @staticmethod
+    def get_single_profile_chart(
+            symbol
+            ):
+
+        batch = Batch.objects.create()
+
+        MarketUtils.get_bars_from_single_symbol(batch, symbol)
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.generate_profile_charts(batch)
+
     @staticmethod
     def get_current_profile_charts(
-            profile_chart_generation_limit
+            profile_chart_generation_limit,
             ):
+
         batch = MarketUtils.get_contracts()
         scan_data_list = ScanData.objects.filter(batch=batch)
         MarketUtils.get_bars_from_scandata(
@@ -377,6 +391,14 @@ class MarketUtils():
         # Disconnect from TWS API
         ib.disconnect()
         return batch
+
+    def get_bars_from_single_symbol(
+            batch,
+            symbol
+            ):
+        MarketUtils.get_bars_in_date_range(symbol,
+                                           'SMART',
+                                           batch=batch)
 
     def get_bars_from_scandata(
             scan_data_dataset,

@@ -17,11 +17,19 @@ class Command(BaseCommand):
     help = 'Call trades of the day with parameters, and call market profile for them'
 
     def add_arguments(self, parser):
-        parser.add_argument('--profile-chart-generation-limit', '-limit',  help='Limit for profile generation')
+        parser.add_argument('--profile-chart-generation-limit', '-l',  help='Limit for profile generation')
+        parser.add_argument('--symbol', '-s',  help='Call profile for a single symbol')
 
     def handle(self, *args, **options):
         # command
         profile_chart_generation_limit_param = options['profile_chart_generation_limit']
+        symbol = options['symbol']
+
+        if symbol is not None:
+
+            MarketUtils.get_single_profile_chart(symbol)
+            return
+
         if profile_chart_generation_limit_param is None:
             profile_chart_generation_limit_param = '50'
 

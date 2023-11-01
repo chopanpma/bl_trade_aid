@@ -17,17 +17,12 @@ warnings.filterwarnings('ignore')
 def Print_Market_Profile(market_df, height_precision=1, frequency='D'):
 
     fin_prod_data = market_df.copy()
-    fin_prod_data.to_csv('initial_df.csv')
     fin_prod_data[('High')] = fin_prod_data[('High')] * height_precision
     fin_prod_data[('Low')] = fin_prod_data[('Low')] * height_precision
-    fin_prod_data.to_csv('after_precision.csv')
     fin_prod_data = fin_prod_data.round({'Low': 0, 'High': 0})
-    fin_prod_data.to_csv('after_rounding.csv')
 
     time_groups = fin_prod_data.set_index('Date')
-    time_groups.to_csv('timegroups.csv')
     time_groups = time_groups.groupby(pd.Grouper(freq=frequency))['Close'].mean()
-    time_groups.to_csv('grouping.csv')
 
     current_time_group_index = 0
     mp = defaultdict(str)
@@ -98,6 +93,7 @@ class Command(BaseCommand):
         )
 
     def normalize_df(self, df):
+        df["date"] = df["date"].dt.tz_convert("America/New_York")
         df = df.rename(columns={'date': 'DateTime'})
         df = df.rename(columns={'open': 'Open'})
         df = df.rename(columns={'high': 'High'})
@@ -142,9 +138,7 @@ class Command(BaseCommand):
                 useRTH=options['extended_hours'],
                 formatDate=1)
 
-        print(f'type bars:{type(bars)}')
 
-        print(f'bars:{bars}')
 
         df = self.normalize_df(util.df(bars))
 
