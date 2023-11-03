@@ -196,6 +196,14 @@ class ProfileChartUtils():
         profile_chart = ProfileChartWrapper(batch)
         return profile_chart
 
+    @staticmethod
+    def plot_tpo(prices_dict, min_price, max_price, tpo):
+        # TODO: small bug about the high price not being plotted
+        for price in range(min_price, max_price + 1):
+            prices_dict[price] += tpo
+
+        return prices_dict
+
 
 class ProfileChartWrapper():
     def __init__(self, batch, height_precision=100):
@@ -246,8 +254,12 @@ class ProfileChartWrapper():
                     day_chart = copy.deepcopy(self.mp_dict[symbol])
                 else:
                     day_chart = dates_df.loc[only_date]['ProfileChart']
-                price = int(row['Close'] * height_precision)
-                day_chart[int(price)] += mapper.get_letter(row['DateTime'].strftime('%H:%M'))
+
+                letter = mapper.get_letter(row['DateTime'].strftime('%H:%M'))
+                min_price = int(row['Low'])
+                max_price = int(row['High'])
+                day_chart = ProfileChartUtils.plot_tpo(day_chart, min_price, max_price, letter)
+
                 dates_df.loc[only_date]['ProfileChart'] = day_chart
 
             dates_df.to_csv(f'{symbol}.csv')
