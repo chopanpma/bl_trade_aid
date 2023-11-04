@@ -34,12 +34,15 @@
         [D] add the header to the file
       [*] compare charts
         [ ] fix details
-          [*] add command to use just one symbol 
-          [*] change price to be descendant 
+          [D] add command to use just one symbol 
+          [D] change price to be descendant 
+          [D] fix plotting periods
+          [*] fix sync on times 
           [ ] manage timeouts
   - as a user I would like to check standar models django admin
   - as a user I would like to create experiments in django admin
   - as a user I would like to set reqScannerData parameters  in a table for the experiment
+  - as a user I would like to Solve the problem of tz not being recognized by read_frame. 
   - as a user I would like to be able to set an alert at an specific instrument either with a trade or no 
   - as a user I would like to be able to remove  an alert at an specific instrument either with a trade or no 
   - as a user I would like to be able to set an alert at an specific open trade 

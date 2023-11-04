@@ -255,7 +255,8 @@ class ProfileChartWrapper():
                 else:
                     day_chart = dates_df.loc[only_date]['ProfileChart']
 
-                letter = mapper.get_letter(row['DateTime'].strftime('%H:%M'))
+                localized_time = row['DateTime'].tz_convert(tz='America/New_York')
+                letter = mapper.get_letter(localized_time.strftime('%H:%M'))
                 min_price = int(row['Low'])
                 max_price = int(row['High'])
                 day_chart = ProfileChartUtils.plot_tpo(day_chart, min_price, max_price, letter)
@@ -283,7 +284,6 @@ class ProfileChartWrapper():
         df = df.rename(columns={'low': 'Low'})
         df = df.rename(columns={'close': 'Close'})
         df = df.rename(columns={'volume': 'Volume'})
-
         df = df.drop(df.columns.difference(
             [
                 'DateTime',
@@ -293,8 +293,8 @@ class ProfileChartWrapper():
                 'Close',
                 'Volume',
                 'symbol',
+                'tz',
                 ]), 1, inplace=False)
-
         df['Date'] = pd.to_datetime(pd.to_datetime(df['DateTime']).dt.date)
         df = df.set_index(pd.DatetimeIndex(df['Date']))
 
@@ -482,35 +482,35 @@ class MarketUtils():
 class HourLetterMapper():
     def __init__(self):
         self.hours_to_letter = {
-            '07:00': 'Z',
-            '07:30': '$',
-            '08:00': 'A',
-            '08:30': 'B',
-            '09:00': 'C',
-            '09:30': 'D',
-            '10:00': 'E',
-            '10:30': 'F',
-            '11:00': 'G',
-            '11:30': 'H',
-            '12:00': 'I',
-            '12:30': 'J',
-            '13:00': 'K',
-            '13:30': 'L',
-            '14:00': 'M',
-            '14:30': 'N',
-            '15:00': 'O',
-            '15:30': 'o',
-            '16:00': 's',
-            '16:30': 't',
-            '17:00': 'P',
-            '17:30': 'Q',
-            '18:00': 'R',
-            '18:30': 'S',
-            '19:00': 'T',
-            '19:30': 'U',
-            '20:00': 'V',
-            '20:30': 'W',
-            '21:00': 'X',
+            '07:00': 'v',
+            '07:30': 'w',
+            '08:00': 'x',
+            '08:30': 'y',
+            '09:00': 'z',
+            '09:30': 'A',
+            '10:00': 'B',
+            '10:30': 'C',
+            '11:00': 'D',
+            '11:30': 'E',
+            '12:00': 'F',
+            '12:30': 'G',
+            '13:00': 'H',
+            '13:30': 'I',
+            '14:00': 'J',
+            '14:30': 'K',
+            '15:00': 'L',
+            '15:30': 'M',
+            '16:00': 'N',
+            '16:30': 'O',
+            '17:00': 'o',
+            '17:30': 's',
+            '18:00': 't',
+            '18:30': 'P',
+            '19:00': 'Q',
+            '19:30': 'R',
+            '20:00': 'S',
+            '20:30': 'T',
+            '21:00': 'U',
             }
 
         self.hours_to_letter_extended = {

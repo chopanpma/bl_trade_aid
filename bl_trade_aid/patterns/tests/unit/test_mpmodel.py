@@ -62,7 +62,7 @@ class MarketProfileOOModelTestCase(TestCase):
         self.assertEquals(14, len(pc.periods('MSFT')))
         # test the profile chart one day column is created
         day_tpo = pc.get_day_tpos('2023-03-13', 'MSFT')
-        self.assertEquals(day_tpo[76], 'JMOPQ')
+        self.assertEquals(day_tpo[76], 'yzABCDEHIJK')
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
@@ -89,11 +89,11 @@ class MarketProfileOOModelTestCase(TestCase):
             ):
         mapper = HourLetterMapper()
 
-        self.assertEquals('A', mapper.get_letter('08:00'))
-        self.assertEquals('I', mapper.get_letter('12:00'))
-        self.assertEquals('o', mapper.get_letter('15:30'))
-        self.assertEquals('U', mapper.get_letter('19:30'))
-        self.assertEquals('$', mapper.get_letter('07:30'))
+        self.assertEquals('x', mapper.get_letter('08:00'))
+        self.assertEquals('F', mapper.get_letter('12:00'))
+        self.assertEquals('M', mapper.get_letter('15:30'))
+        self.assertEquals('R', mapper.get_letter('19:30'))
+        self.assertEquals('w', mapper.get_letter('07:30'))
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
