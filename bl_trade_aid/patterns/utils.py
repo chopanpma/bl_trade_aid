@@ -213,6 +213,7 @@ class ProfileChartWrapper():
         self.symbols_df_dict = {}
         self.dates_df_dict = {}
         self.mp_dict = {}
+        self.height_precision = height_precision
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -222,8 +223,8 @@ class ProfileChartWrapper():
             symbol_df = full_table_df[filter_condition]
 
             symbol_df = self.normalize_df(symbol_df)
-            symbol_df[('High')] = symbol_df[('High')] * height_precision
-            symbol_df[('Low')] = symbol_df[('Low')] * height_precision
+            symbol_df[('High')] = symbol_df[('High')] * self.height_precision
+            symbol_df[('Low')] = symbol_df[('Low')] * self.height_precision
             symbol_df = symbol_df.round({'Low': 0, 'High': 0})
             unique_dates = sorted(symbol_df['Date'].unique())
             dates_df = pd.DataFrame({'Date': unique_dates})
@@ -300,6 +301,10 @@ class ProfileChartWrapper():
 
         return df
 
+    def format_price(self, df):
+        df['Price'] = df['Price'].apply(lambda p: f"{((p * 1.0)/self.height_precision):.3f}")
+        return df
+
     def generate_profile_charts(self, batch):
         for symbol in self.dates_df_dict.keys():
             self.profile_chart_df = pd.DataFrame({'Price': self.mp_dict[symbol].keys()})
@@ -311,11 +316,12 @@ class ProfileChartWrapper():
                     self.profile_chart_df.at[index, date_label] = self.dates_df_dict[symbol].loc[date][0][
                             self.profile_chart_df.iloc[index]['Price']]
             self.profile_chart_df.sort_values(by='Price', ascending=False, inplace=True)
+            print_df = self.format_price(self.profile_chart_df.copy())
 
             # self.profile_chart_df.to_csv('output.csv', sep='\t', index=False)
             pt = prettytable.PrettyTable()
-            pt.field_names = list(self.profile_chart_df.columns)
-            for index, row in self.profile_chart_df.iterrows():
+            pt.field_names = list(print_df.columns)
+            for index, row in print_df.iterrows():
                 pt.add_row(row)
 
             pt.align = 'l'

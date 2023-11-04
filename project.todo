@@ -33,12 +33,14 @@
         [D] add limit to query
         [D] add the header to the file
       [*] compare charts
-        [ ] fix details
+        [*] fix details
           [D] add command to use just one symbol 
           [D] change price to be descendant 
           [D] fix plotting periods
-          [*] fix sync on times 
-          [ ] manage timeouts
+          [D] fix sync on times 
+          [*] fix display real price 
+  [ ] edge cases 
+       [ ] manage timeouts
   - as a user I would like to check standar models django admin
   - as a user I would like to create experiments in django admin
   - as a user I would like to set reqScannerData parameters  in a table for the experiment
