@@ -17,16 +17,16 @@ warnings.filterwarnings('ignore')
 def Print_Market_Profile(market_df, height_precision=1, frequency='D'):
 
     fin_prod_data = market_df.copy()
-    fin_prod_data.to_csv('initial.csv')
+    # fin_prod_data.to_csv('initial.csv')
     fin_prod_data[('High')] = fin_prod_data[('High')] * height_precision
     fin_prod_data[('Low')] = fin_prod_data[('Low')] * height_precision
-    fin_prod_data.to_csv('after_high_low.csv')
+    # fin_prod_data.to_csv('after_high_low.csv')
     fin_prod_data = fin_prod_data.round({'Low': 0, 'High': 0})
-    fin_prod_data.to_csv('after_rounding_low.csv')
+    # fin_prod_data.to_csv('after_rounding_low.csv')
 
     time_groups = fin_prod_data.set_index('Date')
     time_groups = time_groups.groupby(pd.Grouper(freq=frequency))['Close'].mean()
-    fin_prod_data.to_csv('after_timegroups_low.csv')
+    # fin_prod_data.to_csv('after_timegroups_low.csv')
 
     current_time_group_index = 0
     mp = defaultdict(str)
@@ -114,7 +114,7 @@ class Command(BaseCommand):
                 'Close',
                 'Volume',
                 ]), 1, inplace=False)
-        df.to_csv('after_normalization.csv')
+        # df.to_csv('after_normalization.csv')
 
         df['Date'] = pd.to_datetime(pd.to_datetime(df['DateTime']).dt.date)
         df = df.set_index(pd.DatetimeIndex(df['Date']))

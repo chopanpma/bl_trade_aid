@@ -14,7 +14,7 @@
     [ ] add accepted tpos
     [ ] add value area 
     [ ] add initial balance
-  [*] Compare to old profile to check accuracy
+  [D] Compare to old profile to check accuracy
     [D] test/implement create files per date/batch/instrument in string
     [D] test/implement create files per date/batch/instrument in tables
       [D] create all profiles (test/impl)
@@ -26,22 +26,23 @@
         [D] create a test about fetch and get bardata and create chart
       [D] create mp for all of them in disk test 
       [D] create mp for all of theem implmeentation
-    [*]  test reality
+    [D]  test reality
       [D] connect the wires to call the service for a batch 
         [D] test command
         [D] save profiles in a folder
         [D] add limit to query
         [D] add the header to the file
-      [*] compare charts
-        [*] fix details
+      [D] compare charts
+        [D] fix details
           [D] add command to use just one symbol 
           [D] change price to be descendant 
           [D] fix plotting periods
           [D] fix sync on times 
-          [*] fix display real price 
+          [D] fix display real price 
   [ ] edge cases 
        [ ] manage timeouts
-  - as a user I would like to check standar models django admin
+       [ ] manage different precision
+  * as a user I would like to check standar models django admin
   - as a user I would like to create experiments in django admin
   - as a user I would like to set reqScannerData parameters  in a table for the experiment
   - as a user I would like to Solve the problem of tz not being recognized by read_frame. 

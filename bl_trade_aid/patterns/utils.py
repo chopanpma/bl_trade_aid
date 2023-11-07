@@ -264,7 +264,7 @@ class ProfileChartWrapper():
 
                 dates_df.loc[only_date]['ProfileChart'] = day_chart
 
-            dates_df.to_csv(f'{symbol}.csv')
+            # dates_df.to_csv(f'{symbol}.csv')
             self.dates_df_dict[symbol] = dates_df
             self.symbols_df_dict[symbol] = symbol_df
 
@@ -275,8 +275,19 @@ class ProfileChartWrapper():
         return self.symbols_df_dict[symbol]['DateTime'].to_dict()
 
     def get_day_tpos(self, day, symbol):
-
         return self.dates_df_dict[symbol].loc[pd.Timestamp(day)]['ProfileChart']
+
+    def get_point_of_control(self, day, symbol):
+        # loop and get the longest value
+        day_profile_chart = self.dates_df_dict[symbol].loc[pd.Timestamp(day)]['ProfileChart']
+        point_of_control_size = 0
+        point_of_control_price = 0.0
+        for price in day_profile_chart.keys():
+            if len(day_profile_chart[price]) > point_of_control_size:
+                point_of_control_size = len(day_profile_chart[price])
+                point_of_control_price = price
+
+        return (point_of_control_price, day_profile_chart[point_of_control_price])
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})
@@ -301,8 +312,11 @@ class ProfileChartWrapper():
 
         return df
 
+    def price_text_formatting(self, price):
+        return f"{((price * 1.0)/self.height_precision):.3f}"
+
     def format_price(self, df):
-        df['Price'] = df['Price'].apply(lambda p: f"{((p * 1.0)/self.height_precision):.3f}")
+        df['Price'] = df['Price'].apply(lambda p: self.price_text_formatting(p))
         return df
 
     def generate_profile_charts(self, batch):

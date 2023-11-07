@@ -67,6 +67,27 @@ class MarketProfileOOModelTestCase(TestCase):
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
     @patch('ib_insync.IB.connect')
+    def test_get_control_value_for_contracts(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        call_command('loaddata', 'bardata_fixture', verbosity=0)
+
+        batch = Batch.objects.all()[0]
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+
+        self.assertEquals(14, len(pc.periods('MSFT')))
+        # test the profile chart one day column is created
+        point_of_control = pc.get_point_of_control('2023-03-13', 'MSFT')
+        expected_point_of_control = (75, 'yzABCDEFGHJK')
+        self.assertEquals(expected_point_of_control, point_of_control)
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
     def test_call_bar_data_and_insert_symbol(
             self,
             mock_connect,
