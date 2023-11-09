@@ -1,5 +1,12 @@
 [
     {
+        "model": "patterns.experiment",
+        "pk": 1,
+        "fields": {
+            "name": "Test Experiment"
+        }
+    },
+    {
         "model": "patterns.batch",
         "pk": 1,
         "fields": {

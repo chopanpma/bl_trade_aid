@@ -6,9 +6,10 @@ from django.core.management import call_command
 from ...utils import ProfileChartUtils
 from ...utils import HourLetterMapper
 from django.core.files.uploadedfile import SimpleUploadedFile
-from ...models import ProfileChart, Batch, BarData
+from ...models import ProfileChart, Batch, BarData, Experiment
 
 import logging
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +18,8 @@ class ProfileChartModelTest(TestCase):
 
     def test_chart_file_upload(self):
         # Creating a dummy batch for the ForeignKey
-        batch = Batch.objects.create(experiment=1)  # Add required fields here
+        experiment = Experiment.objects.create(name="experiment")
+        batch = Batch.objects.create(experiment=experiment)  # Add required fields here
 
         # Creating a dummy uploaded file
         content = b"dummy_file_content"
@@ -79,11 +81,81 @@ class MarketProfileOOModelTestCase(TestCase):
         batch = Batch.objects.all()[0]
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
 
-        self.assertEquals(14, len(pc.periods('MSFT')))
         # test the profile chart one day column is created
-        point_of_control = pc.get_point_of_control('2023-03-13', 'MSFT')
-        expected_point_of_control = (75, 'yzABCDEFGHJK')
-        self.assertEquals(expected_point_of_control, point_of_control)
+        prices_dict = {
+            70: 'y', 71: 'y', 72: 'y', 73: 'y', 74: 'yzABCEFG', 75: 'yzABCDEFGHJK', 76: 'yzABCDEHIJK',
+            77: 'yIJK', 78: 'yK', 79: 'yK', 80: '', 81: '', 82: '', 83: '', 84: '', 85: '', 86: '',
+            87: '', 88: '', 89: '', 90: '', 91: '', 92: '', 93: '', 94: '', 95: '', 96: '', 97: '',
+            98: '', 99: '', 100: '', 101: '', 102: '', 103: '', 104: '', 105: '', 106: '', 107: '',
+            108: '', 109: '', 110: '', 111: ''}
+        charts = {}
+        charts['ProfileChart'] = prices_dict
+        date = pd.Timestamp('2023-03-13 00:00:00')
+        point_of_control = pc.get_control_point(date, charts)
+        self.assertEquals(75, point_of_control)
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_get_accepted_band_for_all_except_last_two_days(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        batch = Batch.objects.all()[0]
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.positive_outcomes.all()
+        self.assertEquals(8, len(ps))
+
+#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+#     @patch('ib_insync.IB.reqHistoricalData')
+#     @patch('ib_insync.IB.connect')
+#     def test_wider_accepted_band(
+#             self,
+#             mock_connect,
+#             mock_req_historical_data,
+#             mock_disconnect_bar
+#             ):
+#         self.fail("not implemented")
+#
+#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+#     @patch('ib_insync.IB.reqHistoricalData')
+#     @patch('ib_insync.IB.connect')
+#     def test_narrower_accepted_band(
+#             self,
+#             mock_connect,
+#             mock_req_historical_data,
+#             mock_disconnect_bar
+#             ):
+#         self.fail("not implemented")
+#
+#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+#     @patch('ib_insync.IB.reqHistoricalData')
+#     @patch('ib_insync.IB.connect')
+#     def test_offset_up(
+#             self,
+#             mock_connect,
+#             mock_req_historical_data,
+#             mock_disconnect_bar
+#             ):
+#         self.fail("not implemented")
+
+#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+#     @patch('ib_insync.IB.reqHistoricalData')
+#     @patch('ib_insync.IB.connect')
+#     def test_offset_down(
+#             self,
+#             mock_connect,
+#             mock_req_historical_data,
+#             mock_disconnect_bar
+#             ):
+#         self.fail("not implemented")
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
@@ -129,7 +201,7 @@ class MarketProfileOOModelTestCase(TestCase):
         call_command('loaddata', 'bardata_fixture', verbosity=0)
         batch = Batch.objects.all()[0]
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
-        pc.generate_profile_charts(batch)
+        pc.generate_profile_charts()
         # create mocks
         # load profile chart  with pickle
         # call the service that will create the column for the prices and one for day
@@ -155,7 +227,7 @@ class MarketProfileOOModelTestCase(TestCase):
         call_command('loaddata', 'bardata_fixture_2', verbosity=0)
         batch = Batch.objects.all()[0]
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
-        pc.generate_profile_charts(batch)
+        pc.generate_profile_charts()
         # create mocks
         # load profile chart  with pickle
         # call the service that will create the column for the prices and one for day

@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.utils import timezone
 from model_utils.models import TimeStampedModel
 from zoneinfo import ZoneInfo
 
@@ -89,17 +88,32 @@ class BarData(TimeStampedModel):
 
     symbol = models.CharField(_('Symbol'), max_length=10)
 
+    experiment_positive = models.BooleanField(default=False)
+
 #     def save(self, *args, **kwargs):
 #         if self.date is not None:
 #             # Convert the datetime to the appropriate timezone
 #             self.date = timezone.make_aware(self.date, self.tz)
-# 
 #         super().save(*args, **kwargs)
 
 
+class Experiment(TimeStampedModel):
+    name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
+                            help_text=_('Name of the experiment'))
+
+
+class PositiveOutcome(TimeStampedModel):
+    symbol = models.CharField(_('Symbol'), max_length=12,
+                              help_text=_('Symbol'))
+    batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='positive_outcomes',
+                              null=True, blank=True,
+                              on_delete=models.PROTECT)
+
+
 class Batch(TimeStampedModel):
-    experiment = models.IntegerField(_('Experiment'), null=True, blank=True,
-                                     help_text=_('Experiment the batch is in'))
+    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'), related_name='batches',
+                                   null=True, blank=True,
+                                   on_delete=models.PROTECT)
 
 
 class ScanData(TimeStampedModel):

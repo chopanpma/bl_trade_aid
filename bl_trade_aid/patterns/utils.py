@@ -12,8 +12,10 @@ from .models import ContractDetails
 from .models import BarData
 from .models import Batch
 from .models import ProfileChart
+from .models import PositiveOutcome
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.db.models import Q
 from collections import defaultdict
 import queue
 import copy
@@ -270,6 +272,8 @@ class ProfileChartWrapper():
 
             #  with open('mp_pf_dataframe.pickle', 'wb') as file:
             #     pickle.dump(self.df, file)
+    def get_dates_df_dict(self):
+        return self.dates_df_dict
 
     def periods(self, symbol):
         return self.symbols_df_dict[symbol]['DateTime'].to_dict()
@@ -277,17 +281,64 @@ class ProfileChartWrapper():
     def get_day_tpos(self, day, symbol):
         return self.dates_df_dict[symbol].loc[pd.Timestamp(day)]['ProfileChart']
 
-    def get_point_of_control(self, day, symbol):
-        # loop and get the longest value
-        day_profile_chart = self.dates_df_dict[symbol].loc[pd.Timestamp(day)]['ProfileChart']
-        point_of_control_size = 0
-        point_of_control_price = 0.0
-        for price in day_profile_chart.keys():
-            if len(day_profile_chart[price]) > point_of_control_size:
-                point_of_control_size = len(day_profile_chart[price])
-                point_of_control_price = price
+    def check_symbol_positive_experiment(
+            self,
+            control_points,
+            max_point_of_control,
+            min_point_of_control):
 
-        return (point_of_control_price, day_profile_chart[point_of_control_price])
+        dates = list(control_points.keys())
+        responses = []
+        for date in dates[-2:]:
+            if control_points[date] <= min_point_of_control:
+                responses.append('DOWN')
+            else:
+                if control_points[date] >= max_point_of_control:
+                    # last two are inside the range
+                    responses.append('UP')
+                else:
+                    return False
+        # Both have to be outside the band in the same direction
+
+        first_element = responses[0]
+        for element in responses[1:]:
+            if element != first_element:
+                return False
+
+        return True
+
+    def get_control_point(self, date, charts):
+        max_length = 0
+        control_point = 0
+        for price in charts['ProfileChart'].keys():
+            if len(charts['ProfileChart'][price]) > max_length:
+                max_length = len(charts['ProfileChart'][price])
+                control_point = price
+
+        return control_point
+
+    def get_control_points(self, symbol):
+        control_points = {}
+        for date, charts in self.dates_df_dict[symbol].iterrows():
+            control_points[date] = self.get_control_point(date, charts)
+
+        return control_points
+
+    def set_participant_symbols(self):
+        positive_symbols = []
+
+        for symbol in self.dates_df_dict.keys():
+            control_points = self.get_control_points(symbol)
+            if len(control_points) > 2:
+                max_point_of_control = max(list(control_points.values())[:-2])
+                min_point_of_control = min(list(control_points.values())[:-2])
+                if self.check_symbol_positive_experiment(control_points,
+                                                         max_point_of_control,
+                                                         min_point_of_control):
+                    positive_symbols.append(symbol)
+            
+        for positive_symbol in positive_symbols:
+            PositiveOutcome.objects.create(symbol=positive_symbol, batch=self.batch)
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})
@@ -319,7 +370,7 @@ class ProfileChartWrapper():
         df['Price'] = df['Price'].apply(lambda p: self.price_text_formatting(p))
         return df
 
-    def generate_profile_charts(self, batch):
+    def generate_profile_charts(self):
         for symbol in self.dates_df_dict.keys():
             self.profile_chart_df = pd.DataFrame({'Price': self.mp_dict[symbol].keys()})
             for date, charts in self.dates_df_dict[symbol].iterrows():

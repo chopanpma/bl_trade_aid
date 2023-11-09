@@ -11,9 +11,6 @@
     [D] crear oo model
     [D] callculate precision 
     [D] add prints
-    [ ] add accepted tpos
-    [ ] add value area 
-    [ ] add initial balance
   [D] Compare to old profile to check accuracy
     [D] test/implement create files per date/batch/instrument in string
     [D] test/implement create files per date/batch/instrument in tables
@@ -42,7 +39,23 @@
   [ ] edge cases 
        [ ] manage timeouts
        [ ] manage different precision
-  * as a user I would like to check standar models django admin
+  * as a trader I would like to have the possible leads on the daily scann marked so I can look at them
+    [D] add control point
+    [*] add accepted band 
+    [ ] add last value outside range
+    [ ] test live
+    [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
+    [ ] automate in parameters for lead contract as an experiment.
+  [ ] add fundamentals of profile chart
+    [ ] add accepted tpos
+    [ ] add value area 
+    [ ] add initial balance
+
+  [1] as a user I would like to check standar models django admin
+    [ ] create clases for query config and map to the experiment
+    [ ] create clases for criteria for making the contracts a lead  and add to an experiment
+    [ ] create clases copy experiment to change into another experiment 
+
   - as a user I would like to create experiments in django admin
   - as a user I would like to set reqScannerData parameters  in a table for the experiment
   - as a user I would like to Solve the problem of tz not being recognized by read_frame. 
