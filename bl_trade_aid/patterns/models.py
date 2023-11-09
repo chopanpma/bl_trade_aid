@@ -97,6 +97,16 @@ class BarData(TimeStampedModel):
 #         super().save(*args, **kwargs)
 
 
+class Rule(TimeStampedModel):
+    name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
+                            help_text=_('Name of the rule'))
+    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'), related_name='rules',
+                                   null=True, blank=True,
+                                   on_delete=models.PROTECT)
+    control_point_band_ticks = models.IntegerField(_('Control Point Band Ticks'), null=True, blank=True,
+                                                   help_text=_('Ticks allowed for the band'))
+
+
 class Experiment(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the experiment'))

@@ -6,7 +6,11 @@ from django.core.management import call_command
 from ...utils import ProfileChartUtils
 from ...utils import HourLetterMapper
 from django.core.files.uploadedfile import SimpleUploadedFile
-from ...models import ProfileChart, Batch, BarData, Experiment
+from ...models import ProfileChart
+from ...models import Batch
+from ...models import BarData
+from ...models import Experiment
+from ...models import Rule
 
 import logging
 import pandas as pd
@@ -97,7 +101,7 @@ class MarketProfileOOModelTestCase(TestCase):
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
     @patch('ib_insync.IB.connect')
-    def test_get_accepted_band_for_all_except_last_two_days(
+    def test_get_accepted_band_for_all_except_last_two_days_max_band(
             self,
             mock_connect,
             mock_req_historical_data,
@@ -113,17 +117,31 @@ class MarketProfileOOModelTestCase(TestCase):
         ps = batch.positive_outcomes.all()
         self.assertEquals(8, len(ps))
 
-#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
-#     @patch('ib_insync.IB.reqHistoricalData')
-#     @patch('ib_insync.IB.connect')
-#     def test_wider_accepted_band(
-#             self,
-#             mock_connect,
-#             mock_req_historical_data,
-#             mock_disconnect_bar
-#             ):
-#         self.fail("not implemented")
-#
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_wide_accepted_band(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        experiment_rule = Rule.objects.create(control_point_band_ticks=30)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.positive_outcomes.all()
+        self.assertEquals(2, len(ps))
+
 #     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
 #     @patch('ib_insync.IB.reqHistoricalData')
 #     @patch('ib_insync.IB.connect')

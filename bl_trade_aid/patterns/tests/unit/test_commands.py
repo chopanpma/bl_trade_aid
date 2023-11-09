@@ -25,8 +25,10 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
     @patch('bl_trade_aid.patterns.utils.ProfileChartWrapper.generate_profile_charts')
+    @patch('bl_trade_aid.patterns.utils.ProfileChartWrapper.set_participant_symbols')
     def test_generate_current_profile_chart_with_limits(
             self,
+            mock_set_participant_symbols,
             mock_generate_profile_charts,
             mock_get_bars_in_date_range,
             mock_get_contracts,
@@ -40,6 +42,7 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         # Call command
         call_command('generate_current_profile_charts', profile_chart_generation_limit=20)
         self.assertEqual(20, mock_get_bars_in_date_range.call_count)
+        self.assertEqual(1, mock_set_participant_symbols.call_count)
 
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')

@@ -15,7 +15,6 @@ from .models import ProfileChart
 from .models import PositiveOutcome
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.db.models import Q
 from collections import defaultdict
 import queue
 import copy
@@ -207,6 +206,24 @@ class ProfileChartUtils():
         return prices_dict
 
 
+class RuleExecutor():
+    def __init__(self, batch):
+        self.batch = batch
+
+    def rules_passed(self,
+                     max_point_of_control,
+                     min_point_of_control,
+                     ):
+        response = True
+        for rule in self.batch.experiment.rules.all():
+            if rule.control_point_band_ticks is not None:
+                band_width = max_point_of_control - min_point_of_control
+                if band_width > rule.control_point_band_ticks:
+                    response = False
+
+        return response
+
+
 class ProfileChartWrapper():
     def __init__(self, batch, height_precision=100):
 
@@ -216,6 +233,7 @@ class ProfileChartWrapper():
         self.dates_df_dict = {}
         self.mp_dict = {}
         self.height_precision = height_precision
+        self.rules_executor = RuleExecutor(batch)
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -288,6 +306,7 @@ class ProfileChartWrapper():
             min_point_of_control):
 
         dates = list(control_points.keys())
+
         responses = []
         for date in dates[-2:]:
             if control_points[date] <= min_point_of_control:
@@ -304,6 +323,8 @@ class ProfileChartWrapper():
         for element in responses[1:]:
             if element != first_element:
                 return False
+        if not self.rules_executor.rules_passed(max_point_of_control, min_point_of_control):
+            return False
 
         return True
 
@@ -336,7 +357,7 @@ class ProfileChartWrapper():
                                                          max_point_of_control,
                                                          min_point_of_control):
                     positive_symbols.append(symbol)
-            
+
         for positive_symbol in positive_symbols:
             PositiveOutcome.objects.create(symbol=positive_symbol, batch=self.batch)
 
@@ -430,6 +451,7 @@ class MarketUtils():
                 )
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts(batch)
+        pc.set_participant_symbols()
 
     @staticmethod
     def get_contracts():

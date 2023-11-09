@@ -41,11 +41,14 @@
        [ ] manage different precision
   * as a trader I would like to have the possible leads on the daily scann marked so I can look at them
     [D] add control point
-    [*] add accepted band 
-    [ ] add last value outside range
+    [D] add accepted band 
+    [D] add last value outside range
     [ ] test live
     [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
     [ ] automate in parameters for lead contract as an experiment.
+      [D] add parameter for band width
+      [ ] add parameter for days offset
+      [ ] add parameter for ticks offset
   [ ] add fundamentals of profile chart
     [ ] add accepted tpos
     [ ] add value area 
@@ -56,7 +59,7 @@
     [ ] create clases for criteria for making the contracts a lead  and add to an experiment
     [ ] create clases copy experiment to change into another experiment 
 
-  - as a user I would like to create experiments in django admin
+  [*] as a user I would like to create experiments in django admin
   - as a user I would like to set reqScannerData parameters  in a table for the experiment
   - as a user I would like to Solve the problem of tz not being recognized by read_frame. 
   - as a user I would like to be able to set an alert at an specific instrument either with a trade or no 
