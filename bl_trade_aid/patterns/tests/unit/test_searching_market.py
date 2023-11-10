@@ -77,10 +77,6 @@ class ScannerSubscriptionTestCase(TestCase):
         how_many_of_them_are_in_the_batch = ScanData.objects.filter(batch=batch)
         self.assertEquals(50, how_many_of_them_are_in_the_batch.count())
 
-    # TODO:
-    # 1. create the fixture calling the command from the test DONE
-    # 2. mock the call to the scan return data
-    # 3. call the insert as many times as records are in scanData
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
     def test_insert_loop_over_ScanData_entries(
             self,
@@ -99,9 +95,6 @@ class ScannerSubscriptionTestCase(TestCase):
         # - assert the function calls the mock
         self.assertEquals(50, mock_get_bars.call_count)
 
-    # TODO:
-    # 1. mock all dependdencies
-    # 2. assert the callcounts
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_from_scandata')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
@@ -113,7 +106,7 @@ class ScannerSubscriptionTestCase(TestCase):
             mock_get_bars_from_scandata,
             mock_get_contracts,
             ):
-        mock_get_contracts.return_value = 1
+        mock_get_contracts.return_value = Batch.objects.all()[0]
 
         call_command('loaddata', 'scandata_fixture', verbosity=0)
 
@@ -122,4 +115,28 @@ class ScannerSubscriptionTestCase(TestCase):
         self.assertEquals(1, mock_get_contracts.call_count)
         self.assertEquals(1, mock_get_bars_from_scandata.call_count)
         self.assertEquals(1, mock_generate_profile_charts.call_count)
+        # assert that the file has been created
+
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
+    def test_insert_loop_over_ScanData_entries_only_if_they_have_not_being_evaluated(
+            self,
+            mock_get_bars_in_date_range,
+            mock_get_contracts,
+            ):
+        mock_get_contracts.return_value = Batch.objects.all()[0]
+
+        call_command('loaddata', 'contract_fixture2', verbosity=0)
+        call_command('loaddata', 'contract_details_fixture', verbosity=0)
+        call_command('loaddata', 'scandata_fixture_2', verbosity=0)
+        call_command('loaddata', 'bardata_fixture_2', verbosity=0)
+
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+
+        self.assertEquals(2, mock_get_bars_in_date_range.call_count)
+
+        mock_get_bars_in_date_range.reset_mock()
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+
+        self.assertEquals(0, mock_get_bars_in_date_range.call_count)
         # assert that the file has been created

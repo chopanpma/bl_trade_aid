@@ -1,0 +1,32 @@
+[
+{
+    "model": "patterns.contract",
+    "pk": 1,
+    "fields": {
+        "created": "2023-10-27T11:15:58.754Z",
+        "modified": "2023-10-27T11:15:58.754Z",
+        "secType": "STK",
+        "conId": 623240474,
+        "symbol": "AAPL",
+        "exchange": "SMART",
+        "currency": "USD",
+        "localSymbol": "APLM",
+        "tradeClass": ""
+    }
+},
+{
+    "model": "patterns.contract",
+    "pk": 2,
+    "fields": {
+        "created": "2023-10-27T11:15:58.768Z",
+        "modified": "2023-10-27T11:15:58.768Z",
+        "secType": "STK",
+        "conId": 656769404,
+        "symbol": "MSFT",
+        "exchange": "SMART",
+        "currency": "USD",
+        "localSymbol": "NKGN",
+        "tradeClass": ""
+    }
+}
+]

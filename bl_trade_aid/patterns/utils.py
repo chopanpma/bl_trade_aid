@@ -13,8 +13,10 @@ from .models import BarData
 from .models import Batch
 from .models import ProfileChart
 from .models import PositiveOutcome
+from .models import Experiment
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.db.models import Q
 from collections import defaultdict
 import queue
 import copy
@@ -347,7 +349,6 @@ class ProfileChartWrapper():
 
     def set_participant_symbols(self):
         positive_symbols = []
-
         for symbol in self.dates_df_dict.keys():
             control_points = self.get_control_points(symbol)
             if len(control_points) > 2:
@@ -443,14 +444,24 @@ class MarketUtils():
             ):
 
         batch = MarketUtils.get_contracts()
-        scan_data_list = ScanData.objects.filter(batch=batch)
+        experiment = Experiment.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        processed_symbols = PositiveOutcome.objects.filter(
+                created__date=batch.created.date(),
+                batch__experiment=batch.experiment).values_list('symbol')
+
+        scan_data_list = ScanData.objects.filter(
+                Q(batch=batch) &
+                ~Q(contractDetails__contract__symbol__in=processed_symbols)
+                )
         MarketUtils.get_bars_from_scandata(
                 scan_data_list,
                 batch=batch,
                 profile_chart_generation_limit=profile_chart_generation_limit,
                 )
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
-        pc.generate_profile_charts(batch)
+        pc.generate_profile_charts()
         pc.set_participant_symbols()
 
     @staticmethod
@@ -458,7 +469,7 @@ class MarketUtils():
 
         # Connect to TWS API
         ib = IB()
-        ib.connect('192.168.0.20', 7497, clientId=1)
+        ib.connect('192.168.0.20', 7497, clientId=1, account='U3972489')
 
         # Request scanner data
         scanner = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
@@ -506,12 +517,12 @@ class MarketUtils():
                                            batch=batch)
 
     def get_bars_from_scandata(
-            scan_data_dataset,
+            scan_data_queryset,
             batch,
             profile_chart_generation_limit=None
             ):
         counter = 0
-        for scan_data_instance in scan_data_dataset:
+        for scan_data_instance in scan_data_queryset:
             MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
                                                scan_data_instance.contractDetails.contract.exchange,
                                                batch=batch)
