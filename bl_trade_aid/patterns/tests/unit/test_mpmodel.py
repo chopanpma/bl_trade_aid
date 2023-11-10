@@ -114,7 +114,7 @@ class MarketProfileOOModelTestCase(TestCase):
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.set_participant_symbols()
 
-        ps = batch.positive_outcomes.all()
+        ps = batch.processed_contracts.filter(positive_outcome=True)
         self.assertEquals(8, len(ps))
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
@@ -139,7 +139,7 @@ class MarketProfileOOModelTestCase(TestCase):
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.set_participant_symbols()
 
-        ps = batch.positive_outcomes.all()
+        ps = batch.processed_contracts.filter(positive_outcome=True)
         self.assertEquals(2, len(ps))
 
 #     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)

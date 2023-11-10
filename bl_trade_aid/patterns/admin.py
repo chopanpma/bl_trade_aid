@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Experiment
 from .models import Rule
-from .models import PositiveOutcome
+from .models import ProcessedContract
 from .models import Batch
 
 
@@ -23,11 +23,12 @@ class RuleAdmin(admin.ModelAdmin):
     list_filter = ('name', 'experiment')
 
 
-@admin.register(PositiveOutcome)
-class PositiveOutcomeAdmin(admin.ModelAdmin):
+@admin.register(ProcessedContract)
+class ProcessedContractsAdmin(admin.ModelAdmin):
     list_display = (
             'symbol',
             'batch',
+            'positive_outcome',
             )
 
-    list_filter = ('symbol', 'batch')
+    list_filter = ('symbol', 'batch', 'positive_outcome')

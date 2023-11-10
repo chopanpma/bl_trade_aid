@@ -112,12 +112,13 @@ class Experiment(TimeStampedModel):
                             help_text=_('Name of the experiment'))
 
 
-class PositiveOutcome(TimeStampedModel):
+class ProcessedContract(TimeStampedModel):
     symbol = models.CharField(_('Symbol'), max_length=12,
                               help_text=_('Symbol'))
-    batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='positive_outcomes',
+    batch = models.ForeignKey('Batch',  verbose_name=_('Batch'), related_name='processed_contracts',
                               null=True, blank=True,
                               on_delete=models.PROTECT)
+    positive_outcome = models.BooleanField(default=False)
 
 
 class Batch(TimeStampedModel):

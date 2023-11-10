@@ -12,7 +12,7 @@ from .models import ContractDetails
 from .models import BarData
 from .models import Batch
 from .models import ProfileChart
-from .models import PositiveOutcome
+from .models import ProcessedContract
 from .models import Experiment
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
@@ -348,7 +348,6 @@ class ProfileChartWrapper():
         return control_points
 
     def set_participant_symbols(self):
-        positive_symbols = []
         for symbol in self.dates_df_dict.keys():
             control_points = self.get_control_points(symbol)
             if len(control_points) > 2:
@@ -357,10 +356,13 @@ class ProfileChartWrapper():
                 if self.check_symbol_positive_experiment(control_points,
                                                          max_point_of_control,
                                                          min_point_of_control):
-                    positive_symbols.append(symbol)
-
-        for positive_symbol in positive_symbols:
-            PositiveOutcome.objects.create(symbol=positive_symbol, batch=self.batch)
+                    ProcessedContract.objects.create(symbol=symbol,
+                                                     batch=self.batch,
+                                                     positive_outcome=True)
+                else:
+                    ProcessedContract.objects.create(symbol=symbol,
+                                                     batch=self.batch,
+                                                     positive_outcome=False)
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})
@@ -447,7 +449,7 @@ class MarketUtils():
         experiment = Experiment.objects.all()[0]
         batch.experiment = experiment
         batch.save()
-        processed_symbols = PositiveOutcome.objects.filter(
+        processed_symbols = ProcessedContract.objects.filter(
                 created__date=batch.created.date(),
                 batch__experiment=batch.experiment).values_list('symbol')
 
