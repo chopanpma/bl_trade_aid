@@ -1,0 +1,184 @@
+# -*- coding: utf-8 -*-
+
+from django.conf import settings
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from model_utils.models import TimeStampedModel
+
+
+class AuditableModel(models.Model):
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, related_name="created_%(class)s", null=True, on_delete=models.SET_NULL
+    )
+    modified_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, related_name="modified_%(class)s", null=True, on_delete=models.SET_NULL
+    )
+
+    class Meta:
+        abstract = True
+
+
+class CustomerInformation(AuditableModel, TimeStampedModel):
+    first_name = models.CharField(_('First name'), max_length=50, null=True, blank=True)
+    last_name = models.CharField(_('Last name'), max_length=50, null=True, blank=True)
+    customer_id_number = models.CharField(_('Customer id number'), max_length=64,
+                                          help_text=_('The customer\'s ID number used to purchase'
+                                                      ' their CreditLine or FinanceOrder'))
+    customer_id_type = models.CharField(_('Customer id type'), max_length=16, null=True, blank=True,
+                                        help_text=_('The type of ID the customer used to purchase their '
+                                                    'CreditLine or FinanceOrder'))
+    customer_id_country = models.CharField(_('Country code'), max_length=2, null=True, blank=True,
+                                           help_text=_('ISO 3166-1 alpha-3 country code'))
+    email = models.EmailField(_('Email'), blank=True, null=True)
+    device_phone_number = models.CharField(_('Device phone number'), max_length=32, null=True, blank=True,
+                                           help_text=_('We will attempt to pull all phone numbers for the device, '
+                                                       'but return null if none is found TODO deal with null values'))
+
+    def __str__(self):
+        customer_name = f'{self.first_name} {self.last_name}'
+        return customer_name
+
+    def customer_fullname(self, max_length: int = 80):
+        if self.first_name is None and self.last_name is None:
+            customer_name = None
+        else:
+            customer_name = f'{self.first_name} {self.last_name}'[:max_length]
+        return customer_name
+
+
+class CreditLine(AuditableModel, TimeStampedModel):
+    """
+    All fields in pj_kafka_wrapper.models.CreditLine must exist in this model with the same exact name. This model
+    may have additional fields.
+    """
+    credit_line_id = models.CharField(_('Credit line id'), max_length=64)  # Field(alias='creditLineId')
+    credit_line_products = models.JSONField(_('Credit line products'),
+                                            help_text=_("The types of products associated with this CreditLine"))
+    create_time = models.DateTimeField(_('Create time'),
+                                       help_text=_(
+                                           "The Unix timestamp of when the CreditLine or FinanceOrder was created"))
+    term = models.IntegerField(_('Term'),
+                               help_text=_('Multiplying term number of payments of type TermUnit '
+                                           'should produce the original loan amount'))
+    term_unit = models.CharField(_('Term unit'), max_length=20,
+                                 help_text=_('The original expected regularity of payments when creating schedules'))
+    customer = models.ForeignKey(CustomerInformation, verbose_name=_('Customer'), related_name='credit_lines',
+                                 on_delete=models.PROTECT, null=True, blank=True,
+                                 help_text=_('This optional field will be not null only for events of '
+                                             'reason NEW_CREDIT_LINE with financeEngineVersion = FEv2'))
+    user_id = models.CharField(_('User id'), max_length=50,
+                               help_text=_('This will contain the foreign key to the Users table in '
+                                           'M2 or the Persons table in M3'))
+    device_id = models.CharField(_('Device id'), max_length=50,
+                                 help_text=_('This will contain the foreign key to the Devices table'))
+    merchant_id = models.CharField(_('Merchant id'), max_length=64, null=True, blank=True,
+                                   help_text=_('Reference to the Merchants table - ONLY '
+                                               'FEv2 needs to publish this information'))
+    clerk_id = models.CharField(_('Clerk id'), max_length=50, null=True, blank=True,
+                                help_text=_('This will contain the foreign key to the clerk who sold the device'))
+    finance_provider_id = models.CharField(_('Finance provider id'), max_length=50,
+                                           help_text=_('This will contain the foreign key to the '
+                                                       'financeProvider for the device'))
+    status = models.CharField(_('Status'), max_length=20)  # Field(alias='status')
+    currency = models.CharField(_('Currency'), max_length=3,
+                                help_text=_("The three letter currency code abbreviation."))
+    country = models.CharField(_('Country'), max_length=2,
+                               help_text=_('This will contain the two letter country code'
+                                           ' of the country the device was sold in.'))
+    limit_amount = models.DecimalField(_('Limit amount'), max_digits=12, decimal_places=2,
+                                       help_text=_('For FOs, this value corresponds to financeAmount; for CLs it is '
+                                                   'the CreditLine\'s loan limit amount'))
+    down_payment = models.DecimalField(_('Down payment'), max_digits=12,
+                                       decimal_places=2,
+                                       help_text=_('This is the amount the customer first paid. For CLs, '
+                                                   'downPayment + limitAmount = purchaseAmount For FOs'))
+    payoff_amount = models.DecimalField(_('Payoff amount'), max_digits=12, decimal_places=2)
+    minimum_payment_amount = models.DecimalField(_('Minimum payment amount'), max_digits=12, decimal_places=2)
+    reason = models.CharField(_('Reason'), max_length=40,
+                              help_text=_('What action was made on this CreditLine and the reason that'
+                                          ' this event was published.'))
+
+    finance_engine_version = models.CharField(_('Finance engine version'), max_length=5)
+
+    def __str__(self):
+        return f'Credit line {self.credit_line_id} ({self.country}) {self.finance_engine_version}'
+
+
+class FinalPaymentInfo(AuditableModel, TimeStampedModel):
+    payoff_amount = models.DecimalField(_('Payoff amount'), max_digits=12, decimal_places=2,
+                                        help_text=_('This is the amount the customer first paid. For CLs,'
+                                                    ' downPayment + limitAmount = purchaseAmount For FOs.'))
+    total_payments_to_date = models.DecimalField('Total payments to date', max_digits=12, decimal_places=2,
+                                                 help_text=_('This field contains the sum of all payments made'
+                                                             ' on the financeOrder or creditLine to date.'))
+    principle = models.DecimalField(_('Principle'), max_digits=12, decimal_places=2, null=True, blank=True,
+                                    help_text=_('In case of a CreditLine payment, this field represents the'
+                                                ' fraction of the payment received that will be allocated '
+                                                'towards the Credit Line\'s principle'))
+    interest = models.DecimalField(_('Interest'), max_digits=12, decimal_places=2, null=True, blank=True,
+                                   help_text=_('In case of a CreditLine payment, this field represents the '
+                                               'fraction of the payment received that will be allocated '
+                                               'towards the Credit Line\'s interest'))
+    tax = models.DecimalField(_('Tax'), max_digits=12, decimal_places=2, null=True, blank=True,
+                              help_text=_('In case of a CreditLine payment, this field represents the fraction '
+                                          'of the payment received that will be allocated towards the taxes -'
+                                          ' NOTE principle + interest + tax should always = amount'))
+
+    def __str__(self):
+        return f'Payoff: {self.payoff_amount} Total payments: {self.total_payments_to_date}'
+
+
+class Payment(AuditableModel, TimeStampedModel):
+    """This model should match with pj_kafka_wrapper.models.Payment. It may have additional  fields"""
+    credit_line_id = models.CharField(_('Credit line id'), max_length=50)
+    country = models.CharField(_('Country'), max_length=2,
+                               help_text=_('This will contain the two letter country code of'
+                                           ' the country the device was sold in'))
+    days = models.IntegerField(_('Days'), null=True, blank=True,
+                               help_text=_('The number of days of credit the device will receive'))
+    amount = models.DecimalField(_('Amount'), max_digits=12, decimal_places=2,
+                                 help_text=_('The amount collected by the payment'))
+    currency = models.CharField(_('Currency'), max_length=3,
+                                help_text=_('The three letter currency code abbreviation'))
+    timestamp_paid = models.DateTimeField(_('Timestamp paid'),
+                                          help_text=_('The UNIX timestamp at which the payment '
+                                                      'was marked as paid by the external provider or '
+                                                      'processed in case of in-store'))
+    payment_provider = models.CharField(_('Payment provider'), max_length=15)
+    device_id = models.CharField(_('Device id'), max_length=128)
+    user_id = models.CharField(_('User id'), max_length=64,
+                               help_text='Reference to the Users table in M2 or the Persons table in M3')
+    payment_id = models.CharField(_('Payment id'), max_length=64, null=True,
+                                  blank=True, help_text=_('This is a unique identifier of payment internal '
+                                                          'to PJ'))
+    merchant_id = models.CharField(_('Merchant id'), max_length=64, null=True, blank=True)
+    message_id = models.CharField(_('Message id'), max_length=64)
+    clerk_id = models.CharField(_('Clerk id'), max_length=64, null=True, blank=True)
+    final_payment_info = models.OneToOneField(FinalPaymentInfo, verbose_name=_('Final payment info'), null=True,
+                                              blank=True, on_delete=models.PROTECT, related_name='payment')
+
+    def __str__(self):
+        return _(f'Payment for {self.credit_line_id} country: {self.country}')
+
+
+class Transaction(AuditableModel, TimeStampedModel):
+    """This represents a transaction received from the customer related to his credit line."""
+    credit_line = models.ForeignKey(CreditLine, verbose_name=_('Credit line'), related_name='transactions',
+                                    on_delete=models.PROTECT)
+    timestamp_paid = models.DateTimeField(_('Timestamp paid'),
+                                          help_text=_('The UNIX timestamp at which the payment '
+                                                      'was marked as paid by the external provider or '
+                                                      'processed in case of in-store'))  # Field(alias='timestampPaid')
+    payment_provider = models.CharField(_('Payment provider'), max_length=15)
+    amount = models.DecimalField(_('Amount'), max_digits=12, decimal_places=2,
+                                 help_text=_('The amount collected by the payment'))
+    payment = models.ForeignKey(Payment, related_name='transactions', on_delete=models.PROTECT,
+                                verbose_name=_('Payment'), null=True, blank=True)
+    drift = models.DurationField(_('Drift'), null=True, blank=True,
+                                 help_text=_('Difference between timestamp_paid and created'))
+
+    def __str__(self):
+        return f'Payment for credit line {self.credit_line.credit_line_id} {self.payment_provider}'
+
+    class Meta:
+        ordering = ('-timestamp_paid',)

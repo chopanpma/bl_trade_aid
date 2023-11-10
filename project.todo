@@ -1,0 +1,91 @@
+[ ] functionality
+  [D] query type of contract with characteristics
+  [D] fetch query result and get all details from the batch, with fixed params 
+    [D] fetch and save one bar detail. 
+    [D] test the loop
+  [D] storing with batch number
+  [D] market profile OO
+    [D] create periods
+    [D] create tpo 
+    [D] adjustments
+    [D] crear oo model
+    [D] callculate precision 
+    [D] add prints
+  [D] Compare to old profile to check accuracy
+    [D] test/implement create files per date/batch/instrument in string
+    [D] test/implement create files per date/batch/instrument in tables
+      [D] create all profiles (test/impl)
+      [D] make sure we save a batch of contracts  
+        [D] modify the test for fetch bardata filtered by batch
+          [D] test failing
+          [D]test passing
+        [D] modify the test for save scandata to save the batch
+        [D] create a test about fetch and get bardata and create chart
+      [D] create mp for all of them in disk test 
+      [D] create mp for all of theem implmeentation
+    [D]  test reality
+      [D] connect the wires to call the service for a batch 
+        [D] test command
+        [D] save profiles in a folder
+        [D] add limit to query
+        [D] add the header to the file
+      [D] compare charts
+        [D] fix details
+          [D] add command to use just one symbol 
+          [D] change price to be descendant 
+          [D] fix plotting periods
+          [D] fix sync on times 
+          [D] fix display real price 
+  [ ] edge cases 
+       [ ] manage timeouts
+       [ ] manage different precision
+  [D] as a trader I would like to have the possible leads on the daily scann marked so I can look at them
+      [D] add control point
+      [D] add accepted band 
+      [D] add last value outside range
+      [D] test live
+  [*] automate in parameters for lead contract as an experiment.
+      [D] add parameter for band width
+      [*] add parameter for days offset
+      [D] add exclussion list 
+      [ ] add parameter for ticks offset
+      [ ] check days lenght
+  [0]- as a user I would like to set reqScannerData parameters  in a table for the experiment
+  [0]- as a user I would like to view the files in the admin app
+  [ ] add fundamentals of profile chart
+    [ ] add accepted tpos
+    [ ] add value area 
+    [ ] add initial balance
+  [ ] automate change experiments 
+    [0] create clases for query config and map to the experiment
+    [D] create clases for criteria for making the contracts a lead  and add to an experiment
+    [ ] create clases copy experiment to change into another experiment 
+  [ ] general improvements
+    [ ] run command from admin
+    [ ] visualize file from admin 
+    [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
+  [D] as a user I would like to create experiments in django admin
+  [D] as a user I would like to check standar models django admin
+  - as a user I would like to Solve the problem of tz not being recognized by read_frame. 
+  - as a user I would like to be able to set an alert at an specific instrument either with a trade or no 
+  - as a user I would like to be able to remove  an alert at an specific instrument either with a trade or no 
+  - as a user I would like to be able to set an alert at an specific open trade 
+  - as a user I would like to be able to remove an alert at an specific open trade 
+  - as a user I would like to be able to search for an active alert at an specific open trade 
+  - as a user I would like to be able to search for an active alert in all open trades 
+  - as a user I would like to be able to place an order 
+  - as a user I would like to be able bargain in buying, that is moving up until a limit. 
+  - as a user I would like to be able bargain in selling, that is moving up until a limit. 
+  - as a user I would like to be able to cancel an order if it has not been fullfilled. 
+  - as a user I would like to be able to Accept another exchanges so I can test more instruments. 
+  - place a sell order
+  - bargain on sell
+  - cancell the sell order
+  - be able to enter the result of a trade 
+  - be able to automatically record the result of a sale
+
+[ ] system capabilities
+- log every search
+- log every selection
+- log every action
+- ab test functionality 

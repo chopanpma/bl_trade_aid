@@ -1,0 +1,6203 @@
+[
+  {
+    "model": "patterns.bardata",
+    "pk": 1,
+    "fields": {
+        "created": "2023-04-13T14:01:39.458Z",
+        "modified": "2023-04-13T14:01:39.458Z",
+        "batch": 1,
+        "date": "2023-02-23T14:30:00Z",
+        "open": "0.94",
+        "high": "1.04",
+        "low": "0.91",
+        "close": "0.99",
+        "volume": "29137.16",
+        "average": "0.97",
+        "barCount": 313,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2,
+    "fields": {
+        "created": "2023-04-13T14:01:39.458Z",
+        "modified": "2023-04-13T14:01:39.458Z",
+        "batch": 1,
+        "date": "2023-02-23T15:00:00Z",
+        "open": "0.99",
+        "high": "1.05",
+        "low": "0.97",
+        "close": "1.02",
+        "volume": "20771.39",
+        "average": "1.02",
+        "barCount": 243,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 3,
+    "fields": {
+        "created": "2023-04-13T14:01:39.459Z",
+        "modified": "2023-04-13T14:01:39.459Z",
+        "batch": 1,
+        "date": "2023-02-23T15:30:00Z",
+        "open": "1.02",
+        "high": "1.02",
+        "low": "0.97",
+        "close": "0.98",
+        "volume": "7044.67",
+        "average": "0.99",
+        "barCount": 105,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 4,
+    "fields": {
+        "created": "2023-04-13T14:01:39.459Z",
+        "modified": "2023-04-13T14:01:39.459Z",
+        "batch": 1,
+        "date": "2023-02-23T16:00:00Z",
+        "open": "0.98",
+        "high": "1.01",
+        "low": "0.97",
+        "close": "0.98",
+        "volume": "3788.69",
+        "average": "0.99",
+        "barCount": 75,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 5,
+    "fields": {
+        "created": "2023-04-13T14:01:39.460Z",
+        "modified": "2023-04-13T14:01:39.460Z",
+        "batch": 1,
+        "date": "2023-02-23T16:30:00Z",
+        "open": "0.98",
+        "high": "1.00",
+        "low": "0.98",
+        "close": "0.99",
+        "volume": "3530.13",
+        "average": "0.99",
+        "barCount": 92,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 6,
+    "fields": {
+        "created": "2023-04-13T14:01:39.460Z",
+        "modified": "2023-04-13T14:01:39.460Z",
+        "batch": 1,
+        "date": "2023-02-23T17:00:00Z",
+        "open": "1.00",
+        "high": "1.01",
+        "low": "0.98",
+        "close": "0.99",
+        "volume": "2883.37",
+        "average": "0.99",
+        "barCount": 55,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 7,
+    "fields": {
+        "created": "2023-04-13T14:01:39.460Z",
+        "modified": "2023-04-13T14:01:39.460Z",
+        "batch": 1,
+        "date": "2023-02-23T17:30:00Z",
+        "open": "1.00",
+        "high": "1.00",
+        "low": "0.98",
+        "close": "0.98",
+        "volume": "1286.02",
+        "average": "0.99",
+        "barCount": 28,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 8,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T18:00:00Z",
+        "open": "0.98",
+        "high": "1.00",
+        "low": "0.98",
+        "close": "0.98",
+        "volume": "1859.10",
+        "average": "0.99",
+        "barCount": 25,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 9,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T18:30:00Z",
+        "open": "0.98",
+        "high": "1.01",
+        "low": "0.98",
+        "close": "1.01",
+        "volume": "3725.27",
+        "average": "1.00",
+        "barCount": 61,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 10,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T19:00:00Z",
+        "open": "1.00",
+        "high": "1.12",
+        "low": "1.00",
+        "close": "1.03",
+        "volume": "25596.71",
+        "average": "1.06",
+        "barCount": 332,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 11,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T19:30:00Z",
+        "open": "1.03",
+        "high": "1.04",
+        "low": "0.96",
+        "close": "0.99",
+        "volume": "8007.78",
+        "average": "1.00",
+        "barCount": 113,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 12,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-23T20:00:00Z",
+        "open": "0.98",
+        "high": "1.03",
+        "low": "0.98",
+        "close": "1.01",
+        "volume": "3794.10",
+        "average": "1.00",
+        "barCount": 61,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 13,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-23T20:30:00Z",
+        "open": "1.01",
+        "high": "1.04",
+        "low": "0.99",
+        "close": "1.02",
+        "volume": "5411.00",
+        "average": "1.01",
+        "barCount": 121,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 14,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-24T14:30:00Z",
+        "open": "0.99",
+        "high": "1.00",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "9729.64",
+        "average": "0.96",
+        "barCount": 120,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 15,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-24T15:00:00Z",
+        "open": "0.94",
+        "high": "0.98",
+        "low": "0.94",
+        "close": "0.96",
+        "volume": "5364.83",
+        "average": "0.95",
+        "barCount": 109,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 16,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T15:30:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.95",
+        "close": "0.96",
+        "volume": "2345.59",
+        "average": "0.96",
+        "barCount": 74,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 17,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T16:00:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.95",
+        "close": "0.96",
+        "volume": "2229.03",
+        "average": "0.96",
+        "barCount": 76,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 18,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T16:30:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.96",
+        "close": "0.96",
+        "volume": "1473.53",
+        "average": "0.97",
+        "barCount": 52,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 19,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T17:00:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.95",
+        "close": "0.95",
+        "volume": "2856.22",
+        "average": "0.96",
+        "barCount": 76,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20,
+    "fields": {
+        "created": "2023-04-13T14:01:39.464Z",
+        "modified": "2023-04-13T14:01:39.464Z",
+        "batch": 1,
+        "date": "2023-02-24T17:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.94",
+        "volume": "1863.66",
+        "average": "0.95",
+        "barCount": 82,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 21,
+    "fields": {
+        "created": "2023-04-13T14:01:39.464Z",
+        "modified": "2023-04-13T14:01:39.464Z",
+        "batch": 1,
+        "date": "2023-02-24T18:00:00Z",
+        "open": "0.94",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1035.81",
+        "average": "0.95",
+        "barCount": 21,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 22,
+    "fields": {
+        "created": "2023-04-13T14:01:39.464Z",
+        "modified": "2023-04-13T14:01:39.464Z",
+        "batch": 1,
+        "date": "2023-02-24T18:30:00Z",
+        "open": "0.95",
+        "high": "0.97",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1674.93",
+        "average": "0.95",
+        "barCount": 25,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 23,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T19:00:00Z",
+        "open": "0.96",
+        "high": "0.96",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1156.94",
+        "average": "0.95",
+        "barCount": 22,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 24,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T19:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1027.20",
+        "average": "0.95",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 25,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T20:00:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "2021.58",
+        "average": "0.94",
+        "barCount": 24,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 26,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T20:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "2765.38",
+        "average": "0.94",
+        "barCount": 65,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 27,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T14:30:00Z",
+        "open": "0.95",
+        "high": "0.96",
+        "low": "0.92",
+        "close": "0.92",
+        "volume": "4341.28",
+        "average": "0.93",
+        "barCount": 61,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 28,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T15:00:00Z",
+        "open": "0.92",
+        "high": "0.95",
+        "low": "0.91",
+        "close": "0.94",
+        "volume": "4068.73",
+        "average": "0.92",
+        "barCount": 46,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 29,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T15:30:00Z",
+        "open": "0.95",
+        "high": "0.96",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "3019.69",
+        "average": "0.95",
+        "barCount": 26,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 30,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T16:00:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.94",
+        "volume": "1986.03",
+        "average": "0.93",
+        "barCount": 25,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 31,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T16:30:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "730.47",
+        "average": "0.93",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 32,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T17:00:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "790.63",
+        "average": "0.93",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 33,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T17:30:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.93",
+        "volume": "659.98",
+        "average": "0.93",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 34,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T18:00:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "629.62",
+        "average": "0.93",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 35,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T18:30:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "1227.84",
+        "average": "0.93",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 36,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T19:00:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "503.48",
+        "average": "0.93",
+        "barCount": 8,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 37,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T19:30:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "981.99",
+        "average": "0.93",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 38,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T20:00:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.92",
+        "volume": "667.08",
+        "average": "0.93",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 39,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T20:30:00Z",
+        "open": "0.92",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "2327.16",
+        "average": "0.92",
+        "barCount": 46,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 40,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T14:30:00Z",
+        "open": "0.92",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.91",
+        "volume": "1561.34",
+        "average": "0.92",
+        "barCount": 19,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 41,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T15:00:00Z",
+        "open": "0.91",
+        "high": "0.92",
+        "low": "0.89",
+        "close": "0.90",
+        "volume": "3683.23",
+        "average": "0.90",
+        "barCount": 46,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 42,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T15:30:00Z",
+        "open": "0.90",
+        "high": "0.91",
+        "low": "0.86",
+        "close": "0.89",
+        "volume": "7598.76",
+        "average": "0.88",
+        "barCount": 100,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 43,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T16:00:00Z",
+        "open": "0.89",
+        "high": "0.93",
+        "low": "0.88",
+        "close": "0.93",
+        "volume": "2606.88",
+        "average": "0.90",
+        "barCount": 30,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 44,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T16:30:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.90",
+        "close": "0.92",
+        "volume": "1403.57",
+        "average": "0.92",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 45,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T17:00:00Z",
+        "open": "0.92",
+        "high": "0.95",
+        "low": "0.91",
+        "close": "0.94",
+        "volume": "2833.92",
+        "average": "0.93",
+        "barCount": 22,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 46,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T17:30:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.91",
+        "close": "0.91",
+        "volume": "767.17",
+        "average": "0.92",
+        "barCount": 10,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 47,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T18:00:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.92",
+        "volume": "746.73",
+        "average": "0.91",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 48,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T18:30:00Z",
+        "open": "0.92",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.91",
+        "volume": "665.96",
+        "average": "0.92",
+        "barCount": 10,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 49,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T19:00:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.90",
+        "close": "0.92",
+        "volume": "598.13",
+        "average": "0.91",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 50,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T19:30:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.90",
+        "close": "0.91",
+        "volume": "821.08",
+        "average": "0.91",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 51,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T20:00:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.92",
+        "volume": "611.38",
+        "average": "0.91",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 52,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T20:30:00Z",
+        "open": "0.92",
+        "high": "0.92",
+        "low": "0.89",
+        "close": "0.91",
+        "volume": "2338.86",
+        "average": "0.90",
+        "barCount": 27,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 53,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T14:30:00Z",
+        "open": "0.91",
+        "high": "0.92",
+        "low": "0.89",
+        "close": "0.89",
+        "volume": "2020.58",
+        "average": "0.90",
+        "barCount": 26,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 54,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T15:00:00Z",
+        "open": "0.89",
+        "high": "0.90",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "6069.16",
+        "average": "0.87",
+        "barCount": 67,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 55,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T15:30:00Z",
+        "open": "0.88",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "2713.06",
+        "average": "0.87",
+        "barCount": 39,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 56,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T16:00:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "1832.03",
+        "average": "0.87",
+        "barCount": 29,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 57,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T16:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1010.82",
+        "average": "0.87",
+        "barCount": 13,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 58,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T17:00:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "1301.87",
+        "average": "0.87",
+        "barCount": 24,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 59,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T17:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "923.06",
+        "average": "0.87",
+        "barCount": 19,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 60,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T18:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "915.66",
+        "average": "0.87",
+        "barCount": 13,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 61,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T18:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "246.14",
+        "average": "0.87",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 62,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T19:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1638.41",
+        "average": "0.87",
+        "barCount": 23,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 63,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T19:30:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1090.51",
+        "average": "0.87",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 64,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T20:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.86",
+        "volume": "789.28",
+        "average": "0.87",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 65,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T20:30:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.86",
+        "volume": "1507.81",
+        "average": "0.86",
+        "barCount": 29,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 66,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-02T14:30:00Z",
+        "open": "0.85",
+        "high": "0.85",
+        "low": "0.82",
+        "close": "0.85",
+        "volume": "3641.34",
+        "average": "0.83",
+        "barCount": 46,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 67,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T15:00:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "781.83",
+        "average": "0.85",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 68,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T15:30:00Z",
+        "open": "0.85",
+        "high": "0.88",
+        "low": "0.84",
+        "close": "0.87",
+        "volume": "1811.79",
+        "average": "0.87",
+        "barCount": 20,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 69,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T16:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "530.88",
+        "average": "0.86",
+        "barCount": 8,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 70,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T16:30:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "480.52",
+        "average": "0.85",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 71,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T17:00:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.83",
+        "close": "0.83",
+        "volume": "1496.88",
+        "average": "0.84",
+        "barCount": 21,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 72,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T17:30:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.84",
+        "close": "0.84",
+        "volume": "557.91",
+        "average": "0.84",
+        "barCount": 14,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 73,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T18:00:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "1035.06",
+        "average": "0.83",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 74,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T18:30:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "592.80",
+        "average": "0.84",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 75,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T19:00:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.85",
+        "volume": "284.13",
+        "average": "0.84",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 76,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-02T19:30:00Z",
+        "open": "0.84",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "897.88",
+        "average": "0.86",
+        "barCount": 14,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 77,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-02T20:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "1092.25",
+        "average": "0.85",
+        "barCount": 19,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 78,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-02T20:30:00Z",
+        "open": "0.85",
+        "high": "0.85",
+        "low": "0.82",
+        "close": "0.83",
+        "volume": "2097.20",
+        "average": "0.84",
+        "barCount": 41,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 79,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-03T14:30:00Z",
+        "open": "0.84",
+        "high": "0.86",
+        "low": "0.83",
+        "close": "0.85",
+        "volume": "1706.70",
+        "average": "0.85",
+        "barCount": 20,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 80,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T15:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "1880.06",
+        "average": "0.85",
+        "barCount": 20,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 81,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T15:30:00Z",
+        "open": "0.85",
+        "high": "0.88",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "1792.12",
+        "average": "0.86",
+        "barCount": 17,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 82,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T16:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "847.51",
+        "average": "0.85",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 83,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T16:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "1214.82",
+        "average": "0.85",
+        "barCount": 15,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 84,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T17:00:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.82",
+        "close": "0.85",
+        "volume": "2746.59",
+        "average": "0.84",
+        "barCount": 33,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 85,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T17:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.83",
+        "close": "0.86",
+        "volume": "1223.89",
+        "average": "0.84",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 86,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T18:00:00Z",
+        "open": "0.84",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.87",
+        "volume": "518.84",
+        "average": "0.85",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 87,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T18:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "1159.03",
+        "average": "0.86",
+        "barCount": 23,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 88,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T19:00:00Z",
+        "open": "0.87",
+        "high": "0.89",
+        "low": "0.86",
+        "close": "0.88",
+        "volume": "1812.18",
+        "average": "0.88",
+        "barCount": 28,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 89,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-03T19:30:00Z",
+        "open": "0.88",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1973.37",
+        "average": "0.87",
+        "barCount": 33,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 90,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-03T20:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "1732.58",
+        "average": "0.85",
+        "barCount": 32,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 91,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-03T20:30:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "2730.19",
+        "average": "0.86",
+        "barCount": 28,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 92,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-06T14:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "1830.51",
+        "average": "0.87",
+        "barCount": 20,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 93,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T15:00:00Z",
+        "open": "0.86",
+        "high": "0.90",
+        "low": "0.86",
+        "close": "0.90",
+        "volume": "2946.03",
+        "average": "0.88",
+        "barCount": 21,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 94,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T15:30:00Z",
+        "open": "0.90",
+        "high": "0.90",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "1348.82",
+        "average": "0.87",
+        "barCount": 26,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 95,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T16:00:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "1656.88",
+        "average": "0.85",
+        "barCount": 42,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 96,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T16:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "836.18",
+        "average": "0.85",
+        "barCount": 27,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 97,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T17:00:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "1042.89",
+        "average": "0.86",
+        "barCount": 30,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 98,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T17:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.86",
+        "volume": "578.65",
+        "average": "0.87",
+        "barCount": 23,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 99,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T18:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "672.87",
+        "average": "0.87",
+        "barCount": 27,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 100,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T18:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "467.91",
+        "average": "0.87",
+        "barCount": 26,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 101,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T19:00:00Z",
+        "open": "0.87",
+        "high": "0.90",
+        "low": "0.87",
+        "close": "0.89",
+        "volume": "1342.23",
+        "average": "0.89",
+        "barCount": 38,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 102,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T19:30:00Z",
+        "open": "0.90",
+        "high": "0.95",
+        "low": "0.88",
+        "close": "0.95",
+        "volume": "5232.35",
+        "average": "0.92",
+        "barCount": 71,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 103,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-06T20:00:00Z",
+        "open": "0.94",
+        "high": "1.01",
+        "low": "0.93",
+        "close": "0.96",
+        "volume": "26664.85",
+        "average": "0.98",
+        "barCount": 330,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 104,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-06T20:30:00Z",
+        "open": "0.96",
+        "high": "1.00",
+        "low": "0.95",
+        "close": "1.00",
+        "volume": "11268.79",
+        "average": "0.97",
+        "barCount": 201,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 105,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-07T14:30:00Z",
+        "open": "0.92",
+        "high": "0.96",
+        "low": "0.92",
+        "close": "0.95",
+        "volume": "3927.94",
+        "average": "0.94",
+        "barCount": 38,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 106,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-07T15:00:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.90",
+        "close": "0.93",
+        "volume": "2688.84",
+        "average": "0.92",
+        "barCount": 34,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 107,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T15:30:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "566.90",
+        "average": "0.93",
+        "barCount": 8,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 108,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T16:00:00Z",
+        "open": "0.93",
+        "high": "0.95",
+        "low": "0.92",
+        "close": "0.95",
+        "volume": "862.43",
+        "average": "0.94",
+        "barCount": 24,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 109,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T16:30:00Z",
+        "open": "0.95",
+        "high": "0.97",
+        "low": "0.94",
+        "close": "0.96",
+        "volume": "3937.95",
+        "average": "0.96",
+        "barCount": 66,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 110,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T17:00:00Z",
+        "open": "0.96",
+        "high": "0.96",
+        "low": "0.93",
+        "close": "0.95",
+        "volume": "1413.30",
+        "average": "0.94",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 111,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T17:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.93",
+        "close": "0.93",
+        "volume": "1185.86",
+        "average": "0.94",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 112,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T18:00:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.93",
+        "volume": "644.89",
+        "average": "0.93",
+        "barCount": 6,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 113,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T18:30:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "270.15",
+        "average": "0.93",
+        "barCount": 5,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 114,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T19:00:00Z",
+        "open": "0.92",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.92",
+        "volume": "540.39",
+        "average": "0.92",
+        "barCount": 8,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 115,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T19:30:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.92",
+        "volume": "616.58",
+        "average": "0.92",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 116,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-07T20:00:00Z",
+        "open": "0.92",
+        "high": "0.92",
+        "low": "0.90",
+        "close": "0.90",
+        "volume": "2247.52",
+        "average": "0.91",
+        "barCount": 21,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 117,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-07T20:30:00Z",
+        "open": "0.90",
+        "high": "0.91",
+        "low": "0.90",
+        "close": "0.90",
+        "volume": "1550.27",
+        "average": "0.90",
+        "barCount": 21,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 118,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-08T14:30:00Z",
+        "open": "0.90",
+        "high": "0.90",
+        "low": "0.86",
+        "close": "0.88",
+        "volume": "3049.51",
+        "average": "0.88",
+        "barCount": 25,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 119,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-08T15:00:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1081.77",
+        "average": "0.87",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 120,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-08T15:30:00Z",
+        "open": "0.87",
+        "high": "0.92",
+        "low": "0.87",
+        "close": "0.90",
+        "volume": "817.83",
+        "average": "0.88",
+        "barCount": 10,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 121,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T16:00:00Z",
+        "open": "0.90",
+        "high": "0.91",
+        "low": "0.87",
+        "close": "0.89",
+        "volume": "467.23",
+        "average": "0.89",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 122,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T16:30:00Z",
+        "open": "0.88",
+        "high": "0.89",
+        "low": "0.88",
+        "close": "0.88",
+        "volume": "530.97",
+        "average": "0.88",
+        "barCount": 6,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 123,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T17:00:00Z",
+        "open": "0.89",
+        "high": "0.89",
+        "low": "0.88",
+        "close": "0.89",
+        "volume": "181.60",
+        "average": "0.88",
+        "barCount": 3,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 124,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T17:30:00Z",
+        "open": "0.88",
+        "high": "0.89",
+        "low": "0.88",
+        "close": "0.88",
+        "volume": "302.52",
+        "average": "0.88",
+        "barCount": 5,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 125,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T18:00:00Z",
+        "open": "0.88",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.88",
+        "volume": "854.67",
+        "average": "0.87",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 126,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T18:30:00Z",
+        "open": "0.88",
+        "high": "0.89",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "610.67",
+        "average": "0.87",
+        "barCount": 17,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 127,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T19:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "2641.07",
+        "average": "0.85",
+        "barCount": 29,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 128,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T19:30:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "547.29",
+        "average": "0.86",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 129,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T20:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "487.34",
+        "average": "0.86",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 130,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-08T20:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "1136.78",
+        "average": "0.86",
+        "barCount": 18,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 131,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T14:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "1478.98",
+        "average": "0.86",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 132,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T15:00:00Z",
+        "open": "0.86",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "605.23",
+        "average": "0.87",
+        "barCount": 10,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 133,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T15:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "633.98",
+        "average": "0.86",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 134,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T16:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "119.06",
+        "average": "0.86",
+        "barCount": 4,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 135,
+    "fields": {
+        "created": "2023-04-13T14:01:39.490Z",
+        "modified": "2023-04-13T14:01:39.490Z",
+        "batch": 1,
+        "date": "2023-03-09T16:30:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "490.47",
+        "average": "0.86",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 136,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T17:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "170.94",
+        "average": "0.85",
+        "barCount": 3,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 137,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T17:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "243.41",
+        "average": "0.86",
+        "barCount": 6,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 138,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T18:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "867.60",
+        "average": "0.85",
+        "barCount": 13,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 139,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T18:30:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "2245.03",
+        "average": "0.84",
+        "barCount": 36,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 140,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T19:00:00Z",
+        "open": "0.84",
+        "high": "0.84",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "408.52",
+        "average": "0.84",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 141,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-09T19:30:00Z",
+        "open": "0.84",
+        "high": "0.84",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "528.26",
+        "average": "0.84",
+        "barCount": 10,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 142,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-09T20:00:00Z",
+        "open": "0.84",
+        "high": "0.84",
+        "low": "0.83",
+        "close": "0.83",
+        "volume": "644.39",
+        "average": "0.83",
+        "barCount": 14,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 143,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-09T20:30:00Z",
+        "open": "0.83",
+        "high": "0.84",
+        "low": "0.82",
+        "close": "0.83",
+        "volume": "1938.30",
+        "average": "0.82",
+        "barCount": 38,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 144,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-10T14:30:00Z",
+        "open": "0.80",
+        "high": "0.84",
+        "low": "0.78",
+        "close": "0.78",
+        "volume": "3937.57",
+        "average": "0.80",
+        "barCount": 43,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 145,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-10T15:00:00Z",
+        "open": "0.78",
+        "high": "0.79",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "3668.46",
+        "average": "0.78",
+        "barCount": 42,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 146,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T15:30:00Z",
+        "open": "0.77",
+        "high": "0.79",
+        "low": "0.76",
+        "close": "0.79",
+        "volume": "1638.41",
+        "average": "0.77",
+        "barCount": 25,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 147,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T16:00:00Z",
+        "open": "0.79",
+        "high": "0.79",
+        "low": "0.77",
+        "close": "0.78",
+        "volume": "760.56",
+        "average": "0.78",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 148,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T16:30:00Z",
+        "open": "0.78",
+        "high": "0.79",
+        "low": "0.78",
+        "close": "0.78",
+        "volume": "1070.30",
+        "average": "0.79",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 149,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T17:00:00Z",
+        "open": "0.78",
+        "high": "0.79",
+        "low": "0.77",
+        "close": "0.77",
+        "volume": "1261.73",
+        "average": "0.78",
+        "barCount": 19,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 150,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T17:30:00Z",
+        "open": "0.77",
+        "high": "0.77",
+        "low": "0.77",
+        "close": "0.77",
+        "volume": "997.98",
+        "average": "0.77",
+        "barCount": 16,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 151,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T18:00:00Z",
+        "open": "0.77",
+        "high": "0.77",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "483.63",
+        "average": "0.77",
+        "barCount": 6,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 152,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T18:30:00Z",
+        "open": "0.77",
+        "high": "0.78",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "978.58",
+        "average": "0.77",
+        "barCount": 13,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 153,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T19:00:00Z",
+        "open": "0.77",
+        "high": "0.77",
+        "low": "0.76",
+        "close": "0.76",
+        "volume": "994.67",
+        "average": "0.76",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 154,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T19:30:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "1617.82",
+        "average": "0.75",
+        "barCount": 21,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 155,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-10T20:00:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "1555.65",
+        "average": "0.76",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 156,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-10T20:30:00Z",
+        "open": "0.76",
+        "high": "0.84",
+        "low": "0.75",
+        "close": "0.83",
+        "volume": "3202.00",
+        "average": "0.81",
+        "barCount": 68,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 157,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-13T12:30:00Z",
+        "open": "0.77",
+        "high": "0.79",
+        "low": "0.70",
+        "close": "0.76",
+        "volume": "3751.28",
+        "average": "0.74",
+        "barCount": 47,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 158,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-13T13:00:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "654.88",
+        "average": "0.75",
+        "barCount": 9,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 159,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T13:30:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "1113.91",
+        "average": "0.75",
+        "barCount": 34,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 160,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T14:00:00Z",
+        "open": "0.74",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.76",
+        "volume": "849.08",
+        "average": "0.75",
+        "barCount": 17,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 161,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T14:30:00Z",
+        "open": "0.76",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "1142.94",
+        "average": "0.75",
+        "barCount": 24,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 162,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T15:00:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "465.84",
+        "average": "0.75",
+        "barCount": 12,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 163,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T15:30:00Z",
+        "open": "0.76",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.74",
+        "volume": "570.04",
+        "average": "0.75",
+        "barCount": 15,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 164,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T16:00:00Z",
+        "open": "0.74",
+        "high": "0.75",
+        "low": "0.74",
+        "close": "0.74",
+        "volume": "774.22",
+        "average": "0.74",
+        "barCount": 6,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 165,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T16:30:00Z",
+        "open": "0.74",
+        "high": "0.75",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "244.57",
+        "average": "0.74",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 166,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T17:00:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "287.08",
+        "average": "0.75",
+        "barCount": 6,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 167,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T17:30:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.76",
+        "close": "0.76",
+        "volume": "768.04",
+        "average": "0.76",
+        "barCount": 11,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 168,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-13T18:00:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.75",
+        "close": "0.75",
+        "volume": "876.58",
+        "average": "0.76",
+        "barCount": 24,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 169,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-13T18:30:00Z",
+        "open": "0.76",
+        "high": "0.79",
+        "low": "0.75",
+        "close": "0.78",
+        "volume": "1292.05",
+        "average": "0.77",
+        "barCount": 63,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 170,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-14T12:30:00Z",
+        "open": "0.76",
+        "high": "0.79",
+        "low": "0.76",
+        "close": "0.76",
+        "volume": "1271.38",
+        "average": "0.77",
+        "barCount": 18,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 171,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-14T13:00:00Z",
+        "open": "0.76",
+        "high": "0.78",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "597.06",
+        "average": "0.77",
+        "barCount": 7,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 172,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-14T13:30:00Z",
+        "open": "0.77",
+        "high": "0.78",
+        "low": "0.77",
+        "close": "0.77",
+        "volume": "479.89",
+        "average": "0.77",
+        "barCount": 5,
+        "symbol": "AAPL"
+    }
+},
+{
+    "model": "patterns.batch",
+    "pk": 1,
+    "fields": {
+        "created": "2023-04-13T14:01:39.456Z",
+        "modified": "2023-04-13T14:01:39.456Z",
+        "experiment": null
+    }
+},
+  {
+    "model": "patterns.bardata",
+    "pk": 201,
+    "fields": {
+        "created": "2023-04-13T14:01:39.458Z",
+        "modified": "2023-04-13T14:01:39.458Z",
+        "batch": 1,
+        "date": "2023-02-23T14:30:00Z",
+        "open": "0.94",
+        "high": "1.04",
+        "low": "0.91",
+        "close": "0.99",
+        "volume": "29137.16",
+        "average": "0.97",
+        "barCount": 313,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 202,
+    "fields": {
+        "created": "2023-04-13T14:01:39.458Z",
+        "modified": "2023-04-13T14:01:39.458Z",
+        "batch": 1,
+        "date": "2023-02-23T15:00:00Z",
+        "open": "0.99",
+        "high": "1.05",
+        "low": "0.97",
+        "close": "1.02",
+        "volume": "20771.39",
+        "average": "1.02",
+        "barCount": 243,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 203,
+    "fields": {
+        "created": "2023-04-13T14:01:39.459Z",
+        "modified": "2023-04-13T14:01:39.459Z",
+        "batch": 1,
+        "date": "2023-02-23T15:30:00Z",
+        "open": "1.02",
+        "high": "1.02",
+        "low": "0.97",
+        "close": "0.98",
+        "volume": "7044.67",
+        "average": "0.99",
+        "barCount": 105,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 204,
+    "fields": {
+        "created": "2023-04-13T14:01:39.459Z",
+        "modified": "2023-04-13T14:01:39.459Z",
+        "batch": 1,
+        "date": "2023-02-23T16:00:00Z",
+        "open": "0.98",
+        "high": "1.01",
+        "low": "0.97",
+        "close": "0.98",
+        "volume": "3788.69",
+        "average": "0.99",
+        "barCount": 75,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 205,
+    "fields": {
+        "created": "2023-04-13T14:01:39.460Z",
+        "modified": "2023-04-13T14:01:39.460Z",
+        "batch": 1,
+        "date": "2023-02-23T16:30:00Z",
+        "open": "0.98",
+        "high": "1.00",
+        "low": "0.98",
+        "close": "0.99",
+        "volume": "3530.13",
+        "average": "0.99",
+        "barCount": 92,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 206,
+    "fields": {
+        "created": "2023-04-13T14:01:39.460Z",
+        "modified": "2023-04-13T14:01:39.460Z",
+        "batch": 1,
+        "date": "2023-02-23T17:00:00Z",
+        "open": "1.00",
+        "high": "1.01",
+        "low": "0.98",
+        "close": "0.99",
+        "volume": "2883.37",
+        "average": "0.99",
+        "barCount": 55,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 207,
+    "fields": {
+        "created": "2023-04-13T14:01:39.460Z",
+        "modified": "2023-04-13T14:01:39.460Z",
+        "batch": 1,
+        "date": "2023-02-23T17:30:00Z",
+        "open": "1.00",
+        "high": "1.00",
+        "low": "0.98",
+        "close": "0.98",
+        "volume": "1286.02",
+        "average": "0.99",
+        "barCount": 28,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 208,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T18:00:00Z",
+        "open": "0.98",
+        "high": "1.00",
+        "low": "0.98",
+        "close": "0.98",
+        "volume": "1859.10",
+        "average": "0.99",
+        "barCount": 25,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 209,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T18:30:00Z",
+        "open": "0.98",
+        "high": "1.01",
+        "low": "0.98",
+        "close": "1.01",
+        "volume": "3725.27",
+        "average": "1.00",
+        "barCount": 61,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2010,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T19:00:00Z",
+        "open": "1.00",
+        "high": "1.12",
+        "low": "1.00",
+        "close": "1.03",
+        "volume": "25596.71",
+        "average": "1.06",
+        "barCount": 332,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2011,
+    "fields": {
+        "created": "2023-04-13T14:01:39.461Z",
+        "modified": "2023-04-13T14:01:39.461Z",
+        "batch": 1,
+        "date": "2023-02-23T19:30:00Z",
+        "open": "1.03",
+        "high": "1.04",
+        "low": "0.96",
+        "close": "0.99",
+        "volume": "8007.78",
+        "average": "1.00",
+        "barCount": 113,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2012,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-23T20:00:00Z",
+        "open": "0.98",
+        "high": "1.03",
+        "low": "0.98",
+        "close": "1.01",
+        "volume": "3794.10",
+        "average": "1.00",
+        "barCount": 61,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2013,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-23T20:30:00Z",
+        "open": "1.01",
+        "high": "1.04",
+        "low": "0.99",
+        "close": "1.02",
+        "volume": "5411.00",
+        "average": "1.01",
+        "barCount": 121,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2014,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-24T14:30:00Z",
+        "open": "0.99",
+        "high": "1.00",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "9729.64",
+        "average": "0.96",
+        "barCount": 120,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2015,
+    "fields": {
+        "created": "2023-04-13T14:01:39.462Z",
+        "modified": "2023-04-13T14:01:39.462Z",
+        "batch": 1,
+        "date": "2023-02-24T15:00:00Z",
+        "open": "0.94",
+        "high": "0.98",
+        "low": "0.94",
+        "close": "0.96",
+        "volume": "5364.83",
+        "average": "0.95",
+        "barCount": 109,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2016,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T15:30:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.95",
+        "close": "0.96",
+        "volume": "2345.59",
+        "average": "0.96",
+        "barCount": 74,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2017,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T16:00:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.95",
+        "close": "0.96",
+        "volume": "2229.03",
+        "average": "0.96",
+        "barCount": 76,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2018,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T16:30:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.96",
+        "close": "0.96",
+        "volume": "1473.53",
+        "average": "0.97",
+        "barCount": 52,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2019,
+    "fields": {
+        "created": "2023-04-13T14:01:39.463Z",
+        "modified": "2023-04-13T14:01:39.463Z",
+        "batch": 1,
+        "date": "2023-02-24T17:00:00Z",
+        "open": "0.96",
+        "high": "0.97",
+        "low": "0.95",
+        "close": "0.95",
+        "volume": "2856.22",
+        "average": "0.96",
+        "barCount": 76,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2020,
+    "fields": {
+        "created": "2023-04-13T14:01:39.464Z",
+        "modified": "2023-04-13T14:01:39.464Z",
+        "batch": 1,
+        "date": "2023-02-24T17:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.94",
+        "volume": "1863.66",
+        "average": "0.95",
+        "barCount": 82,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2021,
+    "fields": {
+        "created": "2023-04-13T14:01:39.464Z",
+        "modified": "2023-04-13T14:01:39.464Z",
+        "batch": 1,
+        "date": "2023-02-24T18:00:00Z",
+        "open": "0.94",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1035.81",
+        "average": "0.95",
+        "barCount": 21,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2022,
+    "fields": {
+        "created": "2023-04-13T14:01:39.464Z",
+        "modified": "2023-04-13T14:01:39.464Z",
+        "batch": 1,
+        "date": "2023-02-24T18:30:00Z",
+        "open": "0.95",
+        "high": "0.97",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1674.93",
+        "average": "0.95",
+        "barCount": 25,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2023,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T19:00:00Z",
+        "open": "0.96",
+        "high": "0.96",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1156.94",
+        "average": "0.95",
+        "barCount": 22,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2024,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T19:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "1027.20",
+        "average": "0.95",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2025,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T20:00:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.94",
+        "close": "0.95",
+        "volume": "2021.58",
+        "average": "0.94",
+        "barCount": 24,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2026,
+    "fields": {
+        "created": "2023-04-13T14:01:39.465Z",
+        "modified": "2023-04-13T14:01:39.465Z",
+        "batch": 1,
+        "date": "2023-02-24T20:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "2765.38",
+        "average": "0.94",
+        "barCount": 65,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2027,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T14:30:00Z",
+        "open": "0.95",
+        "high": "0.96",
+        "low": "0.92",
+        "close": "0.92",
+        "volume": "4341.28",
+        "average": "0.93",
+        "barCount": 61,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2028,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T15:00:00Z",
+        "open": "0.92",
+        "high": "0.95",
+        "low": "0.91",
+        "close": "0.94",
+        "volume": "4068.73",
+        "average": "0.92",
+        "barCount": 46,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2029,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T15:30:00Z",
+        "open": "0.95",
+        "high": "0.96",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "3019.69",
+        "average": "0.95",
+        "barCount": 26,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2030,
+    "fields": {
+        "created": "2023-04-13T14:01:39.466Z",
+        "modified": "2023-04-13T14:01:39.466Z",
+        "batch": 1,
+        "date": "2023-02-27T16:00:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.94",
+        "volume": "1986.03",
+        "average": "0.93",
+        "barCount": 25,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2031,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T16:30:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "730.47",
+        "average": "0.93",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2032,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T17:00:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "790.63",
+        "average": "0.93",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2033,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T17:30:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.93",
+        "volume": "659.98",
+        "average": "0.93",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2034,
+    "fields": {
+        "created": "2023-04-13T14:01:39.467Z",
+        "modified": "2023-04-13T14:01:39.467Z",
+        "batch": 1,
+        "date": "2023-02-27T18:00:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "629.62",
+        "average": "0.93",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2035,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T18:30:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "1227.84",
+        "average": "0.93",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2036,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T19:00:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.94",
+        "volume": "503.48",
+        "average": "0.93",
+        "barCount": 8,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2037,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T19:30:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "981.99",
+        "average": "0.93",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2038,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T20:00:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.92",
+        "volume": "667.08",
+        "average": "0.93",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2039,
+    "fields": {
+        "created": "2023-04-13T14:01:39.468Z",
+        "modified": "2023-04-13T14:01:39.468Z",
+        "batch": 1,
+        "date": "2023-02-27T20:30:00Z",
+        "open": "0.92",
+        "high": "0.94",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "2327.16",
+        "average": "0.92",
+        "barCount": 46,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2040,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T14:30:00Z",
+        "open": "0.92",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.91",
+        "volume": "1561.34",
+        "average": "0.92",
+        "barCount": 19,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2041,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T15:00:00Z",
+        "open": "0.91",
+        "high": "0.92",
+        "low": "0.89",
+        "close": "0.90",
+        "volume": "3683.23",
+        "average": "0.90",
+        "barCount": 46,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2042,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T15:30:00Z",
+        "open": "0.90",
+        "high": "0.91",
+        "low": "0.86",
+        "close": "0.89",
+        "volume": "7598.76",
+        "average": "0.88",
+        "barCount": 100,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2043,
+    "fields": {
+        "created": "2023-04-13T14:01:39.469Z",
+        "modified": "2023-04-13T14:01:39.469Z",
+        "batch": 1,
+        "date": "2023-02-28T16:00:00Z",
+        "open": "0.89",
+        "high": "0.93",
+        "low": "0.88",
+        "close": "0.93",
+        "volume": "2606.88",
+        "average": "0.90",
+        "barCount": 30,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2044,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T16:30:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.90",
+        "close": "0.92",
+        "volume": "1403.57",
+        "average": "0.92",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2045,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T17:00:00Z",
+        "open": "0.92",
+        "high": "0.95",
+        "low": "0.91",
+        "close": "0.94",
+        "volume": "2833.92",
+        "average": "0.93",
+        "barCount": 22,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2046,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T17:30:00Z",
+        "open": "0.94",
+        "high": "0.94",
+        "low": "0.91",
+        "close": "0.91",
+        "volume": "767.17",
+        "average": "0.92",
+        "barCount": 10,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2047,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T18:00:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.92",
+        "volume": "746.73",
+        "average": "0.91",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2048,
+    "fields": {
+        "created": "2023-04-13T14:01:39.470Z",
+        "modified": "2023-04-13T14:01:39.470Z",
+        "batch": 1,
+        "date": "2023-02-28T18:30:00Z",
+        "open": "0.92",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.91",
+        "volume": "665.96",
+        "average": "0.92",
+        "barCount": 10,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2049,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T19:00:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.90",
+        "close": "0.92",
+        "volume": "598.13",
+        "average": "0.91",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2050,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T19:30:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.90",
+        "close": "0.91",
+        "volume": "821.08",
+        "average": "0.91",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2051,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T20:00:00Z",
+        "open": "0.91",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.92",
+        "volume": "611.38",
+        "average": "0.91",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2052,
+    "fields": {
+        "created": "2023-04-13T14:01:39.471Z",
+        "modified": "2023-04-13T14:01:39.471Z",
+        "batch": 1,
+        "date": "2023-02-28T20:30:00Z",
+        "open": "0.92",
+        "high": "0.92",
+        "low": "0.89",
+        "close": "0.91",
+        "volume": "2338.86",
+        "average": "0.90",
+        "barCount": 27,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2053,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T14:30:00Z",
+        "open": "0.91",
+        "high": "0.92",
+        "low": "0.89",
+        "close": "0.89",
+        "volume": "2020.58",
+        "average": "0.90",
+        "barCount": 26,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2054,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T15:00:00Z",
+        "open": "0.89",
+        "high": "0.90",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "6069.16",
+        "average": "0.87",
+        "barCount": 67,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2055,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T15:30:00Z",
+        "open": "0.88",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "2713.06",
+        "average": "0.87",
+        "barCount": 39,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2056,
+    "fields": {
+        "created": "2023-04-13T14:01:39.472Z",
+        "modified": "2023-04-13T14:01:39.472Z",
+        "batch": 1,
+        "date": "2023-03-01T16:00:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "1832.03",
+        "average": "0.87",
+        "barCount": 29,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2057,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T16:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1010.82",
+        "average": "0.87",
+        "barCount": 13,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2058,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T17:00:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "1301.87",
+        "average": "0.87",
+        "barCount": 24,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2059,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T17:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "923.06",
+        "average": "0.87",
+        "barCount": 19,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2060,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T18:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "915.66",
+        "average": "0.87",
+        "barCount": 13,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2061,
+    "fields": {
+        "created": "2023-04-13T14:01:39.473Z",
+        "modified": "2023-04-13T14:01:39.473Z",
+        "batch": 1,
+        "date": "2023-03-01T18:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "246.14",
+        "average": "0.87",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2062,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T19:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1638.41",
+        "average": "0.87",
+        "barCount": 23,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2063,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T19:30:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1090.51",
+        "average": "0.87",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2064,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T20:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.86",
+        "volume": "789.28",
+        "average": "0.87",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2065,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-01T20:30:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.86",
+        "volume": "1507.81",
+        "average": "0.86",
+        "barCount": 29,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2066,
+    "fields": {
+        "created": "2023-04-13T14:01:39.474Z",
+        "modified": "2023-04-13T14:01:39.474Z",
+        "batch": 1,
+        "date": "2023-03-02T14:30:00Z",
+        "open": "0.85",
+        "high": "0.85",
+        "low": "0.82",
+        "close": "0.85",
+        "volume": "3641.34",
+        "average": "0.83",
+        "barCount": 46,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2067,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T15:00:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "781.83",
+        "average": "0.85",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2068,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T15:30:00Z",
+        "open": "0.85",
+        "high": "0.88",
+        "low": "0.84",
+        "close": "0.87",
+        "volume": "1811.79",
+        "average": "0.87",
+        "barCount": 20,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2069,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T16:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "530.88",
+        "average": "0.86",
+        "barCount": 8,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2070,
+    "fields": {
+        "created": "2023-04-13T14:01:39.475Z",
+        "modified": "2023-04-13T14:01:39.475Z",
+        "batch": 1,
+        "date": "2023-03-02T16:30:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "480.52",
+        "average": "0.85",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2071,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T17:00:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.83",
+        "close": "0.83",
+        "volume": "1496.88",
+        "average": "0.84",
+        "barCount": 21,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2072,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T17:30:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.84",
+        "close": "0.84",
+        "volume": "557.91",
+        "average": "0.84",
+        "barCount": 14,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2073,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T18:00:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "1035.06",
+        "average": "0.83",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2074,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T18:30:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "592.80",
+        "average": "0.84",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2075,
+    "fields": {
+        "created": "2023-04-13T14:01:39.476Z",
+        "modified": "2023-04-13T14:01:39.476Z",
+        "batch": 1,
+        "date": "2023-03-02T19:00:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.85",
+        "volume": "284.13",
+        "average": "0.84",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2076,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-02T19:30:00Z",
+        "open": "0.84",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "897.88",
+        "average": "0.86",
+        "barCount": 14,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2077,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-02T20:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "1092.25",
+        "average": "0.85",
+        "barCount": 19,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2078,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-02T20:30:00Z",
+        "open": "0.85",
+        "high": "0.85",
+        "low": "0.82",
+        "close": "0.83",
+        "volume": "2097.20",
+        "average": "0.84",
+        "barCount": 41,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2079,
+    "fields": {
+        "created": "2023-04-13T14:01:39.477Z",
+        "modified": "2023-04-13T14:01:39.477Z",
+        "batch": 1,
+        "date": "2023-03-03T14:30:00Z",
+        "open": "0.84",
+        "high": "0.86",
+        "low": "0.83",
+        "close": "0.85",
+        "volume": "1706.70",
+        "average": "0.85",
+        "barCount": 20,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2080,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T15:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "1880.06",
+        "average": "0.85",
+        "barCount": 20,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2081,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T15:30:00Z",
+        "open": "0.85",
+        "high": "0.88",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "1792.12",
+        "average": "0.86",
+        "barCount": 17,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2082,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T16:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "847.51",
+        "average": "0.85",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2083,
+    "fields": {
+        "created": "2023-04-13T14:01:39.478Z",
+        "modified": "2023-04-13T14:01:39.478Z",
+        "batch": 1,
+        "date": "2023-03-03T16:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "1214.82",
+        "average": "0.85",
+        "barCount": 15,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2084,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T17:00:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.82",
+        "close": "0.85",
+        "volume": "2746.59",
+        "average": "0.84",
+        "barCount": 33,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2085,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T17:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.83",
+        "close": "0.86",
+        "volume": "1223.89",
+        "average": "0.84",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2086,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T18:00:00Z",
+        "open": "0.84",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.87",
+        "volume": "518.84",
+        "average": "0.85",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2087,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T18:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "1159.03",
+        "average": "0.86",
+        "barCount": 23,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2088,
+    "fields": {
+        "created": "2023-04-13T14:01:39.479Z",
+        "modified": "2023-04-13T14:01:39.479Z",
+        "batch": 1,
+        "date": "2023-03-03T19:00:00Z",
+        "open": "0.87",
+        "high": "0.89",
+        "low": "0.86",
+        "close": "0.88",
+        "volume": "1812.18",
+        "average": "0.88",
+        "barCount": 28,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2089,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-03T19:30:00Z",
+        "open": "0.88",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1973.37",
+        "average": "0.87",
+        "barCount": 33,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2090,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-03T20:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.86",
+        "volume": "1732.58",
+        "average": "0.85",
+        "barCount": 32,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2091,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-03T20:30:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "2730.19",
+        "average": "0.86",
+        "barCount": 28,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2092,
+    "fields": {
+        "created": "2023-04-13T14:01:39.480Z",
+        "modified": "2023-04-13T14:01:39.480Z",
+        "batch": 1,
+        "date": "2023-03-06T14:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "1830.51",
+        "average": "0.87",
+        "barCount": 20,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2093,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T15:00:00Z",
+        "open": "0.86",
+        "high": "0.90",
+        "low": "0.86",
+        "close": "0.90",
+        "volume": "2946.03",
+        "average": "0.88",
+        "barCount": 21,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2094,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T15:30:00Z",
+        "open": "0.90",
+        "high": "0.90",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "1348.82",
+        "average": "0.87",
+        "barCount": 26,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2095,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T16:00:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "1656.88",
+        "average": "0.85",
+        "barCount": 42,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2096,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T16:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "836.18",
+        "average": "0.85",
+        "barCount": 27,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2097,
+    "fields": {
+        "created": "2023-04-13T14:01:39.481Z",
+        "modified": "2023-04-13T14:01:39.481Z",
+        "batch": 1,
+        "date": "2023-03-06T17:00:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "1042.89",
+        "average": "0.86",
+        "barCount": 30,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2098,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T17:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.86",
+        "volume": "578.65",
+        "average": "0.87",
+        "barCount": 23,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 2099,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T18:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.87",
+        "volume": "672.87",
+        "average": "0.87",
+        "barCount": 27,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20100,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T18:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.87",
+        "close": "0.87",
+        "volume": "467.91",
+        "average": "0.87",
+        "barCount": 26,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20101,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T19:00:00Z",
+        "open": "0.87",
+        "high": "0.90",
+        "low": "0.87",
+        "close": "0.89",
+        "volume": "1342.23",
+        "average": "0.89",
+        "barCount": 38,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20102,
+    "fields": {
+        "created": "2023-04-13T14:01:39.482Z",
+        "modified": "2023-04-13T14:01:39.482Z",
+        "batch": 1,
+        "date": "2023-03-06T19:30:00Z",
+        "open": "0.90",
+        "high": "0.95",
+        "low": "0.88",
+        "close": "0.95",
+        "volume": "5232.35",
+        "average": "0.92",
+        "barCount": 71,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20103,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-06T20:00:00Z",
+        "open": "0.94",
+        "high": "1.01",
+        "low": "0.93",
+        "close": "0.96",
+        "volume": "26664.85",
+        "average": "0.98",
+        "barCount": 330,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20104,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-06T20:30:00Z",
+        "open": "0.96",
+        "high": "1.00",
+        "low": "0.95",
+        "close": "1.00",
+        "volume": "11268.79",
+        "average": "0.97",
+        "barCount": 201,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20105,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-07T14:30:00Z",
+        "open": "0.92",
+        "high": "0.96",
+        "low": "0.92",
+        "close": "0.95",
+        "volume": "3927.94",
+        "average": "0.94",
+        "barCount": 38,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20106,
+    "fields": {
+        "created": "2023-04-13T14:01:39.483Z",
+        "modified": "2023-04-13T14:01:39.483Z",
+        "batch": 1,
+        "date": "2023-03-07T15:00:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.90",
+        "close": "0.93",
+        "volume": "2688.84",
+        "average": "0.92",
+        "barCount": 34,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20107,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T15:30:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "566.90",
+        "average": "0.93",
+        "barCount": 8,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20108,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T16:00:00Z",
+        "open": "0.93",
+        "high": "0.95",
+        "low": "0.92",
+        "close": "0.95",
+        "volume": "862.43",
+        "average": "0.94",
+        "barCount": 24,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20109,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T16:30:00Z",
+        "open": "0.95",
+        "high": "0.97",
+        "low": "0.94",
+        "close": "0.96",
+        "volume": "3937.95",
+        "average": "0.96",
+        "barCount": 66,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20110,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T17:00:00Z",
+        "open": "0.96",
+        "high": "0.96",
+        "low": "0.93",
+        "close": "0.95",
+        "volume": "1413.30",
+        "average": "0.94",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20111,
+    "fields": {
+        "created": "2023-04-13T14:01:39.484Z",
+        "modified": "2023-04-13T14:01:39.484Z",
+        "batch": 1,
+        "date": "2023-03-07T17:30:00Z",
+        "open": "0.95",
+        "high": "0.95",
+        "low": "0.93",
+        "close": "0.93",
+        "volume": "1185.86",
+        "average": "0.94",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20112,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T18:00:00Z",
+        "open": "0.93",
+        "high": "0.94",
+        "low": "0.93",
+        "close": "0.93",
+        "volume": "644.89",
+        "average": "0.93",
+        "barCount": 6,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20113,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T18:30:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.93",
+        "volume": "270.15",
+        "average": "0.93",
+        "barCount": 5,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20114,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T19:00:00Z",
+        "open": "0.92",
+        "high": "0.93",
+        "low": "0.92",
+        "close": "0.92",
+        "volume": "540.39",
+        "average": "0.92",
+        "barCount": 8,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20115,
+    "fields": {
+        "created": "2023-04-13T14:01:39.485Z",
+        "modified": "2023-04-13T14:01:39.485Z",
+        "batch": 1,
+        "date": "2023-03-07T19:30:00Z",
+        "open": "0.93",
+        "high": "0.93",
+        "low": "0.91",
+        "close": "0.92",
+        "volume": "616.58",
+        "average": "0.92",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20116,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-07T20:00:00Z",
+        "open": "0.92",
+        "high": "0.92",
+        "low": "0.90",
+        "close": "0.90",
+        "volume": "2247.52",
+        "average": "0.91",
+        "barCount": 21,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20117,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-07T20:30:00Z",
+        "open": "0.90",
+        "high": "0.91",
+        "low": "0.90",
+        "close": "0.90",
+        "volume": "1550.27",
+        "average": "0.90",
+        "barCount": 21,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20118,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-08T14:30:00Z",
+        "open": "0.90",
+        "high": "0.90",
+        "low": "0.86",
+        "close": "0.88",
+        "volume": "3049.51",
+        "average": "0.88",
+        "barCount": 25,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20119,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-08T15:00:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "1081.77",
+        "average": "0.87",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20120,
+    "fields": {
+        "created": "2023-04-13T14:01:39.486Z",
+        "modified": "2023-04-13T14:01:39.486Z",
+        "batch": 1,
+        "date": "2023-03-08T15:30:00Z",
+        "open": "0.87",
+        "high": "0.92",
+        "low": "0.87",
+        "close": "0.90",
+        "volume": "817.83",
+        "average": "0.88",
+        "barCount": 10,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20121,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T16:00:00Z",
+        "open": "0.90",
+        "high": "0.91",
+        "low": "0.87",
+        "close": "0.89",
+        "volume": "467.23",
+        "average": "0.89",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20122,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T16:30:00Z",
+        "open": "0.88",
+        "high": "0.89",
+        "low": "0.88",
+        "close": "0.88",
+        "volume": "530.97",
+        "average": "0.88",
+        "barCount": 6,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20123,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T17:00:00Z",
+        "open": "0.89",
+        "high": "0.89",
+        "low": "0.88",
+        "close": "0.89",
+        "volume": "181.60",
+        "average": "0.88",
+        "barCount": 3,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20124,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T17:30:00Z",
+        "open": "0.88",
+        "high": "0.89",
+        "low": "0.88",
+        "close": "0.88",
+        "volume": "302.52",
+        "average": "0.88",
+        "barCount": 5,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20125,
+    "fields": {
+        "created": "2023-04-13T14:01:39.487Z",
+        "modified": "2023-04-13T14:01:39.487Z",
+        "batch": 1,
+        "date": "2023-03-08T18:00:00Z",
+        "open": "0.88",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.88",
+        "volume": "854.67",
+        "average": "0.87",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20126,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T18:30:00Z",
+        "open": "0.88",
+        "high": "0.89",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "610.67",
+        "average": "0.87",
+        "barCount": 17,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20127,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T19:00:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "2641.07",
+        "average": "0.85",
+        "barCount": 29,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20128,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T19:30:00Z",
+        "open": "0.85",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "547.29",
+        "average": "0.86",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20129,
+    "fields": {
+        "created": "2023-04-13T14:01:39.488Z",
+        "modified": "2023-04-13T14:01:39.488Z",
+        "batch": 1,
+        "date": "2023-03-08T20:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "487.34",
+        "average": "0.86",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20130,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-08T20:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "1136.78",
+        "average": "0.86",
+        "barCount": 18,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20131,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T14:30:00Z",
+        "open": "0.87",
+        "high": "0.88",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "1478.98",
+        "average": "0.86",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20132,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T15:00:00Z",
+        "open": "0.86",
+        "high": "0.88",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "605.23",
+        "average": "0.87",
+        "barCount": 10,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20133,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T15:30:00Z",
+        "open": "0.87",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "633.98",
+        "average": "0.86",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20134,
+    "fields": {
+        "created": "2023-04-13T14:01:39.489Z",
+        "modified": "2023-04-13T14:01:39.489Z",
+        "batch": 1,
+        "date": "2023-03-09T16:00:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.86",
+        "close": "0.87",
+        "volume": "119.06",
+        "average": "0.86",
+        "barCount": 4,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20135,
+    "fields": {
+        "created": "2023-04-13T14:01:39.490Z",
+        "modified": "2023-04-13T14:01:39.490Z",
+        "batch": 1,
+        "date": "2023-03-09T16:30:00Z",
+        "open": "0.86",
+        "high": "0.87",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "490.47",
+        "average": "0.86",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20136,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T17:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.85",
+        "volume": "170.94",
+        "average": "0.85",
+        "barCount": 3,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20137,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T17:30:00Z",
+        "open": "0.85",
+        "high": "0.86",
+        "low": "0.85",
+        "close": "0.86",
+        "volume": "243.41",
+        "average": "0.86",
+        "barCount": 6,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20138,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T18:00:00Z",
+        "open": "0.86",
+        "high": "0.86",
+        "low": "0.84",
+        "close": "0.85",
+        "volume": "867.60",
+        "average": "0.85",
+        "barCount": 13,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20139,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T18:30:00Z",
+        "open": "0.84",
+        "high": "0.85",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "2245.03",
+        "average": "0.84",
+        "barCount": 36,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20140,
+    "fields": {
+        "created": "2023-04-13T14:01:39.491Z",
+        "modified": "2023-04-13T14:01:39.491Z",
+        "batch": 1,
+        "date": "2023-03-09T19:00:00Z",
+        "open": "0.84",
+        "high": "0.84",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "408.52",
+        "average": "0.84",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20141,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-09T19:30:00Z",
+        "open": "0.84",
+        "high": "0.84",
+        "low": "0.83",
+        "close": "0.84",
+        "volume": "528.26",
+        "average": "0.84",
+        "barCount": 10,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20142,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-09T20:00:00Z",
+        "open": "0.84",
+        "high": "0.84",
+        "low": "0.83",
+        "close": "0.83",
+        "volume": "644.39",
+        "average": "0.83",
+        "barCount": 14,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20143,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-09T20:30:00Z",
+        "open": "0.83",
+        "high": "0.84",
+        "low": "0.82",
+        "close": "0.83",
+        "volume": "1938.30",
+        "average": "0.82",
+        "barCount": 38,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20144,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-10T14:30:00Z",
+        "open": "0.80",
+        "high": "0.84",
+        "low": "0.78",
+        "close": "0.78",
+        "volume": "3937.57",
+        "average": "0.80",
+        "barCount": 43,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20145,
+    "fields": {
+        "created": "2023-04-13T14:01:39.492Z",
+        "modified": "2023-04-13T14:01:39.492Z",
+        "batch": 1,
+        "date": "2023-03-10T15:00:00Z",
+        "open": "0.78",
+        "high": "0.79",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "3668.46",
+        "average": "0.78",
+        "barCount": 42,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20146,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T15:30:00Z",
+        "open": "0.77",
+        "high": "0.79",
+        "low": "0.76",
+        "close": "0.79",
+        "volume": "1638.41",
+        "average": "0.77",
+        "barCount": 25,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20147,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T16:00:00Z",
+        "open": "0.79",
+        "high": "0.79",
+        "low": "0.77",
+        "close": "0.78",
+        "volume": "760.56",
+        "average": "0.78",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20148,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T16:30:00Z",
+        "open": "0.78",
+        "high": "0.79",
+        "low": "0.78",
+        "close": "0.78",
+        "volume": "1070.30",
+        "average": "0.79",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20149,
+    "fields": {
+        "created": "2023-04-13T14:01:39.493Z",
+        "modified": "2023-04-13T14:01:39.493Z",
+        "batch": 1,
+        "date": "2023-03-10T17:00:00Z",
+        "open": "0.78",
+        "high": "0.79",
+        "low": "0.77",
+        "close": "0.77",
+        "volume": "1261.73",
+        "average": "0.78",
+        "barCount": 19,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20150,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T17:30:00Z",
+        "open": "0.77",
+        "high": "0.77",
+        "low": "0.77",
+        "close": "0.77",
+        "volume": "997.98",
+        "average": "0.77",
+        "barCount": 16,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20151,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T18:00:00Z",
+        "open": "0.77",
+        "high": "0.77",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "483.63",
+        "average": "0.77",
+        "barCount": 6,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20152,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T18:30:00Z",
+        "open": "0.77",
+        "high": "0.78",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "978.58",
+        "average": "0.77",
+        "barCount": 13,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20153,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T19:00:00Z",
+        "open": "0.77",
+        "high": "0.77",
+        "low": "0.76",
+        "close": "0.76",
+        "volume": "994.67",
+        "average": "0.76",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20154,
+    "fields": {
+        "created": "2023-04-13T14:01:39.494Z",
+        "modified": "2023-04-13T14:01:39.494Z",
+        "batch": 1,
+        "date": "2023-03-10T19:30:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "1617.82",
+        "average": "0.75",
+        "barCount": 21,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20155,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-10T20:00:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "1555.65",
+        "average": "0.76",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20156,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-10T20:30:00Z",
+        "open": "0.76",
+        "high": "0.84",
+        "low": "0.75",
+        "close": "0.83",
+        "volume": "3202.00",
+        "average": "0.81",
+        "barCount": 68,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20157,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-13T12:30:00Z",
+        "open": "0.77",
+        "high": "0.79",
+        "low": "0.70",
+        "close": "0.76",
+        "volume": "3751.28",
+        "average": "0.74",
+        "barCount": 47,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20158,
+    "fields": {
+        "created": "2023-04-13T14:01:39.495Z",
+        "modified": "2023-04-13T14:01:39.495Z",
+        "batch": 1,
+        "date": "2023-03-13T13:00:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "654.88",
+        "average": "0.75",
+        "barCount": 9,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20159,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T13:30:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "1113.91",
+        "average": "0.75",
+        "barCount": 34,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20160,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T14:00:00Z",
+        "open": "0.74",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.76",
+        "volume": "849.08",
+        "average": "0.75",
+        "barCount": 17,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20161,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T14:30:00Z",
+        "open": "0.76",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "1142.94",
+        "average": "0.75",
+        "barCount": 24,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20162,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T15:00:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "465.84",
+        "average": "0.75",
+        "barCount": 12,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20163,
+    "fields": {
+        "created": "2023-04-13T14:01:39.496Z",
+        "modified": "2023-04-13T14:01:39.496Z",
+        "batch": 1,
+        "date": "2023-03-13T15:30:00Z",
+        "open": "0.76",
+        "high": "0.76",
+        "low": "0.74",
+        "close": "0.74",
+        "volume": "570.04",
+        "average": "0.75",
+        "barCount": 15,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20164,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T16:00:00Z",
+        "open": "0.74",
+        "high": "0.75",
+        "low": "0.74",
+        "close": "0.74",
+        "volume": "774.22",
+        "average": "0.74",
+        "barCount": 6,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20165,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T16:30:00Z",
+        "open": "0.74",
+        "high": "0.75",
+        "low": "0.74",
+        "close": "0.75",
+        "volume": "244.57",
+        "average": "0.74",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20166,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T17:00:00Z",
+        "open": "0.75",
+        "high": "0.76",
+        "low": "0.75",
+        "close": "0.76",
+        "volume": "287.08",
+        "average": "0.75",
+        "barCount": 6,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20167,
+    "fields": {
+        "created": "2023-04-13T14:01:39.497Z",
+        "modified": "2023-04-13T14:01:39.497Z",
+        "batch": 1,
+        "date": "2023-03-13T17:30:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.76",
+        "close": "0.76",
+        "volume": "768.04",
+        "average": "0.76",
+        "barCount": 11,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20168,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-13T18:00:00Z",
+        "open": "0.76",
+        "high": "0.77",
+        "low": "0.75",
+        "close": "0.75",
+        "volume": "876.58",
+        "average": "0.76",
+        "barCount": 24,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20169,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-13T18:30:00Z",
+        "open": "0.76",
+        "high": "0.79",
+        "low": "0.75",
+        "close": "0.78",
+        "volume": "1292.05",
+        "average": "0.77",
+        "barCount": 63,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20170,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-14T12:30:00Z",
+        "open": "0.76",
+        "high": "0.79",
+        "low": "0.76",
+        "close": "0.76",
+        "volume": "1271.38",
+        "average": "0.77",
+        "barCount": 18,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20171,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-14T13:00:00Z",
+        "open": "0.76",
+        "high": "0.78",
+        "low": "0.76",
+        "close": "0.77",
+        "volume": "597.06",
+        "average": "0.77",
+        "barCount": 7,
+        "symbol": "MSFT"
+    }
+},
+{
+    "model": "patterns.bardata",
+    "pk": 20172,
+    "fields": {
+        "created": "2023-04-13T14:01:39.498Z",
+        "modified": "2023-04-13T14:01:39.498Z",
+        "batch": 1,
+        "date": "2023-03-14T13:30:00Z",
+        "open": "0.77",
+        "high": "0.78",
+        "low": "0.77",
+        "close": "0.77",
+        "volume": "479.89",
+        "average": "0.77",
+        "barCount": 5,
+        "symbol": "MSFT"
+    }
+}
+]
