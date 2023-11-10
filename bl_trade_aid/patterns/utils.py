@@ -13,6 +13,7 @@ from .models import BarData
 from .models import Batch
 from .models import ProfileChart
 from .models import ProcessedContract
+from .models import ExcludedContract
 from .models import Experiment
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
@@ -348,6 +349,13 @@ class ProfileChartWrapper():
         return control_points
 
     def set_participant_symbols(self):
+        excluded_symbols = ExcludedContract.objects.filter(
+                exclude_active=True,
+                ).values_list('symbol')
+
+        for symbol in excluded_symbols:
+            del self.dates_df_dict[symbol[0]]
+
         for symbol in self.dates_df_dict.keys():
             control_points = self.get_control_points(symbol)
             if len(control_points) > 2:
@@ -453,10 +461,15 @@ class MarketUtils():
                 created__date=batch.created.date(),
                 batch__experiment=batch.experiment).values_list('symbol')
 
+        excluded_symbols = ExcludedContract.objects.filter(
+                exclude_active=True,
+                ).values_list('symbol')
+
         scan_data_list = ScanData.objects.filter(
-                Q(batch=batch) &
-                ~Q(contractDetails__contract__symbol__in=processed_symbols)
-                )
+                (Q(batch=batch) &
+                 ~Q(contractDetails__contract__symbol__in=processed_symbols))
+                ).filter(~Q(contractDetails__contract__symbol__in=excluded_symbols))
+
         MarketUtils.get_bars_from_scandata(
                 scan_data_list,
                 batch=batch,

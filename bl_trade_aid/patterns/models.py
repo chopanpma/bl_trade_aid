@@ -111,6 +111,15 @@ class Experiment(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the experiment'))
 
+    def __str__(self):
+        return self.name
+
+
+class ExcludedContract(TimeStampedModel):
+    symbol = models.CharField(_('Symbol'), max_length=12,
+                              help_text=_('Symbol'))
+    exclude_active = models.BooleanField(default=True)
+
 
 class ProcessedContract(TimeStampedModel):
     symbol = models.CharField(_('Symbol'), max_length=12,

@@ -142,39 +142,6 @@ class MarketProfileOOModelTestCase(TestCase):
         ps = batch.processed_contracts.filter(positive_outcome=True)
         self.assertEquals(2, len(ps))
 
-#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
-#     @patch('ib_insync.IB.reqHistoricalData')
-#     @patch('ib_insync.IB.connect')
-#     def test_narrower_accepted_band(
-#             self,
-#             mock_connect,
-#             mock_req_historical_data,
-#             mock_disconnect_bar
-#             ):
-#         self.fail("not implemented")
-#
-#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
-#     @patch('ib_insync.IB.reqHistoricalData')
-#     @patch('ib_insync.IB.connect')
-#     def test_offset_up(
-#             self,
-#             mock_connect,
-#             mock_req_historical_data,
-#             mock_disconnect_bar
-#             ):
-#         self.fail("not implemented")
-
-#     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
-#     @patch('ib_insync.IB.reqHistoricalData')
-#     @patch('ib_insync.IB.connect')
-#     def test_offset_down(
-#             self,
-#             mock_connect,
-#             mock_req_historical_data,
-#             mock_disconnect_bar
-#             ):
-#         self.fail("not implemented")
-
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
     @patch('ib_insync.IB.connect')

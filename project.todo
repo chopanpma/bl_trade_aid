@@ -39,30 +39,33 @@
   [ ] edge cases 
        [ ] manage timeouts
        [ ] manage different precision
-  * as a trader I would like to have the possible leads on the daily scann marked so I can look at them
-    [D] add control point
-    [D] add accepted band 
-    [D] add last value outside range
-    [D] test live
-      [ ] check precision
-    [*] automate in parameters for lead contract as an experiment.
+  [D] as a trader I would like to have the possible leads on the daily scann marked so I can look at them
+      [D] add control point
+      [D] add accepted band 
+      [D] add last value outside range
+      [D] test live
+  [*] automate in parameters for lead contract as an experiment.
       [D] add parameter for band width
-      [ ] add parameter for days offset
+      [*] add parameter for days offset
+      [D] add exclussion list 
       [ ] add parameter for ticks offset
       [ ] check days lenght
+  [0]- as a user I would like to set reqScannerData parameters  in a table for the experiment
+  [0]- as a user I would like to view the files in the admin app
   [ ] add fundamentals of profile chart
     [ ] add accepted tpos
     [ ] add value area 
     [ ] add initial balance
-
-  [1] as a user I would like to check standar models django admin
-    [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
-    [ ] create clases for query config and map to the experiment
-    [ ] create clases for criteria for making the contracts a lead  and add to an experiment
+  [ ] automate change experiments 
+    [0] create clases for query config and map to the experiment
+    [D] create clases for criteria for making the contracts a lead  and add to an experiment
     [ ] create clases copy experiment to change into another experiment 
-
+  [ ] general improvements
+    [ ] run command from admin
+    [ ] visualize file from admin 
+    [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
   [D] as a user I would like to create experiments in django admin
-  [*]- as a user I would like to set reqScannerData parameters  in a table for the experiment
+  [D] as a user I would like to check standar models django admin
   - as a user I would like to Solve the problem of tz not being recognized by read_frame. 
   - as a user I would like to be able to set an alert at an specific instrument either with a trade or no 
   - as a user I would like to be able to remove  an alert at an specific instrument either with a trade or no 
@@ -81,11 +84,8 @@
   - be able to enter the result of a trade 
   - be able to automatically record the result of a sale
 
-
-
 [ ] system capabilities
 - log every search
 - log every selection
 - log every action
 - ab test functionality 
-

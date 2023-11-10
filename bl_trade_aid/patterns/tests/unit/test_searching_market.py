@@ -7,6 +7,8 @@ from ...utils import MarketUtils
 from ...models import ScanData
 from ...models import BarData
 from ...models import Batch
+from ...models import ProcessedContract
+from ...models import ExcludedContract
 import pickle
 import logging
 logger = logging.getLogger(__name__)
@@ -139,4 +141,27 @@ class ScannerSubscriptionTestCase(TestCase):
         MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
 
         self.assertEquals(0, mock_get_bars_in_date_range.call_count)
+
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
+    def test_exclusion_list(
+            self,
+            mock_get_bars_in_date_range,
+            mock_get_contracts,
+            ):
+        batch = Batch.objects.all()[0]
+        mock_get_contracts.return_value = batch
+
+        call_command('loaddata', 'contract_fixture2', verbosity=0)
+        call_command('loaddata', 'contract_details_fixture', verbosity=0)
+        call_command('loaddata', 'scandata_fixture_2', verbosity=0)
+        call_command('loaddata', 'bardata_fixture_2', verbosity=0)
+
+        ExcludedContract.objects.create(symbol='MSFT', exclude_active=True)
+
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+
+        self.assertEquals(1, mock_get_bars_in_date_range.call_count)
+        self.assertEquals(1, ProcessedContract.objects.filter(batch=batch).count())
+
         # assert that the file has been created
