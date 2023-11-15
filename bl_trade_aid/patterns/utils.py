@@ -352,9 +352,9 @@ class ProfileChartWrapper():
         excluded_symbols = ExcludedContract.objects.filter(
                 exclude_active=True,
                 ).values_list('symbol')
-
-        for symbol in excluded_symbols:
-            del self.dates_df_dict[symbol[0]]
+        for excluded_symbol in excluded_symbols:
+            if self.dates_df_dict.get(excluded_symbol[0], None) is not None:
+                del self.dates_df_dict[excluded_symbol[0]]
 
         for symbol in self.dates_df_dict.keys():
             control_points = self.get_control_points(symbol)
