@@ -1,2 +1,5 @@
 2023-22-15:
 MOBQ enter position .4350
+
+Alertas BCAN 
+Alerta TcJH < 1.27:

@@ -105,6 +105,8 @@ class Rule(TimeStampedModel):
                                    on_delete=models.PROTECT)
     control_point_band_ticks = models.IntegerField(_('Control Point Band Ticks'), null=True, blank=True,
                                                    help_text=_('Ticks allowed for the band'))
+    days_offset = models.IntegerField(_('DayOffset'), null=True, blank=True,
+                                      help_text=_('Day(s) that will be compared with the rest'))
 
 
 class Experiment(TimeStampedModel):

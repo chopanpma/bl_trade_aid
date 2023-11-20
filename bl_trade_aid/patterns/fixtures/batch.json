@@ -3,7 +3,7 @@
         "model": "patterns.experiment",
         "pk": 1,
         "fields": {
-            "name": "Test Experiment"
+            "name": "Test_Experiment"
         }
     },
     {

@@ -2,6 +2,8 @@ import logging
 from unittest.mock import Mock
 from unittest.mock import patch
 from ...models import Batch
+from ...models import Experiment
+from ...models import Rule
 from django.conf import settings
 from django.core.management import call_command
 from django.test import TestCase, TransactionTestCase, override_settings, tag
@@ -58,7 +60,16 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         # done
         # Load Data
         call_command('loaddata', 'scandata_fixture', verbosity=0)
-        mock_get_contracts.return_value = Batch.objects.all()[0]
+
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
+        mock_get_contracts.return_value = batch
         # Call command
-        call_command('generate_current_profile_charts', symbol='MSFT')
+        call_command('generate_current_profile_charts', symbol='MSFT', experiment='Test_Experiment')
         self.assertEqual(1, mock_get_bars_in_date_range.call_count)
