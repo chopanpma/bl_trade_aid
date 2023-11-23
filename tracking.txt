@@ -3,3 +3,4 @@ MOBQ enter position .4350
 
 Alertas BCAN 
 Alerta TcJH < 1.27:
+Alerta NLSP > 39 expected about 60 

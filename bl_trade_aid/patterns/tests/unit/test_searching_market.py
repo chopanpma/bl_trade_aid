@@ -153,16 +153,20 @@ class ScannerSubscriptionTestCase(TestCase):
 
         self.assertEquals(0, mock_get_bars_in_date_range.call_count)
 
-    @patch('bl_trade_aid.patterns.utils.MarketUtils.filter_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
     def test_exclusion_list(
             self,
             mock_get_bars_in_date_range,
             mock_get_contracts,
-            mock_filter_contracts,
             ):
+        experiment_rule = Rule.objects.create(days_offset=2)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
         batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
         mock_get_contracts.return_value = batch
 
         call_command('loaddata', 'contract_fixture2', verbosity=0)
@@ -171,10 +175,8 @@ class ScannerSubscriptionTestCase(TestCase):
         call_command('loaddata', 'bardata_fixture_2', verbosity=0)
 
         ExcludedContract.objects.create(symbol='MSFT', exclude_active=True)
-
         MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
 
-        self.assertEquals(1, mock_filter_contracts.call_count)
         self.assertEquals(1, mock_get_bars_in_date_range.call_count)
         self.assertEquals(1, ProcessedContract.objects.filter(batch=batch).count())
 

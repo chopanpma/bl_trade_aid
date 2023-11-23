@@ -385,7 +385,7 @@ class ProfileChartWrapper():
         df = df.rename(columns={'low': 'Low'})
         df = df.rename(columns={'close': 'Close'})
         df = df.rename(columns={'volume': 'Volume'})
-        df = df.drop(df.columns.difference(
+        df = df.drop(columns=df.columns.difference(
             [
                 'DateTime',
                 'Open',
@@ -395,7 +395,9 @@ class ProfileChartWrapper():
                 'Volume',
                 'symbol',
                 'tz',
-                ]), 1, inplace=False)
+                ]),
+                     axis=1,
+                     inplace=False)
         df['Date'] = pd.to_datetime(pd.to_datetime(df['DateTime']).dt.date)
         df = df.set_index(pd.DatetimeIndex(df['Date']))
 
@@ -466,7 +468,6 @@ class MarketUtils():
         excluded_symbols = ExcludedContract.objects.filter(
                 exclude_active=True,
                 ).values_list('symbol')
-
         filtered_list = ScanData.objects.filter(
                 (Q(batch=batch) &
                  ~Q(contractDetails__contract__symbol__in=processed_symbols))
@@ -482,7 +483,7 @@ class MarketUtils():
         experiment = Experiment.objects.all()[0]
         batch.experiment = experiment
         batch.save()
-        
+
         scan_data_list = MarketUtils.filter_contracts(batch)
         MarketUtils.get_bars_from_scandata(
                 scan_data_list,
@@ -499,7 +500,7 @@ class MarketUtils():
         # Connect to TWS API
         ib = IB()
         ib.connect('192.168.0.20', 7497, clientId=1, account='U3972489')
-    
+
         #  create the batch and link the experiment to it
         batch = Batch()
         batch.experiment = experiment

@@ -29,7 +29,7 @@ class Command(BaseCommand):
         experiment_name = options['experiment']
 
         if symbol is not None:
-            if experiment_name is not None: 
+            if experiment_name is not None:
                 qs = Experiment.objects.filter(name=experiment_name)
                 experiment = qs[0]
 

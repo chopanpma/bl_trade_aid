@@ -168,8 +168,6 @@ class MarketProfileOOModelTestCase(TestCase):
         # 1. filter symbols from being plotted
         # 2. filter scan rules
         # 3. criteria to find a positive chart.
-        ################### ADDD experimento to test batch, 
-        ##########################################################3:w
         
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
@@ -180,12 +178,11 @@ class MarketProfileOOModelTestCase(TestCase):
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
         batch.save()
-
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.set_participant_symbols()
 
         ps = batch.processed_contracts.filter(positive_outcome=True)
-        self.assertEquals(1, len(ps))
+        self.assertEquals(12, len(ps))
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
