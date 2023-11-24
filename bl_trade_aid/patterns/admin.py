@@ -3,6 +3,7 @@ from .models import Experiment
 from .models import Rule
 from .models import ProcessedContract
 from .models import ExcludedContract
+from .models import Position
 
 
 # Register your models here.
@@ -23,8 +24,14 @@ class RuleAdmin(admin.ModelAdmin):
     list_filter = ('name', 'experiment')
 
 
+class PositionInline(admin.TabularInline):
+    model = Position
+    extra = 1
+
+
 @admin.register(ProcessedContract)
 class ProcessedContractsAdmin(admin.ModelAdmin):
+    inlines = [PositionInline]
     list_display = (
             'symbol',
             'batch',
@@ -42,3 +49,13 @@ class ExcludeContractsAdmin(admin.ModelAdmin):
             )
 
     list_filter = ('exclude_active', 'symbol')
+
+
+@admin.register(Position)
+class PositionAdmin(admin.ModelAdmin):
+    list_display = (
+            'processed_contract',
+            'direction',
+            'open_price',
+            'close_price',
+            )

@@ -122,6 +122,9 @@ class ExcludedContract(TimeStampedModel):
                               help_text=_('Symbol'))
     exclude_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.symbol
+
 
 class ProcessedContract(TimeStampedModel):
     symbol = models.CharField(_('Symbol'), max_length=12,
@@ -131,11 +134,46 @@ class ProcessedContract(TimeStampedModel):
                               on_delete=models.PROTECT)
     positive_outcome = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.symbol
+
+
+class Position(TimeStampedModel):
+    LONG = 'L'
+    SHORT = 'S'
+
+    DIRECTION_CHOICES = [
+            (LONG, 'Long'),
+            (SHORT, 'Short')
+            ]
+
+    processed_contract = models.ForeignKey(
+            'ProcessedContract',
+            verbose_name=_('ProcessedContract'),
+            related_name='positions',
+            null=True, blank=True,
+            on_delete=models.PROTECT)
+    shadow_mode = models.BooleanField(default=False)
+    open_price = models.DecimalField(_('open_price'), max_digits=12, decimal_places=2,
+                                     help_text=_('open position price'))
+    close_price = models.DecimalField(_('close_price'), max_digits=12, decimal_places=2,
+                                      help_text=_('close position price'))
+    direction = models.CharField(_('Direction'), max_length=1,
+                                 help_text=_('Direction of the position'),
+                                 choices=DIRECTION_CHOICES,
+                                 default=LONG)
+
+    def __str__(self):
+        return f'{self.symbol} - {self.direction} - O:{self.open_price} - C:{self.close_price}'
+
 
 class Batch(TimeStampedModel):
     experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'), related_name='batches',
                                    null=True, blank=True,
                                    on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f'{self.id} - {self.created}'
 
 
 class ScanData(TimeStampedModel):
