@@ -478,9 +478,9 @@ class MarketUtils():
     @staticmethod
     def get_current_profile_charts(
             profile_chart_generation_limit,
+            experiment,
             ):
-        batch = MarketUtils.get_contracts()
-        experiment = Experiment.objects.all()[0]
+        batch = MarketUtils.get_contracts(experiment)
         batch.experiment = experiment
         batch.save()
 

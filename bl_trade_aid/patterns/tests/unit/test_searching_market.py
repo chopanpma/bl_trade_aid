@@ -123,7 +123,8 @@ class ScannerSubscriptionTestCase(TestCase):
 
         call_command('loaddata', 'scandata_fixture', verbosity=0)
 
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=30)
+        experiment = Experiment.objects.all()[0]
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=30, experiment=experiment)
 
         self.assertEquals(1, mock_get_contracts.call_count)
         self.assertEquals(1, mock_get_bars_from_scandata.call_count)
@@ -138,18 +139,19 @@ class ScannerSubscriptionTestCase(TestCase):
             mock_get_contracts,
             ):
         mock_get_contracts.return_value = Batch.objects.all()[0]
+        experiment = Experiment.objects.all()[0]
 
         call_command('loaddata', 'contract_fixture2', verbosity=0)
         call_command('loaddata', 'contract_details_fixture', verbosity=0)
         call_command('loaddata', 'scandata_fixture_2', verbosity=0)
         call_command('loaddata', 'bardata_fixture_2', verbosity=0)
 
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50, experiment=experiment)
 
         self.assertEquals(2, mock_get_bars_in_date_range.call_count)
 
         mock_get_bars_in_date_range.reset_mock()
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50, experiment=experiment)
 
         self.assertEquals(0, mock_get_bars_in_date_range.call_count)
 
@@ -175,7 +177,7 @@ class ScannerSubscriptionTestCase(TestCase):
         call_command('loaddata', 'bardata_fixture_2', verbosity=0)
 
         ExcludedContract.objects.create(symbol='MSFT', exclude_active=True)
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50, experiment=experiment)
 
         self.assertEquals(1, mock_get_bars_in_date_range.call_count)
         self.assertEquals(1, ProcessedContract.objects.filter(batch=batch).count())
@@ -199,7 +201,7 @@ class ScannerSubscriptionTestCase(TestCase):
 
         ExcludedContract.objects.create(symbol='AMZN', exclude_active=True)
 
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50, experiment=batch.experiment)
 
         self.assertEquals(2, mock_get_bars_in_date_range.call_count)
         self.assertEquals(2, ProcessedContract.objects.filter(batch=batch).count())

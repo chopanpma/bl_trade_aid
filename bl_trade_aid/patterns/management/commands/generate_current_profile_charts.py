@@ -1,13 +1,8 @@
-from collections import defaultdict
 from django.core.management.base import BaseCommand
 from ...utils import MarketUtils
 from ...models import Experiment
+
 import warnings
-
-from ib_insync import IB
-from ib_insync import Stock
-from ib_insync import util
-
 import logging
 logger = logging.getLogger(__name__)
 
@@ -28,17 +23,18 @@ class Command(BaseCommand):
         symbol = options['symbol']
         experiment_name = options['experiment']
 
-        if symbol is not None:
-            if experiment_name is not None:
-                qs = Experiment.objects.filter(name=experiment_name)
-                experiment = qs[0]
-
+        if experiment_name is not None:
+            qs = Experiment.objects.filter(name=experiment_name)
+            experiment = qs[0]
+            if symbol is not None:
                 MarketUtils.get_single_profile_chart(symbol, experiment)
                 return
 
-        if profile_chart_generation_limit_param is None:
-            profile_chart_generation_limit_param = '50'
+            if profile_chart_generation_limit_param is None:
+                profile_chart_generation_limit_param = '50'
 
-        profile_chart_generation_limit = int(profile_chart_generation_limit_param)
+            profile_chart_generation_limit = int(profile_chart_generation_limit_param)
 
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit)
+            MarketUtils.get_current_profile_charts(profile_chart_generation_limit, experiment)
+        else:
+            print('No eperiment')

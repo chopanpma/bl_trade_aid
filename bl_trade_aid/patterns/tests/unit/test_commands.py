@@ -1,13 +1,10 @@
 import logging
-from unittest.mock import Mock
 from unittest.mock import patch
 from ...models import Batch
 from ...models import Experiment
 from ...models import Rule
-from django.conf import settings
 from django.core.management import call_command
-from django.test import TestCase, TransactionTestCase, override_settings, tag
-
+from django.test import TransactionTestCase
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +18,7 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         # assert the count
         # done
 
-        call_command('generate_current_profile_charts')
+        call_command('generate_current_profile_charts', experiment='Test_Experiment')
         self.assertEqual(1, mock_get_current_profile_charts.call_count)
 
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
@@ -42,9 +39,11 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         call_command('loaddata', 'scandata_fixture', verbosity=0)
         mock_get_contracts.return_value = Batch.objects.all()[0]
         # Call command
-        call_command('generate_current_profile_charts', profile_chart_generation_limit=20)
+        experiment = Experiment.objects.all()[0]
+        call_command('generate_current_profile_charts', profile_chart_generation_limit=20, experiment='Test_Experiment')
         self.assertEqual(20, mock_get_bars_in_date_range.call_count)
         self.assertEqual(1, mock_set_participant_symbols.call_count)
+        mock_get_contracts.assert_called_with(experiment)
 
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
