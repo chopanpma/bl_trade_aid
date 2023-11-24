@@ -154,9 +154,9 @@ class Position(TimeStampedModel):
             null=True, blank=True,
             on_delete=models.PROTECT)
     shadow_mode = models.BooleanField(default=False)
-    open_price = models.DecimalField(_('open_price'), max_digits=12, decimal_places=2,
+    open_price = models.DecimalField(_('open_price'), max_digits=12, decimal_places=4,
                                      help_text=_('open position price'))
-    close_price = models.DecimalField(_('close_price'), max_digits=12, decimal_places=2,
+    close_price = models.DecimalField(_('close_price'), max_digits=12, decimal_places=4,
                                       help_text=_('close position price'))
     direction = models.CharField(_('Direction'), max_length=1,
                                  help_text=_('Direction of the position'),
