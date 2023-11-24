@@ -237,6 +237,12 @@ class ProfileChartWrapper():
         self.mp_dict = {}
         self.height_precision = height_precision
         self.rules_executor = RuleExecutor(batch)
+        self.days_offset = 2
+        rules = self.batch.experiment.rules.all()
+
+        for rule in rules:
+            if rule.days_offset is not None:
+                self.days_offset = rule.days_offset
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -311,7 +317,7 @@ class ProfileChartWrapper():
         dates = list(control_points.keys())
 
         responses = []
-        for date in dates[-2:]:
+        for date in dates[-self.days_offset:]:
             if control_points[date] <= min_point_of_control:
                 responses.append('DOWN')
             else:
@@ -358,9 +364,9 @@ class ProfileChartWrapper():
 
         for symbol in self.dates_df_dict.keys():
             control_points = self.get_control_points(symbol)
-            if len(control_points) > 2:
-                max_point_of_control = max(list(control_points.values())[:-2])
-                min_point_of_control = min(list(control_points.values())[:-2])
+            if len(control_points) > self.days_offset:
+                max_point_of_control = max(list(control_points.values())[:-self.days_offset])
+                min_point_of_control = min(list(control_points.values())[:-self.days_offset])
                 if self.check_symbol_positive_experiment(control_points,
                                                          max_point_of_control,
                                                          min_point_of_control):
@@ -379,7 +385,7 @@ class ProfileChartWrapper():
         df = df.rename(columns={'low': 'Low'})
         df = df.rename(columns={'close': 'Close'})
         df = df.rename(columns={'volume': 'Volume'})
-        df = df.drop(df.columns.difference(
+        df = df.drop(columns=df.columns.difference(
             [
                 'DateTime',
                 'Open',
@@ -389,7 +395,9 @@ class ProfileChartWrapper():
                 'Volume',
                 'symbol',
                 'tz',
-                ]), 1, inplace=False)
+                ]),
+                     axis=1,
+                     inplace=False)
         df['Date'] = pd.to_datetime(pd.to_datetime(df['DateTime']).dt.date)
         df = df.set_index(pd.DatetimeIndex(df['Date']))
 
@@ -439,24 +447,20 @@ class MarketUtils():
 
     @staticmethod
     def get_single_profile_chart(
-            symbol
+            symbol,
+            experiment
             ):
 
         batch = Batch.objects.create()
+        batch.experiment = experiment
+        batch.save()
 
         MarketUtils.get_bars_from_single_symbol(batch, symbol)
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts(batch)
 
     @staticmethod
-    def get_current_profile_charts(
-            profile_chart_generation_limit,
-            ):
-
-        batch = MarketUtils.get_contracts()
-        experiment = Experiment.objects.all()[0]
-        batch.experiment = experiment
-        batch.save()
+    def filter_contracts(batch):
         processed_symbols = ProcessedContract.objects.filter(
                 created__date=batch.created.date(),
                 batch__experiment=batch.experiment).values_list('symbol')
@@ -464,12 +468,23 @@ class MarketUtils():
         excluded_symbols = ExcludedContract.objects.filter(
                 exclude_active=True,
                 ).values_list('symbol')
-
-        scan_data_list = ScanData.objects.filter(
+        filtered_list = ScanData.objects.filter(
                 (Q(batch=batch) &
                  ~Q(contractDetails__contract__symbol__in=processed_symbols))
                 ).filter(~Q(contractDetails__contract__symbol__in=excluded_symbols))
 
+        return filtered_list
+
+    @staticmethod
+    def get_current_profile_charts(
+            profile_chart_generation_limit,
+            ):
+        batch = MarketUtils.get_contracts()
+        experiment = Experiment.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
+        scan_data_list = MarketUtils.filter_contracts(batch)
         MarketUtils.get_bars_from_scandata(
                 scan_data_list,
                 batch=batch,
@@ -480,13 +495,19 @@ class MarketUtils():
         pc.set_participant_symbols()
 
     @staticmethod
-    def get_contracts():
+    def get_contracts(experiment):
 
         # Connect to TWS API
         ib = IB()
         ib.connect('192.168.0.20', 7497, clientId=1, account='U3972489')
 
+        #  create the batch and link the experiment to it
+        batch = Batch()
+        batch.experiment = experiment
+        batch.save()
+
         # Request scanner data
+        # TODO: get this from the experiment
         scanner = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
         data = ib.reqScannerData(scanner, [TagValue('averageOptVolumeAbove', '100'),
                                            TagValue('marketCapAbove', '100000000'),
@@ -497,10 +518,7 @@ class MarketUtils():
         # with open('scan_results.pickle', 'wb') as file:
         #     pickle.dump(data, file)
 
-        # Insert data into the tables.
-        batch = Batch()
-        batch.save()
-
+        # insert results
         for scan_data in data:
             contract_dict = scan_data.contractDetails.contract.__dict__
             contract_instance = Contract()

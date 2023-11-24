@@ -45,13 +45,17 @@
       [D] add accepted band
       [D] add last value outside range
       [D] test live
-  [*] automate in parameters for lead contract as an experiment.
+  [0] automate in parameters for lead contract as an experiment.
       [D] add parameter for band width
-      [*] add parameter for days offset
+      [D] add parameter for days offset
       [D] add exclussion list
-      [ ] add parameter for ticks offset
+      [0] add parameter for ticks offset
+      [0] add discarded flag, and checking flag
+      [0] add minimum samaple days for be accepted in Rulescjjj
       [ ] check days why there is no data from 14 days and exclude
-  [0] add table/fields for tracking results of shadow mode
+  [*] add table/fields for tracking results of shadow mode
+  [1] add automatic batch calling until daily sample reached out 
+  [1] add daily sample to experiment
   [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment
   [1]- as a user I would like to view the files in the admin app
   [ ] add fundamentals of profile chart

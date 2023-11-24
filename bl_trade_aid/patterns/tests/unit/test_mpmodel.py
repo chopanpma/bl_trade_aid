@@ -62,7 +62,13 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
         batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
 
         self.assertEquals(14, len(pc.periods('MSFT')))
@@ -82,7 +88,14 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
         batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
 
         # test the profile chart one day column is created
@@ -145,6 +158,35 @@ class MarketProfileOOModelTestCase(TestCase):
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
     @patch('ib_insync.IB.connect')
+    def test_days_offset(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+        # TODO: types of rules
+        # 1. filter symbols from being plotted
+        # 2. filter scan rules
+        # 3. criteria to find a positive chart.
+        
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.processed_contracts.filter(positive_outcome=True)
+        self.assertEquals(12, len(ps))
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
     def test_call_bar_data_and_insert_symbol(
             self,
             mock_connect,
@@ -154,7 +196,14 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
         batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
         ProfileChartUtils.create_profile_chart_wrapper(batch)
         symbols = BarData.objects.filter(batch=batch).distinct('symbol')
 
@@ -184,7 +233,15 @@ class MarketProfileOOModelTestCase(TestCase):
             ):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
+
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
         batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts()
         # create mocks

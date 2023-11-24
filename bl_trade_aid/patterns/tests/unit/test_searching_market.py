@@ -9,6 +9,8 @@ from ...models import BarData
 from ...models import Batch
 from ...models import ProcessedContract
 from ...models import ExcludedContract
+from ...models import Experiment
+from ...models import Rule
 import pickle
 import logging
 logger = logging.getLogger(__name__)
@@ -32,7 +34,12 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_req_historical_data.return_value = data
 
-        batch = Batch()
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
         batch.save()
 
         MarketUtils.get_bars_in_date_range('AMV', 'SMART', batch)
@@ -64,7 +71,11 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_reqscannerdata.return_value = data
 
-        batch = MarketUtils.get_contracts()
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = MarketUtils.get_contracts(experiment)
 
         self.assertEquals(50, len(ScanData.objects.filter(batch=batch)))
         # call_command('dumpdata',  indent=4, output='scandata_fixture.json')
@@ -149,7 +160,13 @@ class ScannerSubscriptionTestCase(TestCase):
             mock_get_bars_in_date_range,
             mock_get_contracts,
             ):
+        experiment_rule = Rule.objects.create(days_offset=2)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
         batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
         mock_get_contracts.return_value = batch
 
         call_command('loaddata', 'contract_fixture2', verbosity=0)
@@ -158,7 +175,6 @@ class ScannerSubscriptionTestCase(TestCase):
         call_command('loaddata', 'bardata_fixture_2', verbosity=0)
 
         ExcludedContract.objects.create(symbol='MSFT', exclude_active=True)
-
         MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50)
 
         self.assertEquals(1, mock_get_bars_in_date_range.call_count)
