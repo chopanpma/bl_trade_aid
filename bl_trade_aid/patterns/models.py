@@ -164,7 +164,7 @@ class Position(TimeStampedModel):
                                  default=LONG)
 
     def __str__(self):
-        return f'{self.symbol} - {self.direction} - O:{self.open_price} - C:{self.close_price}'
+        return f'{self.processed_contract} - {self.direction} - O:{self.open_price} - C:{self.close_price}'
 
 
 class Batch(TimeStampedModel):
