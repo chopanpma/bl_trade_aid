@@ -4,6 +4,7 @@ from .models import Rule
 from .models import ProcessedContract
 from .models import ExcludedContract
 from .models import Position
+from .models import Alert
 
 
 # Register your models here.
@@ -22,6 +23,11 @@ class RuleAdmin(admin.ModelAdmin):
             )
 
     list_filter = ('name', 'experiment')
+
+
+class AlertInline(admin.TabularInline):
+    model = Position
+    extra = 1
 
 
 class PositionInline(admin.TabularInline):
@@ -58,4 +64,13 @@ class PositionAdmin(admin.ModelAdmin):
             'direction',
             'open_price',
             'close_price',
+            )
+
+
+@admin.register(Alert)
+class AlertAdmin(admin.ModelAdmin):
+    list_display = (
+            'processed_contract',
+            'operator',
+            'alert_price',
             )
