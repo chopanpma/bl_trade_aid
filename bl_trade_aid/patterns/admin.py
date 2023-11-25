@@ -26,7 +26,7 @@ class RuleAdmin(admin.ModelAdmin):
 
 
 class AlertInline(admin.TabularInline):
-    model = Position
+    model = Alert
     extra = 1
 
 
