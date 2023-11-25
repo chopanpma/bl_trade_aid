@@ -54,6 +54,9 @@
       [0] add minimum samaple days for be accepted in Rulescjjj
       [ ] check days why there is no data from 14 days and exclude
   [*] add table/fields for tracking results of shadow mode
+    [D] add open close
+    [*] add alert tracking table
+    [*] add test for model aditional methods
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
   [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment

@@ -3,6 +3,7 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from model_utils.models import TimeStampedModel
 from zoneinfo import ZoneInfo
+from django.utils import timezone
 
 
 # Create your models here.
@@ -136,6 +137,26 @@ class ProcessedContract(TimeStampedModel):
 
     def __str__(self):
         return self.symbol
+
+
+class Alert(TimeStampedModel):
+    ALERT_CHOICES = [
+        ('GT', 'Greater Than'),
+        ('LT', 'Less Than'),
+    ]
+
+    alert_price = models.DecimalField(_(
+        'open_price'), max_digits=12, decimal_places=4,
+        help_text=_('open position price'))
+    operator = models.CharField(max_length=2, choices=ALERT_CHOICES)
+    processed_contract = models.ForeignKey(
+            'ProcessedContract',  verbose_name=_('ProcessedContract'), related_name='alerts',
+            on_delete=models.PROTECT)
+
+    def __str__(self):
+        localized_time = timezone.localtime(self.created)
+        return (f'Alert: {self.operator}:{self.alert_price} '
+                f'[{localized_time.strftime("%Y-%m-%d %H:%M:%S")}]')
 
 
 class Position(TimeStampedModel):

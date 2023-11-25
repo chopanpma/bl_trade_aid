@@ -1,19 +1,23 @@
 from django.test import TestCase
 from django.conf import settings
+from django.utils import timezone
+from django.core.management import call_command
+from django.core.files.uploadedfile import SimpleUploadedFile
 from unittest.mock import patch
 from unittest import mock
-from django.core.management import call_command
 from ...utils import ProfileChartUtils
 from ...utils import HourLetterMapper
-from django.core.files.uploadedfile import SimpleUploadedFile
 from ...models import ProfileChart
 from ...models import Batch
 from ...models import BarData
 from ...models import Experiment
 from ...models import Rule
+from ...models import ProcessedContract
+from ...models import Alert
 
 import logging
 import pandas as pd
+import decimal
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +38,7 @@ class ProfileChartModelTest(TestCase):
             batch=batch,
             symbol="TEST",
             chart_file=chart_file
-        )
+            )
 
         # Check that the file has been saved correctly
         self.assertTrue(profile_chart.chart_file)
@@ -168,7 +172,7 @@ class MarketProfileOOModelTestCase(TestCase):
         # 1. filter symbols from being plotted
         # 2. filter scan rules
         # 3. criteria to find a positive chart.
-        
+
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
         experiment_rule = Rule.objects.create(days_offset=1)
@@ -291,3 +295,38 @@ class MarketProfileOOModelTestCase(TestCase):
 
         self.assertEquals(bytes(content1, 'utf-8'), saved_file1)
         self.assertEquals(bytes(content2, 'utf-8'), saved_file2)
+
+
+class AlertModelTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.experiment = Experiment.objects.create(name="experiment")
+        cls.batch = Batch.objects.create(experiment=cls.experiment)  # Add required fields here
+        cls.processed_contract = ProcessedContract.objects.create(
+                symbol='MSFT',
+                batch=cls.batch,
+                positive_outcome=True,
+                )  # Add required fields here
+
+    def test_str_representation(self):
+        alert = Alert(
+                processed_contract=self.processed_contract,
+                alert_price=decimal.Decimal('1234.5678'),
+                operator='GT')
+        alert.save()
+
+        # You might need to adjust the expected string based on the exact requirements
+        expected_string = (f'Alert: {alert.operator}:{alert.alert_price} '
+                           f'[{timezone.localtime(alert.created).strftime("%Y-%m-%d %H:%M:%S")}]')
+
+        self.assertEqual(str(alert), expected_string)
+
+    # Optional: Test field definitions
+    def test_field_definitions(self):
+        alert = Alert(
+                processed_contract=self.processed_contract,
+                alert_price=decimal.Decimal('1234.5678'),
+                operator='GT')
+        alert.save()
+        self.assertIsInstance(alert.alert_price, decimal.Decimal)
+        self.assertIsInstance(alert.operator, str)
