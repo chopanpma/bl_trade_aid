@@ -37,7 +37,7 @@ class PositionInline(admin.TabularInline):
 
 @admin.register(ProcessedContract)
 class ProcessedContractsAdmin(admin.ModelAdmin):
-    inlines = [PositionInline]
+    inlines = [PositionInline, AlertInline]
     list_display = (
             'symbol',
             'batch',
