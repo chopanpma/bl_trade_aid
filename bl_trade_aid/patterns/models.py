@@ -186,6 +186,7 @@ class Position(TimeStampedModel):
                                  help_text=_('Direction of the position'),
                                  choices=DIRECTION_CHOICES,
                                  default=LONG)
+    positive_trade = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.processed_contract} - {self.direction} - O:{self.open_price} - C:{self.close_price}'
