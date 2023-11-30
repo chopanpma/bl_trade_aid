@@ -14,7 +14,6 @@ from .models import Batch
 from .models import ProfileChart
 from .models import ProcessedContract
 from .models import ExcludedContract
-from .models import Experiment
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db.models import Q
@@ -221,13 +220,17 @@ class RuleExecutor():
         for rule in self.batch.experiment.rules.all():
             if rule.control_point_band_ticks is not None:
                 band_width = max_point_of_control - min_point_of_control
-                if band_width > rule.control_point_band_ticks:
+                if band_width >= rule.control_point_band_ticks:
                     response = False
 
         return response
 
 
 class ProfileChartWrapper():
+
+    days_offset = 2
+    ticks_offset = None
+
     def __init__(self, batch, height_precision=100):
 
         qs = BarData.objects.filter(batch=batch)
@@ -237,12 +240,13 @@ class ProfileChartWrapper():
         self.mp_dict = {}
         self.height_precision = height_precision
         self.rules_executor = RuleExecutor(batch)
-        self.days_offset = 2
         rules = self.batch.experiment.rules.all()
 
         for rule in rules:
             if rule.days_offset is not None:
                 self.days_offset = rule.days_offset
+            if rule.ticks_offset is not None:
+                self.ticks_offset = rule.ticks_offset
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -315,22 +319,28 @@ class ProfileChartWrapper():
             min_point_of_control):
 
         dates = list(control_points.keys())
-
         responses = []
+        ticks_delta = 0
+
         for date in dates[-self.days_offset:]:
             if control_points[date] <= min_point_of_control:
-                responses.append('DOWN')
+                ticks_delta = min_point_of_control - control_points[date]
+                responses.append(('DOWN', ticks_delta))
             else:
                 if control_points[date] >= max_point_of_control:
                     # last two are inside the range
-                    responses.append('UP')
+                    ticks_delta = control_points[date] - max_point_of_control
+                    responses.append(('UP', ticks_delta))
                 else:
                     return False
         # Both have to be outside the band in the same direction
 
-        first_element = responses[0]
+        first_element = responses[0][0]
         for element in responses[1:]:
-            if element != first_element:
+            if self.ticks_offset is not None:
+                if element[1] < self.ticks_offset:
+                    return False
+            if element[0] != first_element:
                 return False
         if not self.rules_executor.rules_passed(max_point_of_control, min_point_of_control):
             return False

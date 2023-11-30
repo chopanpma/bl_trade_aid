@@ -45,18 +45,18 @@
       [D] add accepted band
       [D] add last value outside range
       [D] test live
-  [0] automate in parameters for lead contract as an experiment.
+  [*] automate in parameters for lead contract as an experiment.
       [D] add parameter for band width
       [D] add parameter for days offset
       [D] add exclussion list
-      [0] add parameter for ticks offset
+      [*] add parameter for ticks offset
       [0] add discarded flag, and checking flag
-      [0] add minimum samaple days for be accepted in Rulescjjj
+      [*] add minimum samaple days for be accepted in Rulescjjj
       [ ] check days why there is no data from 14 days and exclude
-  [*] add table/fields for tracking results of shadow mode
+  [D] add table/fields for tracking results of shadow mode
     [D] add open close
-    [*] add alert tracking table
-    [*] add test for model aditional methods
+    [D] add alert tracking table
+    [D] add test for model aditional methods
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
   [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment
@@ -73,6 +73,7 @@
     [ ] run command from admin
     [ ] visualize file from admin
     [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
+    [1] refactor rules
   [D] as a user I would like to create experiments in django admin
   [D] as a user I would like to check standar models django admin
   - as a user I would like to Solve the problem of tz not being recognized by read_frame.

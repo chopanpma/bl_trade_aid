@@ -108,6 +108,9 @@ class Rule(TimeStampedModel):
                                                    help_text=_('Ticks allowed for the band'))
     days_offset = models.IntegerField(_('DayOffset'), null=True, blank=True,
                                       help_text=_('Day(s) that will be compared with the rest'))
+    ticks_offset = models.IntegerField(_('Ticks'), null=True, blank=True,
+                                       help_text=_('Ticks that will be the offset of the last(s) days '
+                                                   'from the rest of the pack'))
 
 
 class Experiment(TimeStampedModel):
