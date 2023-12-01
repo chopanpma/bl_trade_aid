@@ -230,6 +230,7 @@ class ProfileChartWrapper():
 
     days_offset = 2
     ticks_offset = None
+    days_returned = None
 
     def __init__(self, batch, height_precision=100):
 
@@ -247,6 +248,8 @@ class ProfileChartWrapper():
                 self.days_offset = rule.days_offset
             if rule.ticks_offset is not None:
                 self.ticks_offset = rule.ticks_offset
+            if rule.days_returned is not None:
+                self.days_returned = rule.days_returned
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -319,6 +322,10 @@ class ProfileChartWrapper():
             min_point_of_control):
 
         dates = list(control_points.keys())
+        if self.days_returned is not None:
+            if len(dates) < self.days_returned:
+                return False
+
         responses = []
         ticks_delta = 0
 

@@ -111,6 +111,9 @@ class Rule(TimeStampedModel):
     ticks_offset = models.IntegerField(_('Ticks'), null=True, blank=True,
                                        help_text=_('Ticks that will be the offset of the last(s) days '
                                                    'from the rest of the pack'))
+    days_returned = models.IntegerField(_('DaysReturned'), null=True, blank=True,
+                                        help_text=_('How many days should be returned for each symbols '
+                                        'used to fetch and validate'))
 
 
 class Experiment(TimeStampedModel):

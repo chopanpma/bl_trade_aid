@@ -112,6 +112,91 @@ class RulesTestCase(TestCase):
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
     @patch('ib_insync.IB.connect')
+    def test_days_returned_happy_path(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar,
+            ):
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        experiment_rule = Rule.objects.create(
+                days_returned=7,
+                days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+
+        control_points = {
+                pd.Timestamp('2023-02-23 00:00:00'): 110,
+                pd.Timestamp('2023-02-24 00:00:00'): 115,
+                pd.Timestamp('2023-02-26 00:00:00'): 150,
+                pd.Timestamp('2023-02-27 00:00:00'): 130,
+                pd.Timestamp('2023-02-28 00:00:00'): 120,
+                pd.Timestamp('2023-03-01 00:00:00'): 110,
+                pd.Timestamp('2023-03-02 00:00:00'): 180,
+                }
+
+        max_point_of_control = 150
+        min_point_of_control = 110
+        result = pc.check_symbol_positive_experiment(
+                control_points,
+                max_point_of_control,
+                min_point_of_control,
+                )
+
+        self.assertTrue(result)
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_days_returned_short(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar,
+            ):
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        experiment_rule = Rule.objects.create(
+                days_returned=7,
+                days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+
+        control_points = {
+                pd.Timestamp('2023-02-23 00:00:00'): 110,
+                pd.Timestamp('2023-02-24 00:00:00'): 115,
+                pd.Timestamp('2023-02-26 00:00:00'): 150,
+                pd.Timestamp('2023-02-27 00:00:00'): 130,
+                pd.Timestamp('2023-03-01 00:00:00'): 110,
+                pd.Timestamp('2023-03-02 00:00:00'): 180,
+                }
+
+        max_point_of_control = 150
+        min_point_of_control = 110
+        result = pc.check_symbol_positive_experiment(
+                control_points,
+                max_point_of_control,
+                min_point_of_control,
+                )
+
+        self.assertFalse(result)
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
     def test_days_offset(
             self,
             mock_connect,

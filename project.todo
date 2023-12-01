@@ -49,7 +49,7 @@
       [D] add parameter for band width
       [D] add parameter for days offset
       [D] add exclussion list
-      [*] add parameter for ticks offset
+      [D] add parameter for ticks offset
       [0] add discarded flag, and checking flag
       [*] add minimum samaple days for be accepted in Rulescjjj
       [ ] check days why there is no data from 14 days and exclude
@@ -57,6 +57,7 @@
     [D] add open close
     [D] add alert tracking table
     [D] add test for model aditional methods
+    [D] added positive trade flag
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
   [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment
