@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Experiment
+from .models import QueryParameter
 from .models import Rule
 from .models import ProcessedContract
 from .models import ExcludedContract
@@ -8,9 +9,19 @@ from .models import Alert
 
 
 # Register your models here.
+class QueryParameterInline(admin.TabularInline):
+    model = QueryParameter
+    extra = 1
+
+
 @admin.register(Experiment)
 class ExperimentAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    inlines = [QueryParameterInline]
+
+    list_display = ['name',
+                    'instrument',
+                    'location_code',
+                    'scan_code']
     list_filter = ['name']
 
 
@@ -73,4 +84,12 @@ class AlertAdmin(admin.ModelAdmin):
             'processed_contract',
             'operator',
             'alert_price',
+            )
+
+
+@admin.register(QueryParameter)
+class QueryParameterAdmin(admin.ModelAdmin):
+    list_display = (
+            'parameter_name',
+            'parameter_value',
             )
