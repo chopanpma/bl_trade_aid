@@ -10,7 +10,10 @@ from ...models import Batch
 from ...models import ProcessedContract
 from ...models import ExcludedContract
 from ...models import Experiment
+from ...models import QueryParameter
 from ...models import Rule
+from ib_insync import ScannerSubscription
+from ib_insync import TagValue
 import pickle
 import logging
 logger = logging.getLogger(__name__)
@@ -207,3 +210,99 @@ class ScannerSubscriptionTestCase(TestCase):
         self.assertEquals(2, ProcessedContract.objects.filter(batch=batch).count())
 
         # assert that the file has been created
+
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.create_parameters')
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.create_scanner')
+    @patch('ib_insync.IB.reqScannerData')
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.connect')
+    def test_get_contract_calls_create_scanner_and_create_parameters(
+            self,
+            mock_connect,
+            mock_disconnect_scan,
+            mock_reqscannerdata,
+            mock_create_scanner,
+            mock_create_parameters):
+
+        file = open(f'{settings.APPS_DIR}/patterns/tests/fixtures/scan_results.pickle', 'rb')
+        data = pickle.load(file)
+        file.close()
+        mock_reqscannerdata.return_value = data
+
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        # add scancodes
+        experiment.instrument = 'STK'
+        experiment.location_code = 'STK.US.MAJOR'
+        experiment.scan_code = 'HOT_BY_VOLUME'
+
+        # call_command('dumpdata',  indent=4, output='scandata_fixture.json')
+
+        # add scancodes
+        QueryParameter.objects.create(
+                parameter_name='averageOptVolumeAbove',
+                parameter_value='100',
+                experiment=experiment)
+        QueryParameter.objects.create(
+                parameter_name='marketCapAbove',
+                parameter_value='100000000',
+                experiment=experiment)
+        QueryParameter.objects.create(
+                parameter_name='marketCapAbove',
+                parameter_value='100000000',
+                experiment=experiment)
+
+        MarketUtils.get_contracts(experiment)
+
+        self.assertEquals(1, mock_create_parameters.call_count)
+        mock_create_parameters.assert_called_with(
+            experiment,
+            )
+
+        self.assertEquals(1, mock_create_scanner.call_count)
+        mock_create_scanner.assert_called_with(
+            experiment,
+            )
+
+    def test_create_scanner_method(
+            self,
+            ):
+
+        experiment_rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment.rules.add(experiment_rule)
+
+        # add scancodes
+        experiment.instrument = 'STK'
+        experiment.location_code = 'STK.US.MAJOR'
+        experiment.scan_code = 'HOT_BY_VOLUME'
+        actual = MarketUtils.create_scanner(experiment)
+        expected = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
+        self.assertEquals(expected, actual)
+
+    def test_create_parameters_method(
+            self,
+            ):
+        experiment = Experiment.objects.all()[0]
+
+        QueryParameter.objects.create(
+                parameter_name='averageOptVolumeAbove',
+                parameter_value='100',
+                experiment=experiment)
+        QueryParameter.objects.create(
+                parameter_name='marketCapAbove',
+                parameter_value='100000000',
+                experiment=experiment)
+        QueryParameter.objects.create(
+                parameter_name='scannerSettingPairs',
+                parameter_value='StockType=STOCK',
+                experiment=experiment)
+
+        expected = [TagValue('averageOptVolumeAbove', '100'),
+                    TagValue('marketCapAbove', '100000000'),
+                    TagValue('scannerSettingPairs', 'StockType=STOCK')]
+        actual = MarketUtils.create_parameters(experiment)
+        are_equal = sorted(actual) == sorted(expected)
+        self.assertTrue(are_equal)

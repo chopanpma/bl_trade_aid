@@ -40,19 +40,19 @@
        [0] manage timeouts
         [0] add try/catch and register timed out symbol
        [ ] manage different precision
+      [ ] check days why there is no data from 14 days and exclude
   [D] as a trader I would like to have the possible leads on the daily scann marked so I can look at them
       [D] add control point
       [D] add accepted band
       [D] add last value outside range
       [D] test live
-  [*] automate in parameters for lead contract as an experiment.
+  [D] automate in parameters for lead contract as an experiment.
       [D] add parameter for band width
       [D] add parameter for days offset
       [D] add exclussion list
       [D] add parameter for ticks offset
       [0] add discarded flag, and checking flag
-      [*] add minimum samaple days for be accepted in Rulescjjj
-      [ ] check days why there is no data from 14 days and exclude
+      [D] add minimum samaple days for be accepted in Rulescj
   [D] add table/fields for tracking results of shadow mode
     [D] add open close
     [D] add alert tracking table
@@ -67,7 +67,8 @@
     [ ] add value area
     [ ] add initial balance
   [ ] automate change experiments
-    [0] create clases for query config and map to the experiment
+    [*] create clases for query config and map to the experiment
+    [*] Bugfix: the 30 points need to be net points rounded  
     [D] create clases for criteria for making the contracts a lead  and add to an experiment
     [ ] create clases copy experiment to change into another experiment
   [ ] general improvements

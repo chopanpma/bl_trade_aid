@@ -525,11 +525,12 @@ class MarketUtils():
 
         # Request scanner data
         # TODO: get this from the experiment
-        scanner = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
-        data = ib.reqScannerData(scanner, [TagValue('averageOptVolumeAbove', '100'),
-                                           TagValue('marketCapAbove', '100000000'),
-                                           TagValue('scannerSettingPairs', 'StockType=STOCK')])
+        # scanner = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
+        scanner = MarketUtils.create_scanner(experiment)
 
+        query_parameters = MarketUtils.create_parameters(experiment)
+
+        data = ib.reqScannerData(scanner, query_parameters)
         # Serialize contracts for mocking
         # print(f'type data:{type(data)}')
         # with open('scan_results.pickle', 'wb') as file:
@@ -631,6 +632,25 @@ class MarketUtils():
 
         # Disconnect from TWS API
         ib.disconnect()
+
+    @staticmethod
+    def create_parameters(experiment):
+        parameters = []
+        for parameter in experiment.query_parameters.all():
+            parameters.append(
+                    TagValue(
+                        parameter.parameter_name,
+                        parameter.parameter_value
+                        )
+                    )
+        return parameters
+
+    @staticmethod
+    def create_scanner(experiment):
+        return ScannerSubscription(
+                instrument=experiment.instrument,
+                locationCode=experiment.location_code,
+                scanCode=experiment.scan_code)
 
 
 class HourLetterMapper():

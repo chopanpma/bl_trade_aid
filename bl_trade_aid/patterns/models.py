@@ -98,6 +98,16 @@ class BarData(TimeStampedModel):
 #         super().save(*args, **kwargs)
 
 
+class QueryParameter(TimeStampedModel):
+    parameter_name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
+                                      help_text=_('Name of the parameter'))
+    parameter_value = models.CharField(_('Value'), max_length=100, null=True, blank=True,
+                                       help_text=_('Value of the parameter'))
+    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'), related_name='query_parameters',
+                                   null=True, blank=True,
+                                   on_delete=models.PROTECT)
+
+
 class Rule(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the rule'))
@@ -119,6 +129,12 @@ class Rule(TimeStampedModel):
 class Experiment(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the experiment'))
+    instrument = models.CharField(_('Instrument'), max_length=100, null=True, blank=True,
+                                  help_text=_('Instrument'))
+    location_code = models.CharField(_('Location_Code'), max_length=100, null=True, blank=True,
+                                     help_text=_('Location of the instrument'))
+    scan_code = models.CharField(_('Scan_Code'), max_length=100, null=True, blank=True,
+                                 help_text=_('Special code for scanning'))
 
     def __str__(self):
         return self.name
