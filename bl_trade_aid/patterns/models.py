@@ -107,6 +107,9 @@ class QueryParameter(TimeStampedModel):
                                    null=True, blank=True,
                                    on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f'{self.parameter_name} : {self.parameter_value}'
+
 
 class Rule(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
@@ -123,6 +126,9 @@ class Rule(TimeStampedModel):
     days_returned = models.IntegerField(_('DaysReturned'), null=True, blank=True,
                                         help_text=_('How many days should be returned for each symbols '
                                         'used to fetch and validate'))
+                                        
+    def __str__(self):
+        return self.name
 
 
 class RuleExperiment(TimeStampedModel):
