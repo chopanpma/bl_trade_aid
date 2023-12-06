@@ -67,7 +67,7 @@
     [ ] add value area
     [ ] add initial balance
   [ ] automate change experiments
-    [*] create clases for query config and map to the experiment
+    [D] create clases for query config and map to the experiment
     [*] Bugfix: the 30 points need to be net points rounded  
     [D] create clases for criteria for making the contracts a lead  and add to an experiment
     [ ] create clases copy experiment to change into another experiment

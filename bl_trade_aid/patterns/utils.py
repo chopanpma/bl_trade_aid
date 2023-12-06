@@ -473,7 +473,7 @@ class MarketUtils():
 
         MarketUtils.get_bars_from_single_symbol(batch, symbol)
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
-        pc.generate_profile_charts(batch)
+        pc.generate_profile_charts()
 
     @staticmethod
     def filter_contracts(batch):

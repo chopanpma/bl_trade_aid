@@ -74,3 +74,4 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         # Call command
         call_command('generate_current_profile_charts', symbol='MSFT', experiment='Test_Experiment')
         self.assertEqual(1, mock_get_bars_in_date_range.call_count)
+        mock_generate_profile_charts.assert_called_with()

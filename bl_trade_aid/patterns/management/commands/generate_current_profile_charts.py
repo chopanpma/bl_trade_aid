@@ -22,7 +22,6 @@ class Command(BaseCommand):
         profile_chart_generation_limit_param = options['profile_chart_generation_limit']
         symbol = options['symbol']
         experiment_name = options['experiment']
-
         if experiment_name is not None:
             qs = Experiment.objects.filter(name=experiment_name)
             experiment = qs[0]
