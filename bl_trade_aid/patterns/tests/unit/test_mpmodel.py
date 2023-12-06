@@ -11,6 +11,7 @@ from ...models import ProfileChart
 from ...models import Batch
 from ...models import BarData
 from ...models import Experiment
+from ...models import RuleExperiment
 from ...models import Rule
 from ...models import ProcessedContract
 from ...models import Alert
@@ -66,9 +67,10 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -92,9 +94,10 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -127,9 +130,10 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -165,9 +169,10 @@ class MarketProfileOOModelTestCase(TestCase):
 
         call_command('loaddata', 'bardata_fixture', verbosity=0)
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment

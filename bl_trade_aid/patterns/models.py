@@ -111,9 +111,8 @@ class QueryParameter(TimeStampedModel):
 class Rule(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the rule'))
-    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'), related_name='rules',
-                                   null=True, blank=True,
-                                   on_delete=models.PROTECT)
+    experiment = models.ManyToManyField('Experiment',  verbose_name=_('Experiment'), through='RuleExperiment',
+                                        null=True, blank=True)
     control_point_band_ticks = models.IntegerField(_('Control Point Band Ticks'), null=True, blank=True,
                                                    help_text=_('Ticks allowed for the band'))
     days_offset = models.IntegerField(_('DayOffset'), null=True, blank=True,
@@ -124,6 +123,15 @@ class Rule(TimeStampedModel):
     days_returned = models.IntegerField(_('DaysReturned'), null=True, blank=True,
                                         help_text=_('How many days should be returned for each symbols '
                                         'used to fetch and validate'))
+
+
+class RuleExperiment(TimeStampedModel):
+    rule = models.ForeignKey('Rule',  verbose_name=_('Rule'), related_name='rule_experiments',
+                             null=True, blank=True,
+                             on_delete=models.CASCADE)
+    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'), related_name='experiment_rules',
+                                   null=True, blank=True,
+                                   on_delete=models.CASCADE)
 
 
 class Experiment(TimeStampedModel):

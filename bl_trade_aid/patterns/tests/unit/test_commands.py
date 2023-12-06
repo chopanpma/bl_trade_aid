@@ -3,6 +3,7 @@ from unittest.mock import patch
 from ...models import Batch
 from ...models import Experiment
 from ...models import Rule
+from ...models import RuleExperiment
 from django.core.management import call_command
 from django.test import TransactionTestCase
 
@@ -60,9 +61,10 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         # Load Data
         call_command('loaddata', 'scandata_fixture', verbosity=0)
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        rule_experiment = RuleExperiment.objects.create(rule=rule, experiment=experiment)
+        experiment.experiment_rules.add(rule_experiment)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment

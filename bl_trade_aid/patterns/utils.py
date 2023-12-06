@@ -217,10 +217,10 @@ class RuleExecutor():
                      min_point_of_control,
                      ):
         response = True
-        for rule in self.batch.experiment.rules.all():
-            if rule.control_point_band_ticks is not None:
+        for experiment_rule in self.batch.experiment.experiment_rules.all():
+            if experiment_rule.rule.control_point_band_ticks is not None:
                 band_width = max_point_of_control - min_point_of_control
-                if band_width >= rule.control_point_band_ticks:
+                if band_width >= experiment_rule.rule.control_point_band_ticks:
                     response = False
 
         return response
@@ -241,15 +241,14 @@ class ProfileChartWrapper():
         self.mp_dict = {}
         self.height_precision = height_precision
         self.rules_executor = RuleExecutor(batch)
-        rules = self.batch.experiment.rules.all()
-
-        for rule in rules:
-            if rule.days_offset is not None:
-                self.days_offset = rule.days_offset
-            if rule.ticks_offset is not None:
-                self.ticks_offset = rule.ticks_offset
-            if rule.days_returned is not None:
-                self.days_returned = rule.days_returned
+        experiment_rules = self.batch.experiment.experiment_rules.all()
+        for experiment_rule in experiment_rules:
+            if experiment_rule.rule.days_offset is not None:
+                self.days_offset = experiment_rule.rule.days_offset
+            if experiment_rule.rule.ticks_offset is not None:
+                self.ticks_offset = experiment_rule.rule.ticks_offset
+            if experiment_rule.rule.days_returned is not None:
+                self.days_returned = experiment_rule.rule.days_returned
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()

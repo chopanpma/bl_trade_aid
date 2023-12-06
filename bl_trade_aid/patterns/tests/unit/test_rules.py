@@ -5,6 +5,7 @@ from unittest import mock
 from ...utils import ProfileChartUtils
 from ...models import Batch
 from ...models import Experiment
+from ...models import RuleExperiment
 from ...models import Rule
 
 import logging
@@ -46,9 +47,10 @@ class RulesTestCase(TestCase):
             ):
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
-        experiment_rule = Rule.objects.create(control_point_band_ticks=30)
+        rule = Rule.objects.create(control_point_band_ticks=30)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -75,11 +77,12 @@ class RulesTestCase(TestCase):
             ):
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
-        experiment_rule = Rule.objects.create(
+        rule = Rule.objects.create(
                 ticks_offset=20,
                 days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -120,11 +123,12 @@ class RulesTestCase(TestCase):
             ):
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
-        experiment_rule = Rule.objects.create(
+        rule = Rule.objects.create(
                 days_returned=7,
                 days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -163,11 +167,12 @@ class RulesTestCase(TestCase):
             ):
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
-        experiment_rule = Rule.objects.create(
+        rule = Rule.objects.create(
                 days_returned=7,
                 days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -210,9 +215,10 @@ class RulesTestCase(TestCase):
 
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment

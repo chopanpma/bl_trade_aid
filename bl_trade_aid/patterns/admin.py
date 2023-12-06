@@ -4,6 +4,7 @@ from .models import QueryParameter
 from .models import Rule
 from .models import ProcessedContract
 from .models import ExcludedContract
+from .models import RuleExperiment
 from .models import Position
 from .models import Alert
 
@@ -14,9 +15,14 @@ class QueryParameterInline(admin.TabularInline):
     extra = 1
 
 
+class RuleExperimentInline(admin.TabularInline):
+    model = RuleExperiment
+    extra = 1
+
+
 @admin.register(Experiment)
 class ExperimentAdmin(admin.ModelAdmin):
-    inlines = [QueryParameterInline]
+    inlines = [QueryParameterInline, RuleExperimentInline]
 
     list_display = ['name',
                     'instrument',
@@ -29,7 +35,6 @@ class ExperimentAdmin(admin.ModelAdmin):
 class RuleAdmin(admin.ModelAdmin):
     list_display = (
             'name',
-            'experiment',
             'control_point_band_ticks',
             )
 
@@ -92,4 +97,12 @@ class QueryParameterAdmin(admin.ModelAdmin):
     list_display = (
             'parameter_name',
             'parameter_value',
+            )
+
+
+@admin.register(RuleExperiment)
+class RuleExperimentAdmin(admin.ModelAdmin):
+    list_display = (
+            'rule',
+            'experiment',
             )

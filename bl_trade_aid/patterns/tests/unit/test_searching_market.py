@@ -10,6 +10,7 @@ from ...models import Batch
 from ...models import ProcessedContract
 from ...models import ExcludedContract
 from ...models import Experiment
+from ...models import RuleExperiment
 from ...models import QueryParameter
 from ...models import Rule
 from ib_insync import ScannerSubscription
@@ -37,9 +38,10 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_req_historical_data.return_value = data
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -74,9 +76,10 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_reqscannerdata.return_value = data
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = MarketUtils.get_contracts(experiment)
 
@@ -165,9 +168,10 @@ class ScannerSubscriptionTestCase(TestCase):
             mock_get_bars_in_date_range,
             mock_get_contracts,
             ):
-        experiment_rule = Rule.objects.create(days_offset=2)
+        rule = Rule.objects.create(days_offset=2)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
@@ -229,9 +233,10 @@ class ScannerSubscriptionTestCase(TestCase):
         file.close()
         mock_reqscannerdata.return_value = data
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         # add scancodes
         experiment.instrument = 'STK'
@@ -270,9 +275,10 @@ class ScannerSubscriptionTestCase(TestCase):
             self,
             ):
 
-        experiment_rule = Rule.objects.create(days_offset=1)
+        rule = Rule.objects.create(days_offset=1)
         experiment = Experiment.objects.all()[0]
-        experiment.rules.add(experiment_rule)
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         # add scancodes
         experiment.instrument = 'STK'
