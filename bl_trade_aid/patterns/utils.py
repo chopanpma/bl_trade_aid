@@ -120,6 +120,12 @@ class TestApp(TestWrapper, TestClient):
         # Starts listening for errors
         self.init_error()
 
+    def scannerParameters(self, xml: str):
+        super().scannerParameters(xml)
+        open('log/scanner.xml', 'w').write(xml)
+        print("ScannerParameters received.")
+
+
 # Below is the program execution
 
 
@@ -509,6 +515,17 @@ class MarketUtils():
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts()
         pc.set_participant_symbols()
+
+    @staticmethod
+    def get_scanner_parameters():
+
+        # Connect to TWS API
+        ib = IB()
+        ib.connect('192.168.0.20', 7497, clientId=1, account='U3972489')
+
+        scanner_parameters = ib.reqScannerParameters()
+        open('scanner.xml', 'w').write(scanner_parameters)
+        ib.disconnect()
 
     @staticmethod
     def get_contracts(experiment):

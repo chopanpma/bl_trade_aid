@@ -27,7 +27,8 @@ class ExperimentAdmin(admin.ModelAdmin):
     list_display = ['name',
                     'instrument',
                     'location_code',
-                    'scan_code']
+                    'scan_code',
+                    'description']
     list_filter = ['name']
 
 

@@ -149,6 +149,8 @@ class Experiment(TimeStampedModel):
                                      help_text=_('Location of the instrument'))
     scan_code = models.CharField(_('Scan_Code'), max_length=100, null=True, blank=True,
                                  help_text=_('Special code for scanning'))
+    description = models.TextField(_('Description'), null=True, blank=True,
+                                 help_text=_('Description of the experiment'))
 
     def __str__(self):
         return self.name
