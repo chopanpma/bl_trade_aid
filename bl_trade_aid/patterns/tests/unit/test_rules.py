@@ -228,3 +228,69 @@ class RulesTestCase(TestCase):
 
         ps = batch.processed_contracts.filter(positive_outcome=True)
         self.assertEquals(12, len(ps))
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_only_down_movement(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+        # TODO: types of rules
+        # 1. filter symbols from being plotted
+        # 2. filter scan rules
+        # 3. criteria to find a positive chart.
+
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        rule = Rule.objects.create(
+                days_offset=1,
+                difference_direction='DOWN'
+                )
+        experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.processed_contracts.filter(positive_outcome=True)
+        self.assertEquals(5, len(ps))
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_only_up_movement(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+        # TODO: types of rules
+        # 1. filter symbols from being plotted
+        # 2. filter scan rules
+        # 3. criteria to find a positive chart.
+
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        rule = Rule.objects.create(
+                days_offset=1,
+                difference_direction='UP'
+                )
+        experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.processed_contracts.filter(positive_outcome=True)
+        self.assertEquals(7, len(ps))

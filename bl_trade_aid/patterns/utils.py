@@ -221,12 +221,16 @@ class RuleExecutor():
     def rules_passed(self,
                      max_point_of_control,
                      min_point_of_control,
+                     direction,
                      ):
         response = True
         for experiment_rule in self.batch.experiment.experiment_rules.all():
             if experiment_rule.rule.control_point_band_ticks is not None:
                 band_width = max_point_of_control - min_point_of_control
                 if band_width >= experiment_rule.rule.control_point_band_ticks:
+                    response = False
+            if experiment_rule.rule.difference_direction is not None:
+                if direction != experiment_rule.rule.difference_direction:
                     response = False
 
         return response
@@ -354,7 +358,10 @@ class ProfileChartWrapper():
                     return False
             if element[0] != first_element:
                 return False
-        if not self.rules_executor.rules_passed(max_point_of_control, min_point_of_control):
+        if not self.rules_executor.rules_passed(
+                max_point_of_control,
+                min_point_of_control,
+                first_element):
             return False
 
         return True

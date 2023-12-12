@@ -1,5 +1,5 @@
 UNIT_TESTS = bl_trade_aid.patterns.tests.unit
-UNIT_TEST = bl_trade_aid.patterns.tests.unit.test_commands.GenerateCurrentProfileChartsCommandTestCase.test_generate_current_profile_chart_one_symbol
+UNIT_TEST = bl_trade_aid.patterns.tests.unit.test_rules.RulesTestCase
 unit-test:
 	docker-compose -f local.yml run django python manage.py test $(UNIT_TESTS) --exclude-tag=INTEGRATION
 unit-test-x:

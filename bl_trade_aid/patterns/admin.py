@@ -37,6 +37,10 @@ class RuleAdmin(admin.ModelAdmin):
     list_display = (
             'name',
             'control_point_band_ticks',
+            'days_offset',
+            'ticks_offset',
+            'days_returned',
+            'difference_direction',
             )
 
     list_filter = ('name', 'experiment')

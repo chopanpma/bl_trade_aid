@@ -68,12 +68,13 @@
     [ ] add initial balance
   [ ] automate change experiments
     [D] create clases for query config and map to the experiment
-    [*] Bugfix: the 30 points need to be net points rounded  
+    [0] Bugfix: the 30 points need to be net points rounded  
     [D] create clases for criteria for making the contracts a lead  and add to an experiment
     [ ] create clases copy experiment to change into another experiment
   [ ] general improvements
+    [*] filter ony down/up for only long positions or short
     [ ] run command from admin
-    [ ] visualize file from admin
+    [*] visualize file from admin
     [ ] improve data structure remvoe 'ProfileChart' key or find a better use for it
     [1] refactor rules
   [D] as a user I would like to create experiments in django admin
