@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='rule',
             name='difference_direction',
-            field=models.CharField(choices=[('DOWN', 'Down'), ('UP', 'Up')], default=None, help_text='Direction of the position', max_length=4, verbose_name='Direction'),
+            field=models.CharField(choices=[('DOWN', 'Down'), ('UP', 'Up')], default=None, null=True, help_text='Direction of the position', max_length=4, verbose_name='Direction'),
         ),
     ]
