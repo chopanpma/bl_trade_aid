@@ -118,4 +118,6 @@ class RuleExperimentAdmin(admin.ModelAdmin):
 class BatchAdmin(admin.ModelAdmin):
     list_display = (
             'experiment',
+            'id',
             )
+    list_filter = ('experiment', 'id')
