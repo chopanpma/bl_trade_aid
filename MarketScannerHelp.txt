@@ -1,0 +1,148 @@
+
+ABSCHANGEPERC: Absolute Change Percentage - The percentage change in the price of a security without considering the direction of the change.
+
+AFTERHRSCHANGE: After Hours Change - The change in the price of a security during the after-hours trading session.
+
+AFTERHRSCHANGEPERC: After Hours Change Percentage - The percentage change in the price of a security during the after-hours trading session.
+
+AVGOPTVOLUME: Average Options Volume - The average volume of options traded over a specified period.
+
+AVGPRICETARGET: Average Price Target - The average target price set by analysts for a particular stock.
+
+AVGRATING: Average Rating - The average rating given to a security by analysts, typically on a scale like buy, hold, sell.
+
+AVGTARGET2PRICERATIO: Average Target to Price Ratio - The ratio of the average target price to the current price of the stock.
+
+AVGVOLUME: Average Volume - The average number of shares traded over a specific period.
+
+AVGVOLUME_USD: Average Volume in USD - The average dollar volume of shares traded over a specific period.
+
+CHANGEOPENPERC: Change from Open Percentage - The percentage change in the price of a security from the opening price to the current price.
+
+CHANGEPERC: Change Percentage - The percentage change in the price of a security from the previous close to the current price.
+
+EMA_20, EMA_50, EMA_100, EMA_200: Exponential Moving Average - A type of moving average that places a greater weight and significance on the most recent data points. The numbers (20, 50, 100, 200) represent the time period.
+
+PRICE_VS_EMA_20, PRICE_VS_EMA_50, PRICE_VS_EMA_100, PRICE_VS_EMA_200: Price versus Exponential Moving Average - The comparison of the current price of a security to its Exponential Moving Average for different time periods (20, 50, 100, 200 days).
+
+DIVIB: Dividend Income Before Taxes - The dividend income received before the deduction of taxes.
+
+DIVYIELD: Dividend Yield - A financial ratio that shows how much a company pays out in dividends each year relative to its stock price.
+
+DIVYIELDIB: Dividend Yield (IB) - The dividend yield as reported by Interactive Brokers.
+
+FEERATE: Fee Rate - The rate charged for a particular financial service or transaction.
+
+FIRSTTRADEDATE: First Trade Date - The date on which a security was first traded on a stock exchange.
+
+GROWTHRATE: Growth Rate - The rate at which a company's earnings are increasing or decreasing over time.
+
+HALTED: Trading Halt Status - Indicates whether trading in a security has been halted.
+
+HASOPTIONS: Options Availability - Indicates whether options are available for a particular security.
+
+HISTDIVIB: Historical Dividend (IB) - The historical dividend data as reported by Interactive Brokers.
+
+HISTDIVYIELDIB: Historical Dividend Yield (IB) - The historical dividend yield data as reported by Interactive Brokers.
+
+IMBALANCE: Order Imbalance - The difference between buy and sell orders for a security.
+
+IMBALANCEADVRATIOPERC: Imbalance to Average Daily Volume Ratio Percentage - The ratio of order imbalance to the average daily volume, expressed as a percentage.
+
+IMPVOLAT: Implied Volatility - A measure of the market's expectation of the volatility of a security's price.
+
+IMPVOLATOVERHIST: Implied Volatility Over Historical - The comparison of a security's current implied volatility to its historical volatility.
+
+INSIDEROFFLOATPERC: Insider Ownership Percentage of Float - The percentage of a company's floating stock that is owned by insiders.
+
+INSTITUTIONALOFFLOATPERC: Institutional Ownership Percentage of Float - The percentage of a company's floating stock that is owned by institutional investors.
+
+MACD: Moving Average Convergence Divergence - A trend-following momentum indicator that shows the relationship between two moving averages of a security's price.
+
+MACD_SIGNAL: MACD Signal Line - A moving average of the MACD used as a signal line to identify potential buy/sell opportunities.
+
+MACD_HISTOGRAM: MACD Histogram - A graphical representation of the difference between the MACD and its signal line.
+
+MKTCAP: Market Capitalization - The total market value of a company's outstanding shares.
+
+MKTCAP_USD: Market Capitalization in USD - The market capitalization of a company, expressed in U.S. dollars.
+
+NEXTDIVAMOUNT: Next Dividend Amount - The amount of the next dividend payment expected to be made by a company.
+
+NEXTDIVDATE: Next Dividend Date - The date on which the next dividend payment is expected to be made by a company.
+
+NUMPRICETARGETS: Number of Price Targets - The number of different price targets set by analysts for a specific stock.
+
+NUMRATINGS: Number of Analyst Ratings - The total number of ratings issued by analysts for a particular stock.
+
+NUMSHARESINSIDER: Number of Shares Owned by Insiders - The total number of shares of a company that are owned by its insiders.
+
+NUMSHARESINSTITUTIONAL: Number of Shares Owned by Institutional Investors - The total number of shares of a company that are owned by institutional investors.
+
+OPENGAPPERC: Opening Gap Percentage - The percentage difference between a security's opening price and its previous closing price.
+
+OPTVOLUME: Options Volume - The total volume of options contracts traded for a security.
+
+OPTVOLUMEPCRATIO: Options Volume Put/Call Ratio - The ratio of the volume of put options to call options traded for a security.
+
+PERATIO: Price-to-Earnings Ratio - A valuation ratio of a company's current share price compared to its per-share earnings.
+
+PPO: Percentage Price Oscillator - A technical momentum indicator that shows the percentage difference between two moving averages.
+
+PPO_SIGNAL: PPO Signal Line - A signal line for the Percentage Price Oscillator, often used to generate buy and sell signals.
+
+PPO_HISTOGRAM: PPO Histogram - A graphical representation of the difference between the PPO and its signal line.
+
+PRICE: Current Price - The current trading price of a security.
+
+PRICE2BK: Price to Book Ratio - A ratio used to compare a stock's market value to its book value.
+
+PRICE2TANBK: Price to Tangible Book Ratio - A ratio comparing the market value of a company to its tangible book value.
+
+PRICERANGE: Price Range - The range between the high and low prices of a security over a specific period.
+
+PRICE_USD: Price in USD - The current trading price of a security, expressed in U.S. dollars.
+
+QUICKRATIO: Quick Ratio - A measure of a company's ability to meet its short-term obligations with its most liquid assets.
+
+REBATERATE: Rebate Rate - The rate of return or discount rate of a financial transaction, often used in short selling.
+
+REGIMBALANCE: Regular Imbalance - The difference between buy and sell orders in a regular trading session.
+
+REGIMBALANCEADVRATIOPERC: Regular Imbalance to Average Daily Volume Ratio Percentage - The ratio of regular session order imbalance to the average daily volume, expressed as a percentage.
+
+RETEQUITY: Return on Equity - A measure of a company's profitability that takes a company's annual return (net income) divided by the value of its total shareholders' equity.
+
+SHORTABLESHARES: Shortable Shares - The number of shares of a security that are available to be shorted.
+
+SHORTSALERESTRICTED: Short Sale Restricted - Indicates whether a security is currently restricted from short selling.
+
+SIC: Standard Industrial Classification - A system for classifying industries by a four-digit code.
+
+ISSUER_COUNTRY_CODE: Issuer Country Code - The ISO country code of the country where the issuer of the security is located.
+
+SOCSACT: Social Activity Score - A score representing the social media activity related to a specific security.
+
+SOCSNET: Social Sentiment Score - A score representing the overall sentiment in social media posts about a specific security.
+
+STKTYPE: Stock Type - The type or category of stock, such as common stock, preferred stock, etc.
+
+STVOLUME_3MIN, STVOLUME_5MIN, STVOLUME_10MIN: Short-Term Volume - The trading volume of a security over short intervals (3, 5, 10 minutes).
+
+TRADECOUNT: Trade Count - The total number of trades executed for a particular security.
+
+TRADERATE: Trade Rate - The frequency of trades for a security, typically measured over a specific time period.
+
+UNSHORTABLE: Unshortable Status - Indicates whether a security is not available for short selling.
+
+VOLUME: Trading Volume - The total number of shares of a security that are traded during a given period.
+
+VOLUMERATE: Volume Rate - The rate at which shares of a security are traded, typically measured per minute or per hour.
+
+VOLUME_USD: Volume in USD - The total dollar value of shares traded for a security during a given period.
+
+RCGLTCLASS, RCGLTENDDATE, RCGLTIVALUE, RCGLTTRADE: Regulatory Compliance - Parameters related to regulatory compliance in trading, specifically for long-term trading.
+
+RCGITCLASS, RCGITENDDATE, RCGITIVALUE, RCGITTRADE: Regulatory Compliance - Parameters related to regulatory compliance in trading, specifically for intermediate-term trading.
+
+RCGSTCLASS, RCGSTENDDATE, RCGSTIVALUE, RCGSTTRADE: Regulatory Compliance - Parameters related to regulatory compliance in trading, specifically for short-term trading.

@@ -7,6 +7,7 @@ from .models import ExcludedContract
 from .models import RuleExperiment
 from .models import Position
 from .models import Alert
+from .models import Batch
 
 
 # Register your models here.
@@ -109,5 +110,12 @@ class QueryParameterAdmin(admin.ModelAdmin):
 class RuleExperimentAdmin(admin.ModelAdmin):
     list_display = (
             'rule',
+            'experiment',
+            )
+
+
+@admin.register(Batch)
+class BatchAdmin(admin.ModelAdmin):
+    list_display = (
             'experiment',
             )
