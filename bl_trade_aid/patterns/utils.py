@@ -553,6 +553,7 @@ class MarketUtils():
 
         query_parameters = MarketUtils.create_parameters(experiment)
 
+        print(f'Scanner: {scanner} Parameters: {query_parameters}')
         data = ib.reqScannerData(scanner, query_parameters)
         # Serialize contracts for mocking
         # print(f'type data:{type(data)}')
