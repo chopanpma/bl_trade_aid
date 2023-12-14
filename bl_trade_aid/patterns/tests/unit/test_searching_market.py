@@ -284,8 +284,35 @@ class ScannerSubscriptionTestCase(TestCase):
         experiment.instrument = 'STK'
         experiment.location_code = 'STK.US.MAJOR'
         experiment.scan_code = 'HOT_BY_VOLUME'
+        experiment.above_price = '0.10'
+        experiment.below_price = '20'
+        experiment.above_volume = '10000'
+        experiment.market_cap_above = '10000000'
+        experiment.market_cap_below = '200000000'
         actual = MarketUtils.create_scanner(experiment)
-        expected = ScannerSubscription(instrument='STK', locationCode='STK.US.MAJOR', scanCode='HOT_BY_VOLUME')
+        expected = ScannerSubscription(
+            numberOfRows=-1,
+            instrument='STK',
+            locationCode='STK.US.MAJOR',
+            scanCode='HOT_BY_VOLUME',
+            abovePrice='0.10',
+            belowPrice='20',
+            aboveVolume='10000',
+            marketCapAbove='10000000',
+            marketCapBelow='200000000',
+            moodyRatingAbove='',
+            moodyRatingBelow='',
+            spRatingAbove='',
+            spRatingBelow='',
+            maturityDateAbove='',
+            maturityDateBelow='',
+            couponRateAbove=1.7976931348623157e+308,
+            couponRateBelow=1.7976931348623157e+308,
+            excludeConvertible=False,
+            averageOptionVolumeAbove=2147483647,
+            scannerSettingPairs='',
+            stockTypeFilter='')
+
         self.assertEquals(expected, actual)
 
     def test_create_parameters_method(

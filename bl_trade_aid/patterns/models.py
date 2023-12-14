@@ -162,6 +162,16 @@ class Experiment(TimeStampedModel):
                                      help_text=_('Location of the instrument'))
     scan_code = models.CharField(_('Scan_Code'), max_length=100, null=True, blank=True,
                                  help_text=_('Special code for scanning'))
+    above_price = models.CharField(_('Above_Price'), max_length=100, null=True, blank=True,
+                                   help_text=_('Above Pride'))
+    below_price = models.CharField(_('Below_Price'), max_length=100, null=True, blank=True,
+                                   help_text=_('Below Price'))
+    above_volume = models.CharField(_('Above_Volume'), max_length=100, null=True, blank=True,
+                                    help_text=_('Above Volume'))
+    market_cap_above = models.CharField(_('Market_Cap_Above'), max_length=100, null=True, blank=True,
+                                        help_text=_('Market_Cap_Above'))
+    market_cap_below = models.CharField(_('Market_Cap_Below'), max_length=100, null=True, blank=True,
+                                        help_text=_('Market_Cap_Below'))
     description = models.TextField(_('Description'), null=True, blank=True,
                                    help_text=_('Description of the experiment'))
 

@@ -674,7 +674,13 @@ class MarketUtils():
         return ScannerSubscription(
                 instrument=experiment.instrument,
                 locationCode=experiment.location_code,
-                scanCode=experiment.scan_code)
+                scanCode=experiment.scan_code,
+                abovePrice=experiment.above_price,
+                belowPrice=experiment.below_price,
+                aboveVolume=experiment.above_volume,
+                marketCapAbove=experiment.market_cap_above,
+                marketCapBelow=experiment.market_cap_below,
+                )
 
 
 class HourLetterMapper():
