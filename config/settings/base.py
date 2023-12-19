@@ -75,7 +75,10 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "slick_reporting",
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOCAL_APPS = [
     "bl_trade_aid.users",

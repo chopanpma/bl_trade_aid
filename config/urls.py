@@ -15,6 +15,7 @@ urlpatterns = [
     ),
     # api bl_trade_aid
     path("api/", include("bl_trade_aid.patterns.api.urls")),
+    path("patterns/", include("bl_trade_aid.patterns.urls")),
 
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
