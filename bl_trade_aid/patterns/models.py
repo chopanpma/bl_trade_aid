@@ -144,6 +144,25 @@ class Rule(TimeStampedModel):
         return self.name
 
 
+class RuleSet(TimeStampedModel):
+    name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
+                            help_text=_('Name of the rule set'))
+    rules = models.ManyToManyField('Rule',  verbose_name=_('Rules'))
+
+    experiment = models.ManyToManyField('Experiment',  verbose_name=_('Experiment'), through='RuleSetExperiment')
+
+    def __str__(self):
+        return self.name
+
+
+class RuleSetExperiment(TimeStampedModel):
+    rule_set = models.ForeignKey('RuleSet',  verbose_name=_('RuleSet'), related_name='rule_set_experiments',
+                                 on_delete=models.CASCADE)
+    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'),
+                                   related_name='rule_sets',
+                                   on_delete=models.CASCADE)
+
+
 class RuleExperiment(TimeStampedModel):
     rule = models.ForeignKey('Rule',  verbose_name=_('Rule'), related_name='rule_experiments',
                              null=True, blank=True,
@@ -156,22 +175,36 @@ class RuleExperiment(TimeStampedModel):
 class Experiment(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the experiment'))
+    days_returned = models.IntegerField(_('DaysReturned'), null=True, blank=True,
+                                        help_text=_('How many days should be returned for each symbols'
+                                        'used to fetch and validate'))
     instrument = models.CharField(_('Instrument'), max_length=100, null=True, blank=True,
                                   help_text=_('Instrument'))
     location_code = models.CharField(_('Location_Code'), max_length=100, null=True, blank=True,
                                      help_text=_('Location of the instrument'))
     scan_code = models.CharField(_('Scan_Code'), max_length=100, null=True, blank=True,
                                  help_text=_('Special code for scanning'))
-    above_price = models.CharField(_('Above_Price'), max_length=100, null=True, blank=True,
-                                   help_text=_('Above Pride'))
-    below_price = models.CharField(_('Below_Price'), max_length=100, null=True, blank=True,
+    above_price = models.CharField(_('Above_Price'), max_length=100, null=True, blank=True, default='',
+                                   help_text=_('Above Price'))
+    below_price = models.CharField(_('Below_Price'), max_length=100, null=True, blank=True, default='',
                                    help_text=_('Below Price'))
-    above_volume = models.CharField(_('Above_Volume'), max_length=100, null=True, blank=True,
+    above_volume = models.CharField(_('Above_Volume'), max_length=100, null=True, blank=True, default='',
                                     help_text=_('Above Volume'))
-    market_cap_above = models.CharField(_('Market_Cap_Above'), max_length=100, null=True, blank=True,
+    market_cap_above = models.CharField(_('Market_Cap_Above'), max_length=100, null=True, blank=True, default='',
                                         help_text=_('Market_Cap_Above'))
-    market_cap_below = models.CharField(_('Market_Cap_Below'), max_length=100, null=True, blank=True,
+    market_cap_below = models.CharField(_('Market_Cap_Below'), max_length=100, null=True, blank=True, default='',
                                         help_text=_('Market_Cap_Below'))
+    coupon_rate_above = models.IntegerField(_('Coupon_Rate_Above'), null=True, blank=True,
+                                            help_text=_('Coupon_Rate_Above'))
+    coupon_rate_below = models.IntegerField(_('Coupon_Rate_Below'), null=True, blank=True,
+                                            help_text=_('Coupon_Rate_Below'))
+    exclude_convertible = models.BooleanField(default=False)
+    average_option_volume_above = models.IntegerField(_('AverageOptionVolumeAbove'),
+                                                      null=True, blank=True,
+                                                      help_text=_('AverageOptionVolumeAbove'))
+    stock_type_filter = models.CharField(_('stockTypeFilter'),
+                                         max_length=100, null=True, blank=True, default='',
+                                         help_text=_('stockTypeFilter'))
     description = models.TextField(_('Description'), null=True, blank=True,
                                    help_text=_('Description of the experiment'))
 

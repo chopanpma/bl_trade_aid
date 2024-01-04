@@ -306,10 +306,10 @@ class ScannerSubscriptionTestCase(TestCase):
             spRatingBelow='',
             maturityDateAbove='',
             maturityDateBelow='',
-            couponRateAbove=1.7976931348623157e+308,
-            couponRateBelow=1.7976931348623157e+308,
+            couponRateAbove=None,
+            couponRateBelow=None,
             excludeConvertible=False,
-            averageOptionVolumeAbove=2147483647,
+            averageOptionVolumeAbove=None,
             scannerSettingPairs='',
             stockTypeFilter='')
 

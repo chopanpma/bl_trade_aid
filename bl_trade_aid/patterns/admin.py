@@ -5,6 +5,8 @@ from .models import Rule
 from .models import ProcessedContract
 from .models import ExcludedContract
 from .models import RuleExperiment
+from .models import RuleSet
+from .models import RuleSetExperiment
 from .models import Position
 from .models import Alert
 from .models import Batch
@@ -21,9 +23,16 @@ class RuleExperimentInline(admin.TabularInline):
     extra = 1
 
 
+class RuleSetExperimentInline(admin.TabularInline):
+    model = RuleSetExperiment
+    extra = 0
+
+
 @admin.register(Experiment)
 class ExperimentAdmin(admin.ModelAdmin):
-    inlines = [QueryParameterInline, RuleExperimentInline]
+    inlines = [QueryParameterInline,
+               RuleExperimentInline,
+               RuleSetExperimentInline,]
 
     list_display = ['name',
                     'instrument',
@@ -111,6 +120,20 @@ class RuleExperimentAdmin(admin.ModelAdmin):
     list_display = (
             'rule',
             'experiment',
+            )
+
+
+class RuleSetExperimentAdmin(admin.ModelAdmin):
+    list_display = (
+            'rule_set',
+            'experiment',
+            )
+
+
+@admin.register(RuleSet)
+class RuleSetAdmin(admin.ModelAdmin):
+    list_display = (
+            'name',
             )
 
 

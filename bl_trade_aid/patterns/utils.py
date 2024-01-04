@@ -680,6 +680,11 @@ class MarketUtils():
                 aboveVolume=experiment.above_volume,
                 marketCapAbove=experiment.market_cap_above,
                 marketCapBelow=experiment.market_cap_below,
+                couponRateAbove=experiment.coupon_rate_above,
+                couponRateBelow=experiment.coupon_rate_below,
+                excludeConvertible=experiment.exclude_convertible,
+                averageOptionVolumeAbove=experiment.average_option_volume_above,
+                stockTypeFilter=experiment.stock_type_filter,
                 )
 
 
