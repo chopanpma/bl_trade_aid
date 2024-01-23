@@ -294,3 +294,83 @@ class RulesTestCase(TestCase):
 
         ps = batch.processed_contracts.filter(positive_outcome=True)
         self.assertEquals(7, len(ps))
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_experiment_rules_one_rule(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        experiment = Experiment.objects.all()[0]
+
+        # adding ruleset
+        rule_1 = Rule.objects.create(
+                days_offset=1,
+                difference_direction='DOWN',
+                ticks_offset=20,
+                days_returned=14,
+                )
+
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule_1)
+        experiment.experiment_rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.processed_contracts.filter(positive_outcome=True, rule=rule_1)
+        self.assertEquals(2, len(ps))
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_experiment_rules_multiple_rules(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        call_command('loaddata', 'bardata_IBD', verbosity=0)
+
+        experiment = Experiment.objects.all()[0]
+
+        # adding ruleset
+        rule_1 = Rule.objects.create(
+                days_offset=1,
+                difference_direction='DOWN',
+                ticks_offset=20,
+                days_returned=14,
+                )
+        rule_2 = Rule.objects.create(
+                days_offset=1,
+                difference_direction='DOWN',
+                ticks_offset=10,
+                days_returned=14,
+                )
+
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule_1)
+        experiment.experiment_rules.add(experiment_rule)
+
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule_2)
+        experiment.experiment_rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.set_participant_symbols()
+
+        ps = batch.processed_contracts.filter(positive_outcome=True, rule=rule_1)
+        self.assertEquals(2, len(ps))
+
+        ps = batch.processed_contracts.filter(positive_outcome=True, rule=rule_1)
+        self.assertEquals(3, len(ps))

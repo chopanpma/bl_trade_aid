@@ -60,12 +60,14 @@
     [D] added positive trade flag
   [0] create a test page for the query 
   [*] create ruleset to separate evaluation from creation 
-    [*] change grap days to use experiment field
+    [*] change graph days to use experiment field
     [*] change experiment run to run all criterias and log wich one is approved in positive outcome
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
   [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment
   [1]- as a user I would like to view the files in the admin app
+  [ ] remove legacy experiment rules
+  [ ] remove legacy rules query fields
   [ ] add fundamentals of profile chart
     [ ] add accepted tpos
     [ ] add value area

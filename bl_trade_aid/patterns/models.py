@@ -115,10 +115,12 @@ class Rule(TimeStampedModel):
 
     DOWN = 'DOWN'
     UP = 'UP'
+    BOTH = 'BOTH'
 
     DIFFERENCE_DIRECTION_CHOICES = [
             (DOWN, 'Down'),
-            (UP, 'Up')
+            (UP, 'Up'),
+            (BOTH, 'Both'),
             ]
 
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
@@ -142,25 +144,6 @@ class Rule(TimeStampedModel):
 
     def __str__(self):
         return self.name
-
-
-class RuleSet(TimeStampedModel):
-    name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
-                            help_text=_('Name of the rule set'))
-    rules = models.ManyToManyField('Rule',  verbose_name=_('Rules'))
-
-    experiment = models.ManyToManyField('Experiment',  verbose_name=_('Experiment'), through='RuleSetExperiment')
-
-    def __str__(self):
-        return self.name
-
-
-class RuleSetExperiment(TimeStampedModel):
-    rule_set = models.ForeignKey('RuleSet',  verbose_name=_('RuleSet'), related_name='rule_set_experiments',
-                                 on_delete=models.CASCADE)
-    experiment = models.ForeignKey('Experiment',  verbose_name=_('Experiment'),
-                                   related_name='rule_sets',
-                                   on_delete=models.CASCADE)
 
 
 class RuleExperiment(TimeStampedModel):
@@ -228,6 +211,10 @@ class ProcessedContract(TimeStampedModel):
                               null=True, blank=True,
                               on_delete=models.PROTECT)
     positive_outcome = models.BooleanField(default=False)
+
+    rule = models.ForeignKey('Rule',  verbose_name=_('Rule'), related_name='procesec_contracts',
+                             null=True, blank=True,
+                             on_delete=models.CASCADE)
 
     def __str__(self):
         return self.symbol
