@@ -236,10 +236,6 @@ class RuleExecutor():
 
 class ProfileChartWrapper():
 
-    days_offset = 2
-    ticks_offset = None
-    days_returned = None
-
     def __init__(self, batch, height_precision=100):
 
         qs = BarData.objects.filter(batch=batch)
@@ -249,14 +245,6 @@ class ProfileChartWrapper():
         self.mp_dict = {}
         self.height_precision = height_precision
         self.rules_executor = RuleExecutor()
-        experiment_rules = self.batch.experiment.experiment_rules.all()
-        for experiment_rule in experiment_rules:
-            if experiment_rule.rule.days_offset is not None:
-                self.days_offset = experiment_rule.rule.days_offset
-            if experiment_rule.rule.ticks_offset is not None:
-                self.ticks_offset = experiment_rule.rule.ticks_offset
-            if experiment_rule.rule.days_returned is not None:
-                self.days_returned = experiment_rule.rule.days_returned
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -349,9 +337,15 @@ class ProfileChartWrapper():
                     return False
         # Both have to be outside the band in the same direction
 
+        print(f'rule:{rule}---'
+              f'max:{max_point_of_control}, min:{min_point_of_control}'
+              f'; len(dates):{len(dates)}, {rule.days_returned};'
+              f' control_points:{control_points.values()};'
+              f' ticks_offset:{rule.ticks_offset},responses:{responses}')
+
         first_element = responses[0][0]
         for element in responses[len(responses) - 1:]:
-            if self.ticks_offset is not None:
+            if rule.ticks_offset is not None:
                 if element[1] < rule.ticks_offset:
                     return False
             if element[0] != first_element:

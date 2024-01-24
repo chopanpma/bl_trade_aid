@@ -30,6 +30,12 @@ class RulesTestCase(TestCase):
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
         batch = Batch.objects.all()[0]
+        rule = Rule.objects.create(
+                days_offset=2)
+        experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
+
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.set_participant_symbols()
 
@@ -47,7 +53,7 @@ class RulesTestCase(TestCase):
             ):
         call_command('loaddata', 'bardata_IBD', verbosity=0)
 
-        rule = Rule.objects.create(control_point_band_ticks=30)
+        rule = Rule.objects.create(control_point_band_ticks=30, days_offset=2)
         experiment = Experiment.objects.all()[0]
         experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
         experiment.experiment_rules.add(experiment_rule)
@@ -108,6 +114,7 @@ class RulesTestCase(TestCase):
                 control_points,
                 max_point_of_control,
                 min_point_of_control,
+                rule,
                 )
 
         self.assertTrue(result)
@@ -152,6 +159,7 @@ class RulesTestCase(TestCase):
                 control_points,
                 max_point_of_control,
                 min_point_of_control,
+                rule,
                 )
 
         self.assertTrue(result)
@@ -195,6 +203,7 @@ class RulesTestCase(TestCase):
                 control_points,
                 max_point_of_control,
                 min_point_of_control,
+                rule,
                 )
 
         self.assertFalse(result)
@@ -353,7 +362,7 @@ class RulesTestCase(TestCase):
         rule_2 = Rule.objects.create(
                 days_offset=1,
                 difference_direction='DOWN',
-                ticks_offset=10,
+                ticks_offset=8,
                 days_returned=14,
                 )
 
@@ -372,5 +381,5 @@ class RulesTestCase(TestCase):
         ps = batch.processed_contracts.filter(positive_outcome=True, rule=rule_1)
         self.assertEquals(2, len(ps))
 
-        ps = batch.processed_contracts.filter(positive_outcome=True, rule=rule_1)
+        ps = batch.processed_contracts.filter(positive_outcome=True, rule=rule_2)
         self.assertEquals(3, len(ps))

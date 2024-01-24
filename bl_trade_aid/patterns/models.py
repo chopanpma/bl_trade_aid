@@ -129,7 +129,7 @@ class Rule(TimeStampedModel):
                                         )
     control_point_band_ticks = models.IntegerField(_('Control Point Band Ticks'), null=True, blank=True,
                                                    help_text=_('Ticks allowed for the band'))
-    days_offset = models.IntegerField(_('DayOffset'), null=True, blank=True,
+    days_offset = models.IntegerField(_('DayOffset'), default=1,
                                       help_text=_('Day(s) that will be compared with the rest'))
     ticks_offset = models.IntegerField(_('Ticks'), null=True, blank=True,
                                        help_text=_('Ticks that will be the offset of the last(s) days '
@@ -143,7 +143,15 @@ class Rule(TimeStampedModel):
                                             default=None)
 
     def __str__(self):
-        return self.name
+        return_value = (
+            f'E:{self.experiment}'
+            f'-CP:{self.control_point_band_ticks}'
+            f'-DO:{self.days_offset}'
+            f'-TO:{self.ticks_offset}'
+            f'-DR:{self.days_returned}'
+            f'-DD:{self.difference_direction}'
+            )
+        return return_value
 
 
 class RuleExperiment(TimeStampedModel):

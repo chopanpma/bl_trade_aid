@@ -139,13 +139,18 @@ class ScannerSubscriptionTestCase(TestCase):
 
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
-    def test_insert_loop_over_ScanData_entries_only_if_they_have_not_being_evaluated(
+    def test_insert_loop_over_ScanData_entries_only_if_they_have_not_been_evaluated(
             self,
             mock_get_bars_in_date_range,
             mock_get_contracts,
             ):
         mock_get_contracts.return_value = Batch.objects.all()[0]
+        rule = Rule.objects.create(
+                ticks_offset=20,
+                days_offset=2)
         experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         call_command('loaddata', 'contract_fixture2', verbosity=0)
         call_command('loaddata', 'contract_details_fixture', verbosity=0)
@@ -200,6 +205,12 @@ class ScannerSubscriptionTestCase(TestCase):
             ):
         batch = Batch.objects.all()[0]
         mock_get_contracts.return_value = batch
+        rule = Rule.objects.create(
+                ticks_offset=20,
+                days_offset=2)
+        experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
 
         call_command('loaddata', 'contract_fixture2', verbosity=0)
         call_command('loaddata', 'contract_details_fixture', verbosity=0)
@@ -208,7 +219,7 @@ class ScannerSubscriptionTestCase(TestCase):
 
         ExcludedContract.objects.create(symbol='AMZN', exclude_active=True)
 
-        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50, experiment=batch.experiment)
+        MarketUtils.get_current_profile_charts(profile_chart_generation_limit=50, experiment=experiment)
 
         self.assertEquals(2, mock_get_bars_in_date_range.call_count)
         self.assertEquals(2, ProcessedContract.objects.filter(batch=batch).count())
