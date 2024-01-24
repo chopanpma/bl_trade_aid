@@ -1,5 +1,5 @@
 UNIT_TESTS = bl_trade_aid.patterns.tests.unit
-UNIT_TEST = bl_trade_aid.patterns.tests.unit.test_rules.RulesTestCase
+UNIT_TEST = bl_trade_aid.patterns.tests.unit.test_rules.RulesTestCase.test_experiment_rules_multiple_rules
 unit-test:
 	docker-compose -f local.yml run django python manage.py test $(UNIT_TESTS) --exclude-tag=INTEGRATION
 unit-test-x:

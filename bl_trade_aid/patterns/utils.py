@@ -215,32 +215,26 @@ class ProfileChartUtils():
 
 
 class RuleExecutor():
-    def __init__(self, batch):
-        self.batch = batch
 
     def rules_passed(self,
                      max_point_of_control,
                      min_point_of_control,
                      direction,
+                     rule,
                      ):
         response = True
-        for experiment_rule in self.batch.experiment.experiment_rules.all():
-            if experiment_rule.rule.control_point_band_ticks is not None:
-                band_width = max_point_of_control - min_point_of_control
-                if band_width >= experiment_rule.rule.control_point_band_ticks:
-                    response = False
-            if experiment_rule.rule.difference_direction is not None:
-                if direction != experiment_rule.rule.difference_direction:
-                    response = False
+        if rule.control_point_band_ticks is not None:
+            band_width = max_point_of_control - min_point_of_control
+            if band_width >= rule.control_point_band_ticks:
+                response = False
+        if rule.difference_direction is not None:
+            if direction != rule.difference_direction:
+                response = False
 
         return response
 
 
 class ProfileChartWrapper():
-
-    days_offset = 2
-    ticks_offset = None
-    days_returned = None
 
     def __init__(self, batch, height_precision=100):
 
@@ -250,15 +244,7 @@ class ProfileChartWrapper():
         self.dates_df_dict = {}
         self.mp_dict = {}
         self.height_precision = height_precision
-        self.rules_executor = RuleExecutor(batch)
-        experiment_rules = self.batch.experiment.experiment_rules.all()
-        for experiment_rule in experiment_rules:
-            if experiment_rule.rule.days_offset is not None:
-                self.days_offset = experiment_rule.rule.days_offset
-            if experiment_rule.rule.ticks_offset is not None:
-                self.ticks_offset = experiment_rule.rule.ticks_offset
-            if experiment_rule.rule.days_returned is not None:
-                self.days_returned = experiment_rule.rule.days_returned
+        self.rules_executor = RuleExecutor()
 
         full_table_df = read_frame(qs)
         symbols = full_table_df['symbol'].unique()
@@ -328,40 +314,47 @@ class ProfileChartWrapper():
             self,
             control_points,
             max_point_of_control,
-            min_point_of_control):
+            min_point_of_control,
+            rule):
 
         dates = list(control_points.keys())
-        if self.days_returned is not None:
-            if len(dates) < self.days_returned:
+        if rule.days_returned is not None:
+            if len(dates) < rule.days_returned:
                 return False
 
         responses = []
         ticks_delta = 0
-
-        for date in dates[-self.days_offset:]:
+        # TODO: add the logic for both
+        for date in dates[-rule.days_offset:]:
             if control_points[date] <= min_point_of_control:
                 ticks_delta = min_point_of_control - control_points[date]
                 responses.append(('DOWN', ticks_delta))
             else:
                 if control_points[date] >= max_point_of_control:
-                    # last two are inside the range
                     ticks_delta = control_points[date] - max_point_of_control
                     responses.append(('UP', ticks_delta))
                 else:
                     return False
         # Both have to be outside the band in the same direction
 
+        print(f'rule:{rule}---'
+              f'max:{max_point_of_control}, min:{min_point_of_control}'
+              f'; len(dates):{len(dates)}, {rule.days_returned};'
+              f' control_points:{control_points.values()};'
+              f' ticks_offset:{rule.ticks_offset},responses:{responses}')
+
         first_element = responses[0][0]
-        for element in responses[1:]:
-            if self.ticks_offset is not None:
-                if element[1] < self.ticks_offset:
+        for element in responses[len(responses) - 1:]:
+            if rule.ticks_offset is not None:
+                if element[1] < rule.ticks_offset:
                     return False
             if element[0] != first_element:
                 return False
         if not self.rules_executor.rules_passed(
                 max_point_of_control,
                 min_point_of_control,
-                first_element):
+                first_element,
+                rule):
             return False
 
         return True
@@ -383,29 +376,37 @@ class ProfileChartWrapper():
 
         return control_points
 
-    def set_participant_symbols(self):
+    def delete_excluded_symbols(self):
         excluded_symbols = ExcludedContract.objects.filter(
                 exclude_active=True,
                 ).values_list('symbol')
+
         for excluded_symbol in excluded_symbols:
             if self.dates_df_dict.get(excluded_symbol[0], None) is not None:
                 del self.dates_df_dict[excluded_symbol[0]]
 
-        for symbol in self.dates_df_dict.keys():
-            control_points = self.get_control_points(symbol)
-            if len(control_points) > self.days_offset:
-                max_point_of_control = max(list(control_points.values())[:-self.days_offset])
-                min_point_of_control = min(list(control_points.values())[:-self.days_offset])
-                if self.check_symbol_positive_experiment(control_points,
-                                                         max_point_of_control,
-                                                         min_point_of_control):
-                    ProcessedContract.objects.create(symbol=symbol,
-                                                     batch=self.batch,
-                                                     positive_outcome=True)
-                else:
-                    ProcessedContract.objects.create(symbol=symbol,
-                                                     batch=self.batch,
-                                                     positive_outcome=False)
+    def set_participant_symbols(self):
+        self.delete_excluded_symbols()
+        for experiment_rule in self.batch.experiment.experiment_rules.all():
+            for symbol in self.dates_df_dict.keys():
+                control_points = self.get_control_points(symbol)
+                if len(control_points) > experiment_rule.rule.days_offset:
+                    max_point_of_control = max(list(control_points.values())[:-experiment_rule.rule.days_offset])
+                    min_point_of_control = min(list(control_points.values())[:-experiment_rule.rule.days_offset])
+
+                    if self.check_symbol_positive_experiment(control_points,
+                                                             max_point_of_control,
+                                                             min_point_of_control,
+                                                             experiment_rule.rule):
+                        ProcessedContract.objects.create(symbol=symbol,
+                                                         batch=self.batch,
+                                                         positive_outcome=True,
+                                                         rule=experiment_rule.rule)
+                    else:
+                        ProcessedContract.objects.create(symbol=symbol,
+                                                         batch=self.batch,
+                                                         positive_outcome=False,
+                                                         rule=experiment_rule.rule)
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})
@@ -680,6 +681,11 @@ class MarketUtils():
                 aboveVolume=experiment.above_volume,
                 marketCapAbove=experiment.market_cap_above,
                 marketCapBelow=experiment.market_cap_below,
+                couponRateAbove=experiment.coupon_rate_above,
+                couponRateBelow=experiment.coupon_rate_below,
+                excludeConvertible=experiment.exclude_convertible,
+                averageOptionVolumeAbove=experiment.average_option_volume_above,
+                stockTypeFilter=experiment.stock_type_filter,
                 )
 
 

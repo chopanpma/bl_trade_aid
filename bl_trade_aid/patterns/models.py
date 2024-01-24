@@ -115,10 +115,12 @@ class Rule(TimeStampedModel):
 
     DOWN = 'DOWN'
     UP = 'UP'
+    BOTH = 'BOTH'
 
     DIFFERENCE_DIRECTION_CHOICES = [
             (DOWN, 'Down'),
-            (UP, 'Up')
+            (UP, 'Up'),
+            (BOTH, 'Both'),
             ]
 
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
@@ -127,7 +129,7 @@ class Rule(TimeStampedModel):
                                         )
     control_point_band_ticks = models.IntegerField(_('Control Point Band Ticks'), null=True, blank=True,
                                                    help_text=_('Ticks allowed for the band'))
-    days_offset = models.IntegerField(_('DayOffset'), null=True, blank=True,
+    days_offset = models.IntegerField(_('DayOffset'), default=1,
                                       help_text=_('Day(s) that will be compared with the rest'))
     ticks_offset = models.IntegerField(_('Ticks'), null=True, blank=True,
                                        help_text=_('Ticks that will be the offset of the last(s) days '
@@ -141,7 +143,15 @@ class Rule(TimeStampedModel):
                                             default=None)
 
     def __str__(self):
-        return self.name
+        return_value = (
+            f'E:{self.experiment}'
+            f'-CP:{self.control_point_band_ticks}'
+            f'-DO:{self.days_offset}'
+            f'-TO:{self.ticks_offset}'
+            f'-DR:{self.days_returned}'
+            f'-DD:{self.difference_direction}'
+            )
+        return return_value
 
 
 class RuleExperiment(TimeStampedModel):
@@ -156,22 +166,36 @@ class RuleExperiment(TimeStampedModel):
 class Experiment(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the experiment'))
+    days_returned = models.IntegerField(_('DaysReturned'), null=True, blank=True,
+                                        help_text=_('How many days should be returned for each symbols'
+                                        'used to fetch and validate'))
     instrument = models.CharField(_('Instrument'), max_length=100, null=True, blank=True,
                                   help_text=_('Instrument'))
     location_code = models.CharField(_('Location_Code'), max_length=100, null=True, blank=True,
                                      help_text=_('Location of the instrument'))
     scan_code = models.CharField(_('Scan_Code'), max_length=100, null=True, blank=True,
                                  help_text=_('Special code for scanning'))
-    above_price = models.CharField(_('Above_Price'), max_length=100, null=True, blank=True,
-                                   help_text=_('Above Pride'))
-    below_price = models.CharField(_('Below_Price'), max_length=100, null=True, blank=True,
+    above_price = models.CharField(_('Above_Price'), max_length=100, null=True, blank=True, default='',
+                                   help_text=_('Above Price'))
+    below_price = models.CharField(_('Below_Price'), max_length=100, null=True, blank=True, default='',
                                    help_text=_('Below Price'))
-    above_volume = models.CharField(_('Above_Volume'), max_length=100, null=True, blank=True,
+    above_volume = models.CharField(_('Above_Volume'), max_length=100, null=True, blank=True, default='',
                                     help_text=_('Above Volume'))
-    market_cap_above = models.CharField(_('Market_Cap_Above'), max_length=100, null=True, blank=True,
+    market_cap_above = models.CharField(_('Market_Cap_Above'), max_length=100, null=True, blank=True, default='',
                                         help_text=_('Market_Cap_Above'))
-    market_cap_below = models.CharField(_('Market_Cap_Below'), max_length=100, null=True, blank=True,
+    market_cap_below = models.CharField(_('Market_Cap_Below'), max_length=100, null=True, blank=True, default='',
                                         help_text=_('Market_Cap_Below'))
+    coupon_rate_above = models.IntegerField(_('Coupon_Rate_Above'), null=True, blank=True,
+                                            help_text=_('Coupon_Rate_Above'))
+    coupon_rate_below = models.IntegerField(_('Coupon_Rate_Below'), null=True, blank=True,
+                                            help_text=_('Coupon_Rate_Below'))
+    exclude_convertible = models.BooleanField(default=False)
+    average_option_volume_above = models.IntegerField(_('AverageOptionVolumeAbove'),
+                                                      null=True, blank=True,
+                                                      help_text=_('AverageOptionVolumeAbove'))
+    stock_type_filter = models.CharField(_('stockTypeFilter'),
+                                         max_length=100, null=True, blank=True, default='',
+                                         help_text=_('stockTypeFilter'))
     description = models.TextField(_('Description'), null=True, blank=True,
                                    help_text=_('Description of the experiment'))
 
@@ -195,6 +219,10 @@ class ProcessedContract(TimeStampedModel):
                               null=True, blank=True,
                               on_delete=models.PROTECT)
     positive_outcome = models.BooleanField(default=False)
+
+    rule = models.ForeignKey('Rule',  verbose_name=_('Rule'), related_name='procesec_contracts',
+                             null=True, blank=True,
+                             on_delete=models.CASCADE)
 
     def __str__(self):
         return self.symbol

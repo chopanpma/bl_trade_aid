@@ -23,7 +23,9 @@ class RuleExperimentInline(admin.TabularInline):
 
 @admin.register(Experiment)
 class ExperimentAdmin(admin.ModelAdmin):
-    inlines = [QueryParameterInline, RuleExperimentInline]
+    inlines = [QueryParameterInline,
+               RuleExperimentInline,
+               ]
 
     list_display = ['name',
                     'instrument',
@@ -110,6 +112,13 @@ class QueryParameterAdmin(admin.ModelAdmin):
 class RuleExperimentAdmin(admin.ModelAdmin):
     list_display = (
             'rule',
+            'experiment',
+            )
+
+
+class RuleSetExperimentAdmin(admin.ModelAdmin):
+    list_display = (
+            'rule_set',
             'experiment',
             )
 
