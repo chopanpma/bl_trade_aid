@@ -460,9 +460,10 @@ class ProfileChartWrapper():
                 pt.add_row(row)
 
             pt.align = 'l'
-            content = bytes(pt.get_string(title=f"{symbol} - {self.dates_df_dict[symbol].index[0]} "), 'utf-8')
-            content_txt = pt.get_string(title=f"{symbol} - {self.dates_df_dict[symbol].index[0]} ")
-            with open(f"{self.dates_df_dict[symbol].index[0].strftime('%y-%m-%d')}-{symbol}.txt", "w") as f:
+            date_used_in_file = self.dates_df_dict[symbol].index[-1]
+            content = bytes(pt.get_string(title=f"{symbol} - {date_used_in_file} "), 'utf-8')
+            content_txt = pt.get_string(title=f"{symbol} - {date_used_in_file} ")
+            with open(f"{date_used_in_file.strftime('%y-%m-%d')}-{symbol}.txt", "w") as f:
                 f.write(content_txt)
             chart_file = SimpleUploadedFile("profile", content)
 
@@ -634,7 +635,7 @@ class MarketUtils():
         bars = ib.reqHistoricalData(
                 contract,
                 endDateTime='',
-                durationStr='14 D',  # add param for days
+                durationStr='{batch.experiment.days_returned} D',  # add param for days
                 barSizeSetting='30 mins',
                 whatToShow='TRADES',
                 useRTH=True,  # TODO: create param for extended hours

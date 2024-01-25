@@ -36,9 +36,9 @@
           [D] fix plotting periods
           [D] fix sync on times
           [D] fix display real price
-  [ ] edge cases
-       [0] manage timeouts
-        [0] add try/catch and register timed out symbol
+  [1] edge cases
+       [1] manage timeouts
+        [1] add try/catch and register timed out symbol
        [ ] manage different precision
       [ ] check days why there is no data from 14 days and exclude
   [D] as a trader I would like to have the possible leads on the daily scann marked so I can look at them
@@ -51,17 +51,19 @@
       [D] add parameter for days offset
       [D] add exclussion list
       [D] add parameter for ticks offset
-      [0] add discarded flag, and checking flag
       [D] add minimum samaple days for be accepted in Rulescj
   [D] add table/fields for tracking results of shadow mode
     [D] add open close
     [D] add alert tracking table
     [D] add test for model aditional methods
     [D] added positive trade flag
-  [0] create a test page for the query 
-  [*] create ruleset to separate evaluation from creation 
-    [*] change graph days to use experiment field
-    [*] change experiment run to run all criterias and log wich one is approved in positive outcome
+  [D] change graph days to use experiment field
+  [D] fix date of the graph 
+  [0] create a test command for the query 
+  [0] add discarded flag, and checking flag
+  [1] create a test page for the query 
+  [D] create ruleset to separate evaluation from creation 
+    [D] change experiment run to run all rules and log wich one is approved in positive outcome
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
   [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment
@@ -74,7 +76,7 @@
     [ ] add initial balance
   [ ] automate change experiments
     [D] create clases for query config and map to the experiment
-    [0] Bugfix: the 30 points need to be net points rounded  
+    [2] Bugfix: the 30 points need to be net points rounded  
     [D] create clases for criteria for making the contracts a lead  and add to an experiment
     [ ] create clases copy experiment to change into another experiment
   [ ] general improvements
