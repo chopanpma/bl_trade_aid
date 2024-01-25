@@ -641,7 +641,7 @@ class MarketUtils():
         bars = ib.reqHistoricalData(
                 contract,
                 endDateTime='',
-                durationStr='{batch.experiment.days_requested} D',  # add param for days
+                durationStr=f'{batch.experiment.days_requested} D',  # add param for days
                 barSizeSetting='30 mins',
                 whatToShow='TRADES',
                 useRTH=True,  # TODO: create param for extended hours

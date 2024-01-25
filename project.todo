@@ -59,7 +59,8 @@
     [D] added positive trade flag
   [D] change graph days to use experiment field
   [D] fix date of the graph 
-  [0] create a test command for the query 
+  [D] create a test command for the query 
+  [*] add test for reqHistoricalData paraemeters 
   [0] add discarded flag, and checking flag
   [1] create a test page for the query 
   [D] create ruleset to separate evaluation from creation 

@@ -15,6 +15,7 @@ from ...models import QueryParameter
 from ...models import Rule
 from ib_insync import ScannerSubscription
 from ib_insync import TagValue
+from ib_insync import Stock
 import pickle
 import logging
 logger = logging.getLogger(__name__)
@@ -22,6 +23,43 @@ logger = logging.getLogger(__name__)
 
 class ScannerSubscriptionTestCase(TestCase):
     fixtures = ['batch.json']
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
+    def test_reqHistoricalParameters(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        file = open(f'{settings.APPS_DIR}/patterns/tests/fixtures/bar_data_range_results.pickle', 'rb')
+        data = pickle.load(file)
+        file.close()
+        mock_req_historical_data.return_value = data
+
+        rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+
+        MarketUtils.get_bars_in_date_range('AMV', 'SMART', batch)
+
+        # - assert the function calls the mock
+
+        mock_req_historical_data.assert_called_with(
+                Stock(symbol='AMV', exchange='SMART', currency='USD'),
+                endDateTime='',
+                durationStr='14 D',
+                barSizeSetting='30 mins',
+                whatToShow='TRADES',
+                useRTH=True,
+                formatDate=1)
 
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
