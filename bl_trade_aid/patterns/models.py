@@ -166,7 +166,7 @@ class RuleExperiment(TimeStampedModel):
 class Experiment(TimeStampedModel):
     name = models.CharField(_('Name'), max_length=100, null=True, blank=True,
                             help_text=_('Name of the experiment'))
-    days_requested = models.IntegerField(_('DaysRequested'), null=True, blank=True,
+    days_requested = models.IntegerField(_('DaysRequested'), default=14,
                                          help_text=_('How many days will be requested for each symbols'
                                          'used to fetch'))
     instrument = models.CharField(_('Instrument'), max_length=100, null=True, blank=True,
