@@ -36,4 +36,4 @@ class Command(BaseCommand):
 
             MarketUtils.get_current_profile_charts(profile_chart_generation_limit, experiment)
         else:
-            print('No eperiment')
+            print('No experiment')

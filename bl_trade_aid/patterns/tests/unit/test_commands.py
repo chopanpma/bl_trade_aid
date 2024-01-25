@@ -75,3 +75,24 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         call_command('generate_current_profile_charts', symbol='MSFT', experiment='Test_Experiment')
         self.assertEqual(1, mock_get_bars_in_date_range.call_count)
         mock_generate_profile_charts.assert_called_with()
+
+
+class ContractQueryTestCase(TransactionTestCase):
+    fixtures = ['batch.json']
+
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
+    def test_get_contracts_from_experiment_query(
+            self,
+            mock_get_contracts,
+            ):
+        # TODO: save profiles in a day/version folder.
+        # assert the count
+        # done
+        # Load Data
+        call_command('loaddata', 'scandata_fixture', verbosity=0)
+        mock_get_contracts.return_value = Batch.objects.all()[0]
+        # Call command
+        experiment = Experiment.objects.all()[0]
+        call_command('get_contracts_from_experiment_query', experiment='Test_Experiment')
+        self.assertEqual(1, mock_get_contracts.call_count)
+        mock_get_contracts.assert_called_with(experiment)

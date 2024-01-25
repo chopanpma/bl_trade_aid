@@ -563,17 +563,22 @@ class MarketUtils():
         #     pickle.dump(data, file)
 
         # insert results
+        counter = 0
         for scan_data in data:
+
+            counter = counter + 1
             contract_dict = scan_data.contractDetails.contract.__dict__
             contract_instance = Contract()
             ModelUtil.update_model_fields(contract_instance, contract_dict)
             contract_instance.save()
+            print(f'Contract: {contract_dict}')
 
             contract_details_dict = scan_data.contractDetails.__dict__
             contract_details_instance = ContractDetails()
             ModelUtil.update_model_fields(contract_details_instance, contract_details_dict)
             contract_details_instance.contract = contract_instance
             contract_details_instance.save()
+            print(f'ContractDetails: {contract_details_dict}')
 
             scan_data_dict = scan_data.__dict__
             scan_data_instance = ScanData()
@@ -583,6 +588,7 @@ class MarketUtils():
             scan_data_instance.save()
         # Disconnect from TWS API
         ib.disconnect()
+        print(f'TOTAL CONTRACTS: {counter}')
         return batch
 
     def get_bars_from_single_symbol(
