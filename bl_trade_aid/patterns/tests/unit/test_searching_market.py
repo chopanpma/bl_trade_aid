@@ -27,6 +27,38 @@ class ScannerSubscriptionTestCase(TestCase):
     @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
     @patch('ib_insync.IB.reqHistoricalData')
     @patch('ib_insync.IB.connect')
+    def test_reqHistoricalTimeoutException(
+            self,
+            mock_connect,
+            mock_req_historical_data,
+            mock_disconnect_bar
+            ):
+
+        file = open(f'{settings.APPS_DIR}/patterns/tests/fixtures/bar_data_range_results.pickle', 'rb')
+        data = pickle.load(file)
+        file.close()
+        mock_req_historical_data.return_value = data
+
+        rule = Rule.objects.create(days_offset=1)
+        experiment = Experiment.objects.all()[0]
+        experiment_rule = RuleExperiment.objects.create(experiment=experiment, rule=rule)
+        experiment.experiment_rules.add(experiment_rule)
+
+        batch = Batch.objects.all()[0]
+        batch.experiment = experiment
+        batch.save()
+        mock_req_historical_data.side_effect = Exception("Timeout")
+        try:
+            MarketUtils.get_bars_in_date_range('AMV', 'SMART', batch)
+            handled = True
+        except Exception:
+            handled = False
+
+        self.assertTrue(handled)
+
+    @patch('ib_insync.IB.disconnect',  new_callable=mock.Mock)
+    @patch('ib_insync.IB.reqHistoricalData')
+    @patch('ib_insync.IB.connect')
     def test_reqHistoricalParameters(
             self,
             mock_connect,

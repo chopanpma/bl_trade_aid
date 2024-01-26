@@ -638,14 +638,15 @@ class MarketUtils():
                 )
 
         # Request scanner data
-        bars = ib.reqHistoricalData(
-                contract,
-                endDateTime='',
-                durationStr=f'{batch.experiment.days_requested} D',  # add param for days
-                barSizeSetting='30 mins',
-                whatToShow='TRADES',
-                useRTH=True,  # TODO: create param for extended hours
-                formatDate=1)
+        try:
+            bars = ib.reqHistoricalData(
+                    contract,
+                    endDateTime='',
+                    durationStr=f'{batch.experiment.days_requested} D',  # add param for days
+                    barSizeSetting='30 mins',
+                    whatToShow='TRADES',
+                    useRTH=True,  # TODO: create param for extended hours
+                    formatDate=1)
 
         # Serialize bar result
         #  print(f'type bars:{type(bars)}')
@@ -654,14 +655,15 @@ class MarketUtils():
         #      pickle.dump(bars, file)
 
         # Insert data into the tables.
-        for bar in bars:
-            bar_data_dict = bar.__dict__
-            bar_data_dict['symbol'] = symbol
-            bar_data_instance = BarData()
-            ModelUtil.update_model_fields(bar_data_instance, bar_data_dict)
-            bar_data_instance.batch = batch
-            bar_data_instance.save()
-
+            for bar in bars:
+                bar_data_dict = bar.__dict__
+                bar_data_dict['symbol'] = symbol
+                bar_data_instance = BarData()
+                ModelUtil.update_model_fields(bar_data_instance, bar_data_dict)
+                bar_data_instance.batch = batch
+                bar_data_instance.save()
+        except Exception as e:
+            print(e)
         # Disconnect from TWS API
         ib.disconnect()
 
