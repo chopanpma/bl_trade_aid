@@ -629,16 +629,16 @@ class MarketUtils():
 
         # Connect to TWS API
         ib = IB()
-        ib.connect('192.168.0.20', 7497, clientId=1)
+        try:
+            ib.connect('192.168.0.20', 7497, clientId=1)
 
-        contract = Stock(
-                symbol,
-                exchange,
-                'USD'
-                )
+            contract = Stock(
+                    symbol,
+                    exchange,
+                    'USD'
+                    )
 
         # Request scanner data
-        try:
             bars = ib.reqHistoricalData(
                     contract,
                     endDateTime='',

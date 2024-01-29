@@ -3,6 +3,7 @@ from unittest.mock import patch
 from unittest import mock
 from django.conf import settings
 from django.core.management import call_command
+from asyncio.exceptions import TimeoutError
 from ...utils import MarketUtils
 from ...models import ScanData
 from ...models import BarData
@@ -47,11 +48,11 @@ class ScannerSubscriptionTestCase(TestCase):
         batch = Batch.objects.all()[0]
         batch.experiment = experiment
         batch.save()
-        mock_req_historical_data.side_effect = Exception("Timeout")
+        mock_req_historical_data.side_effect = TimeoutError("Timeout")
         try:
             MarketUtils.get_bars_in_date_range('AMV', 'SMART', batch)
             handled = True
-        except Exception:
+        except TimeoutError:
             handled = False
 
         self.assertTrue(handled)
