@@ -11,9 +11,8 @@ from .models import ProcessedContract
 class TotalExperimentSuccess(ReportView):
     report_model = ProcessedContract
     date_field = "created"
-    group_by = "batch"
+    group_by = "batch__experiment"
     columns = [
-        "experiment",
         ComputationField.create(
             Count, "id", verbose_name="Hits", is_summable=False
         ),
@@ -36,4 +35,3 @@ class TotalExperimentSuccess(ReportView):
             title_source=["experiment"],
         ),
     ]
-

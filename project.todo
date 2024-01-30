@@ -61,17 +61,17 @@
   [D] fix date of the graph 
   [D] create a test command for the query 
   [D] add test for reqHistoricalData paraemeters 
-  [*] fix bug of filter processed transactions 
-  [0] add discarded flag, and checking flag
   [1] create a test page for the query 
+  [0] add discarded flag, and checking flag
+  [*] fix the statistics to show how good is the process
   [D] create ruleset to separate evaluation from creation 
     [D] change experiment run to run all rules and log wich one is approved in positive outcome
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
-  [1]- as a user I would like to set reqScannerData parameters  in a table for the experiment
-  [1]- as a user I would like to view the files in the admin app
-  [ ] remove legacy experiment rules
-  [ ] remove legacy rules query fields
+  [D]- as a user I would like to set reqScannerData parameters  in a table for the experiment
+  [0]- as a user I would like to view the files in the admin app
+  [D] remove legacy experiment rules
+  [D] remove legacy rules query fields
   [ ] add fundamentals of profile chart
     [ ] add accepted tpos
     [ ] add value area
