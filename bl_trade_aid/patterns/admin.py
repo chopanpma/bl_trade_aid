@@ -8,6 +8,7 @@ from .models import RuleExperiment
 from .models import Position
 from .models import Alert
 from .models import Batch
+from .models import ProfileChart
 
 
 # Register your models here.
@@ -130,3 +131,13 @@ class BatchAdmin(admin.ModelAdmin):
             'id',
             )
     list_filter = ('experiment', 'id')
+
+
+@admin.register(ProfileChart)
+class ProfileChartAdmin(admin.ModelAdmin):
+    list_display = (
+            'batch',
+            'symbol',
+            'chart_file',
+            )
+    list_filter = ('symbol', 'batch')

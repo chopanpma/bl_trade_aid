@@ -63,7 +63,7 @@
   [D] add test for reqHistoricalData paraemeters 
   [1] create a test page for the query 
   [0] add discarded flag, and checking flag
-  [*] fix the statistics to show how good is the process
+  [D] get the statistics to show how good is the process
   [D] create ruleset to separate evaluation from creation 
     [D] change experiment run to run all rules and log wich one is approved in positive outcome
   [1] add automatic batch calling until daily sample reached out 
