@@ -389,6 +389,11 @@ class ProfileChartWrapper():
         self.delete_excluded_symbols()
         for experiment_rule in self.batch.experiment.experiment_rules.all():
             for symbol in self.dates_df_dict.keys():
+                profile_charts = ProfileChart.objects.filter(batch=self.batch, symbol=symbol)
+                if len(profile_charts) > 0:
+                    profile_chart = profile_charts.last()
+                else:
+                    profile_chart = None
                 control_points = self.get_control_points(symbol)
                 if len(control_points) > experiment_rule.rule.days_offset:
                     max_point_of_control = max(list(control_points.values())[:-experiment_rule.rule.days_offset])
@@ -401,12 +406,14 @@ class ProfileChartWrapper():
                         ProcessedContract.objects.create(symbol=symbol,
                                                          batch=self.batch,
                                                          positive_outcome=True,
-                                                         rule=experiment_rule.rule)
+                                                         rule=experiment_rule.rule,
+                                                         profile_chart=profile_chart)
                     else:
                         ProcessedContract.objects.create(symbol=symbol,
                                                          batch=self.batch,
                                                          positive_outcome=False,
-                                                         rule=experiment_rule.rule)
+                                                         rule=experiment_rule.rule,
+                                                         profile_chart=profile_chart)
 
     def normalize_df(self, df):
         df = df.rename(columns={'date': 'DateTime'})

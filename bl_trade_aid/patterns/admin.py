@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import Experiment
 from .models import QueryParameter
 from .models import Rule
@@ -67,7 +68,16 @@ class ProcessedContractsAdmin(admin.ModelAdmin):
             'symbol',
             'batch',
             'positive_outcome',
+            'get_profile_chart',
             )
+
+    def get_profile_chart(self, obj):
+        if obj.profile_chart and obj.profile_chart.chart_file:
+            file_url = obj.profile_chart.chart_file.url
+            file_name = obj.profile_chart.chart_file.name
+            return format_html("<a href='{}' target='_blank'>{}</a>", file_url, file_name)
+        return "No file"
+    get_profile_chart.short_description = "File Link"
 
     list_filter = ('positive_outcome', 'batch', 'symbol')
 

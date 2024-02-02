@@ -223,6 +223,11 @@ class ProcessedContract(TimeStampedModel):
     rule = models.ForeignKey('Rule',  verbose_name=_('Rule'), related_name='procesec_contracts',
                              null=True, blank=True,
                              on_delete=models.CASCADE)
+    profile_chart = models.ForeignKey('ProfileChart',
+                                      verbose_name=_('ProfileChart'),
+                                      related_name='processed_contracts',
+                                      null=True, blank=True,
+                                      on_delete=models.PROTECT)
 
     def __str__(self):
         return self.symbol
