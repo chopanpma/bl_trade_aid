@@ -469,9 +469,9 @@ class ProfileChartWrapper():
             pt.align = 'l'
             date_used_in_file = self.dates_df_dict[symbol].index[-1]
             content = bytes(pt.get_string(title=f"{symbol} - {date_used_in_file} "), 'utf-8')
-            content_txt = pt.get_string(title=f"{symbol} - {date_used_in_file} ")
-            with open(f"{date_used_in_file.strftime('%y-%m-%d')}-{symbol}.txt", "w") as f:
-                f.write(content_txt)
+            # content_txt = pt.get_string(title=f"{symbol} - {date_used_in_file} ")
+            # with open(f"{date_used_in_file.strftime('%y-%m-%d')}-{symbol}.txt", "w") as f:
+            #     f.write(content_txt)
             chart_file = SimpleUploadedFile("profile", content)
 
             ProfileChart.objects.create(

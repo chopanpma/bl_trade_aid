@@ -63,13 +63,18 @@
   [D] add test for reqHistoricalData paraemeters 
   [1] create a test page for the query 
   [0] add discarded flag, and checking flag
+  [*] create an experiment with other instrument
+  [*] try catch Timeout in get contracts 
+  [*] fix error in query when the experiment is not found
+  [*] add constant monitor and alert trigger (celery)
+    [*] we might have alerted in another instance, do something to prevent it
   [D] get the statistics to show how good is the process
   [D] create ruleset to separate evaluation from creation 
     [D] change experiment run to run all rules and log wich one is approved in positive outcome
   [1] add automatic batch calling until daily sample reached out 
   [1] add daily sample to experiment
   [D]- as a user I would like to set reqScannerData parameters  in a table for the experiment
-  [0]- as a user I would like to view the files in the admin app
+  [D]- as a user I would like to view the files in the admin app
   [D] remove legacy experiment rules
   [D] remove legacy rules query fields
   [ ] add fundamentals of profile chart

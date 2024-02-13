@@ -66,9 +66,10 @@ class ProcessedContractsAdmin(admin.ModelAdmin):
     inlines = [PositionInline, AlertInline]
     list_display = (
             'symbol',
-            'batch',
-            'positive_outcome',
             'get_profile_chart',
+            'batch',
+            'rule',
+            'positive_outcome',
             )
 
     def get_profile_chart(self, obj):
