@@ -7,6 +7,13 @@
         }
     },
     {
+        "model": "patterns.experiment",
+        "pk": 2,
+        "fields": {
+            "name": "Test_Experiment2"
+        }
+    },
+    {
         "model": "patterns.batch",
         "pk": 1,
         "fields": {

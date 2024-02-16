@@ -1,5 +1,5 @@
 UNIT_TESTS = bl_trade_aid.patterns.tests.unit
-UNIT_TEST = bl_trade_aid.patterns.tests.unit.test_searching_market.ScannerSubscriptionTestCase.test_reqHistoricalTimeoutException
+UNIT_TEST = bl_trade_aid.patterns.tests.unit.test_commands.GenerateCurrentProfileChartsCommandTestCase.test_generate_current_profile_charts_multi_experiment
 unit-test:
 	docker-compose -f local.yml run django python manage.py test $(UNIT_TESTS) --exclude-tag=INTEGRATION
 unit-test-x:

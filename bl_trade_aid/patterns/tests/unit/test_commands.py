@@ -22,6 +22,15 @@ class GenerateCurrentProfileChartsCommandTestCase(TransactionTestCase):
         call_command('generate_current_profile_charts', experiment='Test_Experiment')
         self.assertEqual(1, mock_get_current_profile_charts.call_count)
 
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_current_profile_charts')
+    def test_generate_current_profile_charts_multi_experiment(self, mock_get_current_profile_charts):
+        # TODO: save profiles in a day/version folder.
+        # assert the count
+        # done
+
+        call_command('generate_current_profile_charts', experiment=['Test_Experiment', 'Test_Experiment2'])
+        self.assertEqual(2, mock_get_current_profile_charts.call_count)
+
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
     @patch('bl_trade_aid.patterns.utils.ProfileChartWrapper.generate_profile_charts')
