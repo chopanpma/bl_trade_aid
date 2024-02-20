@@ -51,3 +51,9 @@ services:
     ports:
       - "9000:9000"
     command: /start-docs
+  networks:
+      - bl_network
+
+  networks:
+    bl_network:
+      driver: bridge
