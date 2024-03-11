@@ -537,7 +537,7 @@ class MarketUtils():
 
         # Connect to TWS API
         ib = IB()
-        ib.connect('192.168.0.8', 7497, clientId=1, account='U3972489')
+        ib.connect('192.168.0.13', 7497, clientId=1, account='U3972489')
 
         scanner_parameters = ib.reqScannerParameters()
         open('scanner.xml', 'w').write(scanner_parameters)
@@ -548,7 +548,7 @@ class MarketUtils():
 
         # Connect to TWS API
         ib = IB()
-        ib.connect('192.168.0.8', 7497, clientId=1, account='U3972489')
+        ib.connect('192.168.0.13', 7497, clientId=1, account='U3972489')
 
         #  create the batch and link the experiment to it
         batch = Batch()
@@ -637,7 +637,7 @@ class MarketUtils():
         # Connect to TWS API
         ib = IB()
         try:
-            ib.connect('192.168.0.8', 7497, clientId=1)
+            ib.connect('192.168.0.13', 7497, clientId=1)
 
             contract = Stock(
                     symbol,
