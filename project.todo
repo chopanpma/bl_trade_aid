@@ -61,13 +61,19 @@
   [D] fix date of the graph 
   [D] create a test command for the query 
   [D] add test for reqHistoricalData paraemeters 
+  [D] try catch Timeout in get contracts 
   [1] create a test page for the query 
   [0] add discarded flag, and checking flag
-  [*] create an experiment with other instrument
-  [*] try catch Timeout in get contracts 
+  [0] create an experiment with other instrument
+  - [0] change the contract to future when the type is FUT
   [*] fix error in query when the experiment is not found
   [*] add constant monitor and alert trigger (celery)
     [*] we might have alerted in another instance, do something to prevent it
+  [*] check for one stock chart it should get stored. j 
+  [0] implement simple stream storage.
+  [0] implement simple alert checking 
+  [0] implement kafka
+  [0] implement kubernetes like service. 
   [D] get the statistics to show how good is the process
   [D] create ruleset to separate evaluation from creation 
     [D] change experiment run to run all rules and log wich one is approved in positive outcome
