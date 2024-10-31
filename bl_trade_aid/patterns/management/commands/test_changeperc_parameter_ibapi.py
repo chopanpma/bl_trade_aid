@@ -41,6 +41,6 @@ def equity_scan():
     scan_filter = [TagValue("CHANGEPERC", "2")]  # Change percentage filter
 
     # Request the scanner subscription
-    app.reqScannerSubscription(7001, scan, scan_filter, [])
+    app.reqScannerSubscription(7001, scan, [], scan_filter)
 
     app.run()
