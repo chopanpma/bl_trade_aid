@@ -35,3 +35,4 @@ ib-insync==0.9.86
 django-pandas==0.6.6
 prettytable==3.8.0
 django-slick-reporting==1.3.0
+# ./wheels/ibapi-10.19.4-py3-none-any.whl
