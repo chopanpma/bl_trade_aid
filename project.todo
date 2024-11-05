@@ -63,13 +63,18 @@
   [D] add test for reqHistoricalData paraemeters 
   [D] try catch Timeout in get contracts 
   [1] create a test page for the query 
+  [*] modify query to add other instruments.
+    [*0] try to query something as is to short or long  
+    [*1] check new documentation
+    [*1] test container ib (have something full dockerized to the solution) 
+    [*1] try an example of realtime with Rust package and insert to the same pg db 
   [0] add discarded flag, and checking flag
   [0] create an experiment with other instrument
   - [0] change the contract to future when the type is FUT
-  [*] fix error in query when the experiment is not found
-  [*] add constant monitor and alert trigger (celery)
-    [*] we might have alerted in another instance, do something to prevent it
-  [*] check for one stock chart it should get stored. j 
+  [0] fix error in query when the experiment is not found
+  [0] add constant monitor and alert trigger (celery)
+    [0] we might have alerted in another instance, do something to prevent it
+  [0] check for one stock chart it should get stored.  
   [0] implement simple stream storage.
   [0] implement simple alert checking 
   [0] implement kafka
