@@ -185,6 +185,30 @@ class ScannerSubscriptionTestCase(TestCase):
         # - assert the function calls the mock
         self.assertEquals(50, mock_get_bars.call_count)
 
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_from_scandata')
+    @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
+    @patch('bl_trade_aid.patterns.utils.ProfileChartWrapper.generate_profile_charts')
+    def test_create_profiles_from_symbol_list(
+            self,
+            mock_generate_profile_charts,
+            mock_get_bars_in_date_range,
+            mock_get_bars_from_scandata,
+            ):
+
+        call_command('loaddata', 'scandata_fixture', verbosity=0)
+
+        experiment = Experiment.objects.all()[0]
+        symbol_list = ['AWIN', 'CFRX']
+        MarketUtils.get_current_profile_charts_from_symbol_list(
+            symbol_list,
+            profile_chart_generation_limit=30,
+            experiment=experiment,
+            )
+
+        self.assertEquals(1, mock_get_bars_from_scandata.call_count)
+        self.assertEquals(1, mock_generate_profile_charts.call_count)
+        # assert that the file has been created
+
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_contracts')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_from_scandata')
     @patch('bl_trade_aid.patterns.utils.MarketUtils.get_bars_in_date_range')
