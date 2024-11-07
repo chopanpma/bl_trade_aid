@@ -514,6 +514,24 @@ class MarketUtils():
         return filtered_list
 
     @staticmethod
+    def get_current_profile_charts_from_symbol_list(
+            symbol_list,
+            profile_chart_generation_limit,
+            experiment,
+            ):
+        batch = Batch()
+        batch.experiment = experiment
+        batch.save()
+
+        MarketUtils.get_bars_from_scandata(
+                symbol_list,
+                batch=batch,
+                profile_chart_generation_limit=profile_chart_generation_limit,
+                )
+        pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
+        pc.generate_profile_charts()
+
+    @staticmethod
     def get_current_profile_charts(
             profile_chart_generation_limit,
             experiment,
