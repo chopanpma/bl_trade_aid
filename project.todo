@@ -62,8 +62,9 @@
   [D] create a test command for the query 
   [D] add test for reqHistoricalData paraemeters 
   [D] try catch Timeout in get contracts 
-  [1] create a test page for the query 
   [*] modify query to add other instruments.
+    [*] separate get_current_profile_chart so it takes the list as a parameter 
+  [1] create a test page for the query 
     [*0] try to query something as is to short or long  
     [*1] check new documentation
     [*1] test container ib (have something full dockerized to the solution) 
