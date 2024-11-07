@@ -1,7 +1,8 @@
 from django.core.management.base import BaseCommand
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
-from ibapi.scanner import ScannerSubscription, TagValue
+from ibapi.tag_value import TagValue
+from ibapi.scanner import ScannerSubscription
 from ibapi.utils import iswrapper
 
 
@@ -9,7 +10,11 @@ class Command(BaseCommand):
     help = 'Scans stocks using TWS API testing CHANGEPERC parameter'
 
     def handle(self, *args, **options):
-        equity_scan()
+        for filter in options['filters']:
+            equity_scan(filter)
+
+    def add_arguments(self, parser):
+        parser.add_argument("filters", nargs="+")
 
 
 class MarketScanner(EWrapper, EClient):
@@ -22,14 +27,16 @@ class MarketScanner(EWrapper, EClient):
               f"{contractDetails.contract.secType}, {contractDetails.contract.exchange}, Change: {distance}")
 
     @iswrapper
-    def scannerDataEnd(self, reqId):
-        print(f"ScannerDataEnd. ReqId: {reqId}\n")
+    def ScannerDataEnd(self, reqId):
+        print('ScannerDataEnd!')
+        self.cancelScannerSubscription(reqId)
         self.disconnect()
 
 
-def equity_scan():
+def equity_scan(filter):
     app = MarketScanner()
-    app.connect("127.0.0.1", 7497, 0)
+    app.connect('192.168.0.13', 7497, 3)
+    # ib.connect('192.168.0.13', 7497, clientId=1, account='U3972489')
 
     # Create a scanner subscription object for equities
     scan = ScannerSubscription()
@@ -38,7 +45,9 @@ def equity_scan():
     scan.scanCode = "TOP_PERC_GAIN"  # Top percentage gainers
 
     # Add a filter for CHANGEPERC > 2%
-    scan_filter = [TagValue("CHANGEPERC", "2")]  # Change percentage filter
+
+    scan_filter = [TagValue(f"{filter}", "0")]  # Change percentage filter
+    # scan_filter = []  # Change percentage filter
 
     # Request the scanner subscription
     app.reqScannerSubscription(7001, scan, [], scan_filter)
