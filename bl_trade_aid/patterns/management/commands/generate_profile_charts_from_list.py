@@ -16,16 +16,22 @@ class Command(BaseCommand):
         parser.add_argument('--profile-chart-generation-limit', '-l',  help='Limit for profile generation')
         parser.add_argument('--symbol', '-s',  nargs='+',  help='Call profile for a single symbol')
         parser.add_argument('--experiment', '-e',  nargs='+', help='Name of the experiment')
+        parser.add_argument('--analize', '-a', action='store_true', help='Analize the results of the charts')
 
     def handle(self, *args, **options):
         # command
         symbols = options.get('symbol', [])
         experiment_names = options.get('experiment', [])
+        generation_limit = 50
         for experiment_name in experiment_names:
             if experiment_name is not None:
                 qs = Experiment.objects.filter(name=experiment_name)
                 experiment = qs[0]
-                MarketUtils.get_current_profile_charts_from_symbol_list(symbols, experiment)
+                MarketUtils.get_current_profile_charts_from_symbol_list(
+                        symbols,
+                        generation_limit,
+                        experiment,
+                        options['analize'])
                 return
             else:
                 print('No experiment')

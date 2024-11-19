@@ -17,6 +17,7 @@ from .models import ExcludedContract
 from django_pandas.io import read_frame
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db.models import Q
+from django.db.models.query import QuerySet
 from collections import defaultdict
 import queue
 import copy
@@ -518,6 +519,7 @@ class MarketUtils():
             symbol_list,
             profile_chart_generation_limit,
             experiment,
+            analize_results
             ):
         batch = Batch()
         batch.experiment = experiment
@@ -530,6 +532,8 @@ class MarketUtils():
                 )
         pc = ProfileChartUtils.create_profile_chart_wrapper(batch)
         pc.generate_profile_charts()
+        if analize_results:
+            pc.set_participant_symbols()
 
     @staticmethod
     def get_current_profile_charts(
@@ -625,21 +629,34 @@ class MarketUtils():
                                            batch=batch)
 
     def get_bars_from_scandata(
-            scan_data_queryset,
+            scan_data,
             batch,
-            profile_chart_generation_limit=None
+            profile_chart_generation_limit=None,
+            exchange="SMART"
             ):
         counter = 0
-        for scan_data_instance in scan_data_queryset:
-            MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
-                                               scan_data_instance.contractDetails.contract.exchange,
-                                               batch=batch)
-            counter = counter + 1
+        if isinstance(scan_data, QuerySet):
+            for scan_data_instance in scan_data:
+                MarketUtils.get_bars_in_date_range(scan_data_instance.contractDetails.contract.symbol,
+                                                   scan_data_instance.contractDetails.contract.exchange,
+                                                   batch=batch)
+                counter = counter + 1
 
-            if MarketUtils.exit_on_limit_reached(
-                    profile_chart_generation_limit,
-                    counter):
-                return
+                if MarketUtils.exit_on_limit_reached(
+                        profile_chart_generation_limit,
+                        counter):
+                    return
+        if isinstance(scan_data, list):
+            for scan_data_instance in scan_data:
+                MarketUtils.get_bars_in_date_range(scan_data_instance,
+                                                   exchange,
+                                                   batch=batch)
+                counter = counter + 1
+
+                if MarketUtils.exit_on_limit_reached(
+                        profile_chart_generation_limit,
+                        counter):
+                    return
 
     def exit_on_limit_reached(
             profile_chart_generation_limit,

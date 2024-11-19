@@ -1,0 +1,8 @@
+database:
+  - name: "localdb"
+    host: "192.168.0.13"
+    port: 5432
+    db: "bl_trade_aid"
+    user: "tfNbPxVdnlNEbUwDOgQMClkHTtpSpPag"
+    password: "HdTniKerPQDDasn0q1PVC2tdSZMJzocV6fdm8WM3jAl6CuZYnDW913rbLUKfFSCS"
+    driver: "postgres"

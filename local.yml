@@ -34,6 +34,8 @@ services:
       - bl_trade_aid_local_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
+    ports:
+      - "5432:5432"
 
   docs:
     image: bl_trade_aid_local_docs
